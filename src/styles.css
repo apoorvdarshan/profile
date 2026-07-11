@@ -115,7 +115,6 @@ h2 { margin: 0 0 .7em; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
 .link-columns { display: block; columns: 2; column-gap: 2em; }
 .link-columns li { margin-bottom: .5em; break-inside: avoid; }
 blockquote { margin: 0; padding-left: 1em; border-left: 1px solid var(--text); }
-.source-note { margin: 4em 0 3em; color: var(--secondary); font-size: .8em; }
 .page-enter { animation: page-enter .28s ease both; }
 
 @keyframes page-enter {
