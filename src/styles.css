@@ -102,22 +102,6 @@ h2 { margin: 0 0 .7em; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
 .last-section { margin-bottom: 3em; }
 .last-section p { margin-bottom: 0; }
 
-.experience-list { margin: 0; padding: 0; border-top: 1px solid rgba(31, 30, 29, .2); list-style: none; }
-.experience-list > li { padding: .9em 0 1em; border-bottom: 1px solid rgba(31, 30, 29, .2); }
-.experience-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1em; }
-.experience-heading p,
-.experience-location,
-.experience-description { margin: 0; }
-.experience-dates { flex: 0 0 auto; color: var(--secondary); font-size: .82em; }
-.experience-type,
-.experience-location { color: var(--secondary); }
-.experience-location { font-size: .9em; }
-.experience-description { margin-top: .55em; color: var(--secondary); font-size: .94em; line-height: 1.5; }
-.experience-highlights { margin: .6em 0 0; padding-left: 1.1em; color: var(--secondary); font-size: .9em; line-height: 1.45; }
-.experience-highlights li + li { margin-top: .35em; }
-:root[data-theme='dark'] .experience-list { border-top-color: rgba(240, 238, 230, .2); }
-:root[data-theme='dark'] .experience-list > li { border-bottom-color: rgba(240, 238, 230, .2); }
-
 .detail-section { margin-top: 0; }
 .detail-list { gap: 1em; }
 .technology-list { line-height: 1.75; }
@@ -148,7 +132,6 @@ blockquote { margin: 0; padding-left: 1em; border-left: 1px solid var(--text); }
   .container { width: 95%; }
   .header { margin-top: 0; }
   .link-columns { columns: 1; }
-  .experience-heading { display: block; }
 }
 
 @media (prefers-reduced-motion: reduce) {
