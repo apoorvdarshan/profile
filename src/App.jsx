@@ -60,17 +60,12 @@ function InternalLink({ to, onNavigate, children, className = '' }) {
 function EntryList({ items, limit }) {
   const visible = typeof limit === 'number' ? items.slice(0, limit) : items
   return (
-    <ul className="entry-list">
+    <ul className="bullet-list entry-list">
       {visible.map((item) => (
         <li key={`${item.name}-${item.url}`}>
-          <div className="entry-title-line">
-            <ExternalLink className="entry-link" href={item.url}>
-              <span>{displayName(item.name)}</span>
-              <span className="external-arrow" aria-hidden="true">↗</span>
-            </ExternalLink>
-            {item.status && <span className="item-status">{item.status}</span>}
-          </div>
-          {item.description && <p className="entry-summary">{item.description}</p>}
+          <ExternalLink href={item.url}>{displayName(item.name)}</ExternalLink>
+          {item.status && <span className="item-status">({item.status})</span>}
+          {item.description && <span className="entry-summary"> — {item.description}</span>}
         </li>
       ))}
     </ul>
@@ -79,17 +74,12 @@ function EntryList({ items, limit }) {
 
 function DetailList({ items }) {
   return (
-    <ul className="detail-list">
+    <ul className="bullet-list detail-list">
       {items.map((item) => (
         <li key={`${item.name}-${item.url}`}>
-          <div className="entry-title-line">
-            <ExternalLink className="entry-link" href={item.url}>
-              <span>{displayName(item.name)}</span>
-              <span className="external-arrow" aria-hidden="true">↗</span>
-            </ExternalLink>
-            {item.status && <span className="item-status">{item.status}</span>}
-          </div>
-          {item.description && <p className="entry-description">{item.description}</p>}
+          <ExternalLink href={item.url}>{displayName(item.name)}</ExternalLink>
+          {item.status && <span className="item-status">({item.status})</span>}
+          {item.description && <span className="entry-summary"> — {item.description}</span>}
         </li>
       ))}
     </ul>
@@ -137,7 +127,7 @@ function HomePage({ navigate }) {
 
       <section>
         <h2>More</h2>
-        <ul className="text-link-list">
+        <ul className="bullet-list">
           <li><InternalLink to="/about" onNavigate={navigate}>Technologies, activity, recognition, links, and personal notes</InternalLink></li>
           <li><ExternalLink href={profile.source.url}>Read the source GitHub profile README</ExternalLink></li>
         </ul>
@@ -192,24 +182,24 @@ function AboutPage() {
 
       <section>
         <h2>What I’m doing</h2>
-        <ul className="prose-list">
+        <ul className="bullet-list">
           {profile.currentWork.map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
         </ul>
       </section>
 
       <section>
         <h2>Writing</h2>
-        <ul className="prose-list"><li><ExternalLink href={profile.writing.url}>{profile.writing.name}</ExternalLink><span className="muted-copy"> — {profile.writing.description}</span></li></ul>
+        <ul className="bullet-list"><li><ExternalLink href={profile.writing.url}>{profile.writing.name}</ExternalLink><span className="entry-summary"> — {profile.writing.description}</span></li></ul>
       </section>
 
       <section>
         <h2>Recognition</h2>
-        <ul className="prose-list">{profile.recognition.map((item) => <li key={item}>{item}</li>)}</ul>
+        <ul className="bullet-list">{profile.recognition.map((item) => <li key={item}>{item}</li>)}</ul>
       </section>
 
       <section>
         <h2>Connect</h2>
-        <ul className="link-columns">{profile.connect.map((item) => <li key={item.name}><ExternalLink href={item.url}>{item.name}<span className="external-arrow" aria-hidden="true">↗</span></ExternalLink></li>)}</ul>
+        <ul className="bullet-list link-columns">{profile.connect.map((item) => <li key={item.name}><ExternalLink href={item.url}>{item.name}</ExternalLink></li>)}</ul>
       </section>
 
       <section>
@@ -219,7 +209,7 @@ function AboutPage() {
 
       <section className="last-section">
         <h2>Random facts</h2>
-        <ul className="prose-list">{profile.randomFacts.map((item) => <li key={item}>{item}</li>)}</ul>
+        <ul className="bullet-list">{profile.randomFacts.map((item) => <li key={item}>{item}</li>)}</ul>
       </section>
     </>
   )
@@ -235,7 +225,7 @@ function App() {
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? 'dark' : 'light'
     localStorage.setItem('apoorv-theme-v2', dark ? 'dark' : 'light')
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#1f1e1d' : '#f2f0e8')
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#1f1e1d' : '#f0eee6')
   }, [dark])
 
   useEffect(() => {
