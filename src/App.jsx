@@ -29,6 +29,49 @@ const WORD_FORMS = {
   os: 'OS', pr: 'PR', readme: 'README', sql: 'SQL', ui: 'UI', url: 'URL',
 }
 
+const ACTIVITY_COLORS = '9b7548,718a69'
+let activitySvgPromise
+
+function activityUrl(background) {
+  const url = new URL(profile.activityImage)
+  url.searchParams.set('colors', ACTIVITY_COLORS)
+  url.searchParams.set('bg', background)
+  return url.toString()
+}
+
+function prepareActivitySvg(svg, theme) {
+  const colors = theme === 'dark'
+    ? { text: '#f0eee6', empty: '#302e2b', originalText: '#c9d1d9', originalEmpty: '#161b22' }
+    : { text: '#1f1e1d', empty: '#dedbd2', originalText: '#24292f', originalEmpty: '#ebedf0' }
+
+  const camouflaged = svg
+    .replace(/<rect width="[^"]+" height="[^"]+" fill="#[0-9a-fA-F]{6}" rx="6" ry="6"\s*\/>/, '')
+    .replaceAll(colors.originalText, colors.text)
+    .replaceAll(colors.originalEmpty, colors.empty)
+
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(camouflaged)}`
+}
+
+function loadActivitySvgs() {
+  if (!activitySvgPromise) {
+    activitySvgPromise = Promise.all([
+      fetch(activityUrl('light')).then((response) => {
+        if (!response.ok) throw new Error(`Activity graph returned ${response.status}`)
+        return response.text()
+      }),
+      fetch(activityUrl('dark')).then((response) => {
+        if (!response.ok) throw new Error(`Activity graph returned ${response.status}`)
+        return response.text()
+      }),
+    ]).then(([light, dark]) => ({
+      light: prepareActivitySvg(light, 'light'),
+      dark: prepareActivitySvg(dark, 'dark'),
+    }))
+  }
+
+  return activitySvgPromise
+}
+
 function displayName(name) {
   if (NAME_OVERRIDES[name]) return NAME_OVERRIDES[name]
   return name
@@ -96,9 +139,24 @@ function PageHeading({ title, children }) {
 }
 
 function GitHubActivity() {
+  const [graphs, setGraphs] = useState(null)
+
+  useEffect(() => {
+    let active = true
+    loadActivitySvgs()
+      .then((result) => { if (active) setGraphs(result) })
+      .catch(() => { if (active) setGraphs({ light: activityUrl('light'), dark: activityUrl('dark') }) })
+    return () => { active = false }
+  }, [])
+
   return (
-    <ExternalLink className="activity-link" href={profile.activityImage}>
-      <img className="activity-graph" src={profile.activityImage} alt="Apoorv Darshan's merged GitHub contribution graph" />
+    <ExternalLink className="activity-link" href={activityUrl('light')}>
+      {graphs ? (
+        <>
+          <img className="activity-graph activity-graph-light" src={graphs.light} alt="Apoorv Darshan's merged GitHub contribution graph" />
+          <img className="activity-graph activity-graph-dark" src={graphs.dark} alt="Apoorv Darshan's merged GitHub contribution graph" />
+        </>
+      ) : <span className="activity-placeholder" aria-label="Loading Apoorv Darshan's GitHub contribution graph" role="img" />}
     </ExternalLink>
   )
 }
