@@ -103,6 +103,58 @@ function GitHubActivity() {
   )
 }
 
+function ReadmeDetails({ includeTechnologies = false, includeActivity = false }) {
+  return (
+    <>
+      {includeTechnologies && (
+        <section>
+          <h2>Technologies</h2>
+          <p className="technology-list">{profile.technologies.join(' · ')}</p>
+        </section>
+      )}
+
+      {includeActivity && (
+        <section>
+          <h2>GitHub activity</h2>
+          <GitHubActivity />
+        </section>
+      )}
+
+      <section>
+        <h2>What I’m doing</h2>
+        <ul className="bullet-list">
+          {profile.currentWork.map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Writing</h2>
+        <ul className="bullet-list"><li><ExternalLink href={profile.writing.url}>{profile.writing.name}</ExternalLink><span className="entry-summary"> — {profile.writing.description}</span></li></ul>
+      </section>
+
+      <section>
+        <h2>Connect</h2>
+        <ul className="bullet-list link-columns">{profile.connect.map((item) => <li key={item.name}><ExternalLink href={item.url}>{item.name}</ExternalLink></li>)}</ul>
+      </section>
+
+      <section>
+        <h2>Recognition</h2>
+        <ul className="bullet-list">{profile.recognition.map((item) => <li key={item}>{item}</li>)}</ul>
+      </section>
+
+      <section>
+        <h2>Philosophy</h2>
+        <blockquote>{profile.philosophy}</blockquote>
+      </section>
+
+      <section>
+        <h2>Random facts</h2>
+        <ul className="bullet-list">{profile.randomFacts.map((item) => <li key={item}>{item}</li>)}</ul>
+      </section>
+    </>
+  )
+}
+
 function HomePage({ navigate }) {
   return (
     <>
@@ -138,10 +190,12 @@ function HomePage({ navigate }) {
         <GitHubActivity />
       </section>
 
+      <ReadmeDetails />
+
       <section>
         <h2>More</h2>
         <ul className="bullet-list">
-          <li><InternalLink to="/about" onNavigate={navigate}>Technologies, activity, recognition, links, and personal notes</InternalLink></li>
+          <li><InternalLink to="/about" onNavigate={navigate}>Technologies and complete profile</InternalLink></li>
           <li><ExternalLink href={profile.source.url}>Read the source GitHub profile README</ExternalLink></li>
         </ul>
       </section>
@@ -180,48 +234,7 @@ function AboutPage() {
   return (
     <>
       <PageHeading title="Complete profile">The remaining details from Apoorv’s GitHub profile README, kept together without using LinkedIn as a content source.</PageHeading>
-
-      <section>
-        <h2>Technologies</h2>
-        <p className="technology-list">{profile.technologies.join(' · ')}</p>
-      </section>
-
-      <section>
-        <h2>GitHub activity</h2>
-        <GitHubActivity />
-      </section>
-
-      <section>
-        <h2>What I’m doing</h2>
-        <ul className="bullet-list">
-          {profile.currentWork.map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
-        </ul>
-      </section>
-
-      <section>
-        <h2>Writing</h2>
-        <ul className="bullet-list"><li><ExternalLink href={profile.writing.url}>{profile.writing.name}</ExternalLink><span className="entry-summary"> — {profile.writing.description}</span></li></ul>
-      </section>
-
-      <section>
-        <h2>Recognition</h2>
-        <ul className="bullet-list">{profile.recognition.map((item) => <li key={item}>{item}</li>)}</ul>
-      </section>
-
-      <section>
-        <h2>Connect</h2>
-        <ul className="bullet-list link-columns">{profile.connect.map((item) => <li key={item.name}><ExternalLink href={item.url}>{item.name}</ExternalLink></li>)}</ul>
-      </section>
-
-      <section>
-        <h2>Philosophy</h2>
-        <blockquote>{profile.philosophy}</blockquote>
-      </section>
-
-      <section className="last-section">
-        <h2>Random facts</h2>
-        <ul className="bullet-list">{profile.randomFacts.map((item) => <li key={item}>{item}</li>)}</ul>
-      </section>
+      <ReadmeDetails includeTechnologies includeActivity />
     </>
   )
 }
