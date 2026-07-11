@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import profile from './profileData.generated.json'
 import { linkedinExperience } from './linkedinExperience'
+import { linkedinEducation } from './linkedinEducation'
 
-const ROUTES = new Set(['/', '/experience', '/projects', '/open-source', '/about'])
+const ROUTES = new Set(['/', '/experience', '/education', '/projects', '/open-source', '/about'])
 
 const NAME_OVERRIDES = {
   'fud-ai': 'Fud AI',
@@ -239,6 +240,31 @@ function ExperienceSection({ navigate }) {
   )
 }
 
+function EducationList({ limit }) {
+  const visible = typeof limit === 'number' ? linkedinEducation.slice(0, limit) : linkedinEducation
+  return (
+    <ul className="bullet-list education-list">
+      {visible.map((item) => (
+        <li key={`${item.institution}-${item.program}-${item.dates}`}>
+          <strong>{item.institution}</strong>
+          <span className="item-status">({item.dates})</span>
+          <span className="entry-summary"> — {item.program}{item.grade && `; ${item.grade}`}{item.note && `; ${item.note}`}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function EducationSection({ navigate }) {
+  return (
+    <section>
+      <h2>Education</h2>
+      <EducationList limit={4} />
+      <p className="after-list"><InternalLink to="/education" onNavigate={navigate}>View all {linkedinEducation.length} education entries →</InternalLink></p>
+    </section>
+  )
+}
+
 function HomePage({ navigate }) {
   return (
     <>
@@ -248,6 +274,8 @@ function HomePage({ navigate }) {
       </section>
 
       <ExperienceSection navigate={navigate} />
+
+      <EducationSection navigate={navigate} />
 
       <section>
         <h2>Apps</h2>
@@ -303,6 +331,17 @@ function ExperiencePage() {
   )
 }
 
+function EducationPage() {
+  return (
+    <>
+      <PageHeading title="Education">All {linkedinEducation.length} education entries from Apoorv’s LinkedIn profile.</PageHeading>
+      <section className="detail-section">
+        <EducationList />
+      </section>
+    </>
+  )
+}
+
 function OpenSourcePage() {
   return (
     <>
@@ -346,6 +385,7 @@ function App() {
     const titles = {
       '/': 'Apoorv Darshan — Developer',
       '/experience': 'Experience — Apoorv Darshan',
+      '/education': 'Education — Apoorv Darshan',
       '/projects': 'Projects — Apoorv Darshan',
       '/open-source': 'Open Source — Apoorv Darshan',
       '/about': 'Complete Profile — Apoorv Darshan',
@@ -363,6 +403,7 @@ function App() {
 
   let page
   if (path === '/experience') page = <ExperiencePage />
+  else if (path === '/education') page = <EducationPage />
   else if (path === '/projects') page = <ProjectsPage />
   else if (path === '/open-source') page = <OpenSourcePage />
   else if (path === '/about') page = <AboutPage />
