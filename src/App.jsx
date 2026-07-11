@@ -3,7 +3,7 @@ import profile from './profileData.generated.json'
 import { linkedinExperience } from './linkedinExperience'
 import { linkedinEducation } from './linkedinEducation'
 
-const ROUTES = new Set(['/', '/experience', '/education', '/projects', '/open-source', '/about'])
+const ROUTES = new Set(['/', '/experience', '/education', '/projects', '/open-source'])
 
 const NAME_OVERRIDES = {
   'fud-ai': 'Fud AI',
@@ -84,7 +84,9 @@ function displayName(name) {
 
 function currentPath() {
   const path = window.location.pathname.replace(/\/$/, '') || '/'
-  return ROUTES.has(path) ? path : '/'
+  if (ROUTES.has(path)) return path
+  window.history.replaceState({}, '', '/')
+  return '/'
 }
 
 function ExternalLink({ href, children, className = '' }) {
@@ -170,23 +172,9 @@ function GitHubActivity() {
   )
 }
 
-function ReadmeDetails({ includeTechnologies = false, includeActivity = false }) {
+function ReadmeDetails() {
   return (
     <>
-      {includeTechnologies && (
-        <section>
-          <h2>Technologies</h2>
-          <p className="technology-list">{profile.technologies.join(' · ')}</p>
-        </section>
-      )}
-
-      {includeActivity && (
-        <section>
-          <h2>GitHub activity</h2>
-          <GitHubActivity />
-        </section>
-      )}
-
       <section>
         <h2>What I’m doing</h2>
         <ul className="bullet-list">
@@ -360,15 +348,6 @@ function OpenSourcePage() {
   )
 }
 
-function AboutPage() {
-  return (
-    <>
-      <PageHeading title="Complete profile">The remaining details from Apoorv’s GitHub profile README, kept together without using LinkedIn as a content source.</PageHeading>
-      <ReadmeDetails includeTechnologies includeActivity />
-    </>
-  )
-}
-
 function App() {
   const [dark, setDark] = useState(() => {
     const saved = localStorage.getItem('apoorv-theme-v2')
@@ -395,7 +374,6 @@ function App() {
       '/education': 'Education — Apoorv Darshan',
       '/projects': 'Projects — Apoorv Darshan',
       '/open-source': 'Open Source — Apoorv Darshan',
-      '/about': 'Complete Profile — Apoorv Darshan',
     }
     document.title = titles[path]
   }, [path])
@@ -413,7 +391,6 @@ function App() {
   else if (path === '/education') page = <EducationPage />
   else if (path === '/projects') page = <ProjectsPage />
   else if (path === '/open-source') page = <OpenSourcePage />
-  else if (path === '/about') page = <AboutPage />
   else page = <HomePage navigate={navigate} />
 
   return (
