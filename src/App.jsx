@@ -269,7 +269,7 @@ function HomePage({ navigate }) {
     <>
       <section className="intro">
         <p>Apoorv Darshan is an AI-powered builder in Delhi, building web apps, mobile apps, bots, APIs, and everything in between.</p>
-        <p>{profile.intro.statement}</p>
+        <p className="intro-deck">{profile.intro.statement}</p>
       </section>
 
       <ExperienceSection navigate={navigate} />

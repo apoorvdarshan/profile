@@ -86,6 +86,7 @@ button { font: inherit; }
 
 .page-main { display: flex; flex: 1; flex-flow: column; }
 .intro p:last-child { margin-bottom: 0; }
+.intro-deck { font-style: italic; }
 section + section { margin-top: 1.3em; }
 h1 { margin: 0; font-weight: 600; }
 h2 { margin: 0 0 .7em; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
@@ -115,7 +116,7 @@ h2 { margin: 0 0 .7em; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
 :root[data-theme='dark'] .activity-placeholder { background: rgba(240, 238, 230, .07); }
 .link-columns { display: block; columns: 2; column-gap: 2em; }
 .link-columns li { margin-bottom: .5em; break-inside: avoid; }
-blockquote { margin: 0; padding: 0; }
+blockquote { margin: 0; padding: 0; font-style: italic; }
 .page-enter { animation: page-enter .28s ease both; }
 
 @keyframes page-enter {
