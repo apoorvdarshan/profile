@@ -206,9 +206,11 @@ function ReadmeDetails() {
         <blockquote>{profile.philosophy}</blockquote>
       </section>
 
-      <section>
-        <h2>Random facts</h2>
-        <ul className="bullet-list">{profile.randomFacts.map((item) => <li key={item}>{item}</li>)}</ul>
+      <section className="random-facts">
+        <details>
+          <summary>Random facts</summary>
+          <ul className="bullet-list">{profile.randomFacts.map((item) => <li key={item}>{item}</li>)}</ul>
+        </details>
       </section>
     </>
   )
