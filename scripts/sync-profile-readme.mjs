@@ -74,6 +74,29 @@ function badgeLinks(value) {
   })
 }
 
+async function attachStarCounts(data) {
+  const queue = ['apps', 'extensions', 'projects', 'openSource']
+    .flatMap((key) => data[key])
+    .filter((item) => item.starBadgeUrl)
+
+  const workers = Array.from({ length: Math.min(8, queue.length) }, async () => {
+    while (queue.length) {
+      const item = queue.shift()
+      try {
+        const response = await fetch(item.starBadgeUrl, { headers: { 'User-Agent': 'apoorv-profile-build' } })
+        if (!response.ok) throw new Error(`badge returned ${response.status}`)
+        const svg = await response.text()
+        item.starCount = svg.match(/aria-label="★:\s*([^"]+)"/)?.[1] ?? ''
+      } catch (error) {
+        item.starCount = ''
+        console.warn(`Star count unavailable for ${item.name}: ${error.message}`)
+      }
+    }
+  })
+
+  await Promise.all(workers)
+}
+
 function parseReadme(readme) {
   const beforeApps = section(readme, '# Hi,', '## Apps')
   const technologyMatches = [...beforeApps.matchAll(/!\[([^\]]+)\]\(https:\/\/img\.shields\.io\/badge/g)]
@@ -134,6 +157,7 @@ async function main() {
   }
 
   const data = parseReadme(readme)
+  await attachStarCounts(data)
   await writeFile(fileURLToPath(OUTPUT_URL), `${JSON.stringify(data, null, 2)}\n`)
   console.log(`Synced GitHub README: ${data.apps.length} apps, ${data.extensions.length} extensions, ${data.projects.length} projects, ${data.openSource.length} open-source contributions.`)
 }

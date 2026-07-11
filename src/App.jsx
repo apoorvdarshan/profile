@@ -106,7 +106,11 @@ function InternalLink({ to, onNavigate, children, className = '' }) {
 
 function StarBadge({ item }) {
   if (!item.starBadgeUrl) return null
-  return <img className="star-badge" src={item.starBadgeUrl} alt={`${displayName(item.name)} GitHub star count`} loading="lazy" />
+  return (
+    <span className="star-count" aria-label={`${displayName(item.name)} has ${item.starCount || 'an unavailable number of'} GitHub stars`}>
+      <span aria-hidden="true">★ {item.starCount}</span>
+    </span>
+  )
 }
 
 function EntryList({ items, limit }) {
