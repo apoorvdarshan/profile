@@ -14,7 +14,9 @@
     }
   ],
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "description": "The personal website of developer and open-source builder Apoorv Darshan.",
   "background_color": "#f0eee6",
   "theme_color": "#1f1e1d"
 }
