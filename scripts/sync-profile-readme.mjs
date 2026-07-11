@@ -1,0 +1,139 @@
+import { access, writeFile } from 'node:fs/promises'
+import { constants } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+
+const README_URL = 'https://raw.githubusercontent.com/apoorvdarshan/apoorvdarshan/main/README.md'
+const OUTPUT_URL = new URL('../src/profileData.generated.json', import.meta.url)
+
+const decode = (value = '') => value
+  .replaceAll('&amp;', '&')
+  .replaceAll('&quot;', '"')
+  .replaceAll('&#39;', "'")
+  .replaceAll('&bull;', '')
+  .replaceAll('&gt;', '>')
+  .replaceAll('&lt;', '<')
+
+const plainText = (value = '') => decode(value)
+  .replace(/<img[^>]*alt="([^"]*)"[^>]*>/g, (_, alt) => alt === 'Stars' ? '' : alt)
+  .replace(/<[^>]+>/g, '')
+  .replace(/\s+/g, ' ')
+  .trim()
+
+function section(readme, start, end) {
+  const startIndex = readme.indexOf(start)
+  const endIndex = end ? readme.indexOf(end, startIndex + start.length) : readme.length
+  return startIndex === -1 ? '' : readme.slice(startIndex, endIndex === -1 ? readme.length : endIndex)
+}
+
+function htmlEntries(readme, start, end) {
+  return section(readme, start, end).split('\n').flatMap((line) => {
+    const match = line.match(/<strong><a href="([^"]+)">([^<]+)<\/a><\/strong>(.*?)(?:<\/li>|<\/div>)/)
+    if (!match) return []
+
+    const prefix = line.slice(0, line.indexOf('<strong>'))
+    const marker = plainText(prefix).replace(/^•\s*/, '').trim()
+    const rawTail = plainText(match[3])
+    const status = rawTail.match(/^\(([^)]+)\)/)?.[1] ?? ''
+    const description = rawTail
+      .replace(/^\([^)]+\)\s*/, '')
+      .replace(/^\s*-\s*/, '')
+      .replace(/\(by\s*\)/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+
+    return [{
+      name: plainText(match[2]),
+      url: decode(match[1]),
+      description,
+      status,
+      marker,
+    }]
+  })
+}
+
+function markdownBullets(value) {
+  return value.split('\n').flatMap((line) => {
+    const match = line.match(/^-\s+(.*)$/)
+    return match ? [plainText(match[1]).replaceAll('**', '')] : []
+  })
+}
+
+function namedBullets(value) {
+  return value.split('\n').flatMap((line) => {
+    const match = line.match(/^-\s+\*\*([^*]+)\*\*\s*-\s*(.+)$/)
+    return match ? [{ name: plainText(match[1]), description: plainText(match[2]) }] : []
+  })
+}
+
+function badgeLinks(value) {
+  return value.split('\n').flatMap((line) => {
+    const match = line.match(/^\[!\[([^\]]+)\]\([^)]*\)\]\(([^)]+)\)/)
+    return match ? [{ name: plainText(match[1]).replace(/^[-★\s]+$/, 'X'), url: decode(match[2]) }] : []
+  })
+}
+
+function parseReadme(readme) {
+  const beforeApps = section(readme, '# Hi,', '## Apps')
+  const technologyMatches = [...beforeApps.matchAll(/!\[([^\]]+)\]\(https:\/\/img\.shields\.io\/badge/g)]
+  const technologies = technologyMatches.map((match) => match[1])
+  const tagline = readme.split('\n').find((line) => line.includes('AI-powered builder')) ?? ''
+  const statement = beforeApps.split('\n').find((line) => line.startsWith('> '))?.slice(2) ?? ''
+  const activitySection = section(readme, '## GitHub Activity', '## What I\'m Doing')
+  const activityImage = activitySection.match(/<img src="([^"]+)"/)?.[1] ?? ''
+  const writingSection = section(readme, '## Writing', '## Connect')
+  const writingUrl = [...writingSection.matchAll(/\]\((https?:\/\/[^)]+)\)/g)].at(-1)?.[1] ?? ''
+  const writingLine = writingSection.split('\n').find((line) => line.startsWith('- [![')) ?? ''
+  const writingDescription = writingLine.includes(') - ') ? writingLine.slice(writingLine.lastIndexOf(') - ') + 4) : ''
+  const philosophySection = section(readme, '### Philosophy')
+  const philosophy = philosophySection.split('\n').find((line) => line.startsWith('> '))?.slice(2) ?? ''
+  const randomFactsPart = philosophySection.split('<summary>Random Facts</summary>')[1]?.split('</details>')[0] ?? ''
+
+  return {
+    source: {
+      label: 'GitHub profile README',
+      url: 'https://github.com/apoorvdarshan',
+      rawUrl: README_URL,
+    },
+    intro: {
+      title: "Hi, I'm Apoorv 👋",
+      location: 'Delhi',
+      tagline: plainText(tagline).replaceAll('**', ''),
+      statement: plainText(statement),
+    },
+    technologies,
+    apps: htmlEntries(readme, '## Apps', '## Chrome Extensions'),
+    extensions: htmlEntries(readme, '## Chrome Extensions', '## Projects'),
+    projects: htmlEntries(readme, '## Projects', '### Open Source Contributions'),
+    openSource: htmlEntries(readme, '### Open Source Contributions', '## GitHub Activity'),
+    activityImage,
+    currentWork: namedBullets(section(readme, "## What I'm Doing", '## Writing')),
+    writing: { name: 'Medium', url: writingUrl, description: plainText(writingDescription) },
+    connect: badgeLinks(section(readme, '## Connect', '### Recognition')),
+    recognition: markdownBullets(section(readme, '### Recognition', '### Philosophy')),
+    philosophy: plainText(philosophy),
+    randomFacts: markdownBullets(randomFactsPart),
+  }
+}
+
+async function main() {
+  let readme
+  try {
+    const response = await fetch(README_URL, { headers: { 'User-Agent': 'apoorv-profile-build' } })
+    if (!response.ok) throw new Error(`GitHub returned ${response.status}`)
+    readme = await response.text()
+  } catch (error) {
+    try {
+      await access(OUTPUT_URL, constants.R_OK)
+      console.warn(`README sync skipped: ${error.message}. Using the committed snapshot.`)
+      return
+    } catch {
+      throw error
+    }
+  }
+
+  const data = parseReadme(readme)
+  await writeFile(fileURLToPath(OUTPUT_URL), `${JSON.stringify(data, null, 2)}\n`)
+  console.log(`Synced GitHub README: ${data.apps.length} apps, ${data.extensions.length} extensions, ${data.projects.length} projects, ${data.openSource.length} open-source contributions.`)
+}
+
+await main()

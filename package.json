@@ -4,7 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "sync-profile": "node scripts/sync-profile-readme.mjs",
+    "predev": "npm run sync-profile",
     "dev": "vite --host 0.0.0.0 --port 3000",
+    "prebuild": "npm run sync-profile",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
     "lint": "eslint .",
