@@ -84,7 +84,7 @@ button { font: inherit; }
 .toggle-knob { position: absolute; width: 14px; height: 14px; left: 2px; bottom: 2px; border-radius: 50%; background: #1f1e1d; transition: transform .2s; }
 :root[data-theme='dark'] .toggle-knob { transform: translateX(20px); }
 
-.page-main { display: flex; flex: 1; flex-flow: column; }
+.page-main { display: flex; flex: 1; flex-flow: column; padding-bottom: 3.5em; }
 .intro p:last-child { margin-bottom: 0; }
 .intro-deck { font-style: italic; }
 section + section { margin-top: 1.3em; }
