@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import profile from './profileData.generated.json'
 import { linkedinExperience } from './linkedinExperience'
 import { linkedinEducation } from './linkedinEducation'
+import { SEO_BY_PATH, SOCIAL_IMAGE, canonicalUrl, structuredData } from './seo'
 
 const ROUTES = new Set(['/', '/experience', '/education', '/projects', '/open-source'])
 
@@ -374,14 +375,27 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const titles = {
-      '/': 'Apoorv Darshan — Developer',
-      '/experience': 'Experience — Apoorv Darshan',
-      '/education': 'Education — Apoorv Darshan',
-      '/projects': 'Projects — Apoorv Darshan',
-      '/open-source': 'Open Source — Apoorv Darshan',
+    const seo = SEO_BY_PATH[path] || SEO_BY_PATH['/']
+    const canonical = canonicalUrl(path)
+    document.title = seo.title
+
+    const setMeta = (selector, attribute, value) => {
+      const element = document.head.querySelector(selector)
+      if (element) element.setAttribute(attribute, value)
     }
-    document.title = titles[path]
+
+    setMeta('meta[name="description"]', 'content', seo.description)
+    setMeta('meta[property="og:title"]', 'content', seo.title)
+    setMeta('meta[property="og:description"]', 'content', seo.description)
+    setMeta('meta[property="og:url"]', 'content', canonical)
+    setMeta('meta[property="og:image"]', 'content', SOCIAL_IMAGE)
+    setMeta('meta[name="twitter:title"]', 'content', seo.title)
+    setMeta('meta[name="twitter:description"]', 'content', seo.description)
+    setMeta('meta[name="twitter:image"]', 'content', SOCIAL_IMAGE)
+
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonical)
+    const schema = document.querySelector('script[type="application/ld+json"]')
+    if (schema) schema.textContent = JSON.stringify(structuredData(path))
   }, [path])
 
   const navigate = (to) => {
