@@ -1,75 +1,188 @@
 import { useEffect, useState } from 'react'
+import profile from './profileData.generated.json'
 
-const products = [
-  ['Fud AI', 'iOS & Android', 'https://github.com/apoorvdarshan/fud-ai'],
-  ['Verceltics', 'iOS', 'https://github.com/apoorvdarshan/verceltics'],
-  ['Scowld', 'iOS', 'https://github.com/apoorvdarshan/scowld'],
-  ['Quit All', 'iOS', 'https://apps.apple.com/us/app/quit-all-break-every-habit/id6760978934'],
-  ['Crossposter', 'Web', 'https://github.com/apoorvdarshan/crossposter'],
-  ['TetherShot', 'macOS', 'https://github.com/apoorvdarshan/TetherShot'],
-]
+const ROUTES = new Set(['/', '/projects', '/open-source', '/about'])
 
-const projects = [
-  ['OpenGraph Studio', 'https://github.com/apoorvdarshan/opengraph-studio'],
-  ['Country Filter for X', 'https://github.com/apoorvdarshan/x-country-filter'],
-  ['Streaming Auto Pause', 'https://github.com/apoorvdarshan/streaming-autopause'],
-  ['GitHub Contribution Graph Merger', 'https://github.com/apoorvdarshan/github-readme-contribution-merger'],
-  ['Daxerly', 'https://github.com/apoorvdarshan/daxerly'],
-  ['Nornlore', 'https://github.com/apoorvdarshan/nornlore'],
-  ['How Rich Are You?', 'https://github.com/apoorvdarshan/how-rich-are-you'],
-  ['Billionaire Smash', 'https://github.com/apoorvdarshan/billionaire-smash'],
-  ['DOB Selector', 'https://github.com/apoorvdarshan/dob-selector'],
-  ['Rekisei', 'https://github.com/apoorvdarshan/rekisei'],
-  ['Claw C', 'https://github.com/apoorvdarshan/claw-c'],
-]
-
-const contributions = [
-  ['TensorFlow', 'PR #110665', 'https://github.com/tensorflow/tensorflow/pull/110665'],
-  ['Kubernetes', 'PR #137095', 'https://github.com/kubernetes/kubernetes/pull/137095'],
-  ['Flutter', 'PR #182546', 'https://github.com/flutter/flutter/pull/182546'],
-  ['Svelte', 'PR #17745', 'https://github.com/sveltejs/svelte/pull/17745'],
-  ['Spring Boot', 'PR #49261', 'https://github.com/spring-projects/spring-boot/pull/49261'],
-  ['jQuery', 'PR #5775', 'https://github.com/jquery/jquery/pull/5775'],
-  ['.NET Runtime', 'PR #124498', 'https://github.com/dotnet/runtime/pull/124498'],
-  ['Google zx', '2 merged PRs', 'https://github.com/google/zx/pulls?q=author%3Aapoorvdarshan'],
-  ['SQLFluff', '7 merged PRs', 'https://github.com/sqlfluff/sqlfluff/pulls?q=author%3Aapoorvdarshan'],
-]
-
-const background = [
-  ['B.S. Computer Science, University of the People', '2025–2026'],
-  ['President’s List and Dean’s List', '2026'],
-  ['Meta Front-End Developer Specialization', '2025'],
-  ['Claude Code in Action, Anthropic', '2025'],
-  ['YouTube channel grown to 21.5K+ subscribers and sold', '2019–2024'],
-  ['ACE Certified Personal Trainer', '2024'],
-  ['Top 1.5% in JEE; AIR 15,796 in JEE Advanced', '2023'],
-]
-
-const elsewhere = [
-  ['GitHub', 'https://github.com/apoorvdarshan'],
-  ['LinkedIn', 'https://www.linkedin.com/in/apoorvdarshan'],
-  ['Writing', 'https://apoorvdarshan.com'],
-  ['X', 'https://x.com/apoorvdarshan'],
-  ['YouTube', 'https://youtube.com/@apoorvdarshan'],
-  ['Bluesky', 'https://bsky.app/profile/apoorvdarshan.com'],
-  ['Dev.to', 'https://dev.to/apoorvdarshan'],
-  ['Product Hunt', 'https://www.producthunt.com/@apoorvdarshan'],
-]
-
-function ExternalLink({ href, children }) {
-  return <a href={href} target="_blank" rel="noreferrer">{children}</a>
+function currentPath() {
+  const path = window.location.pathname.replace(/\/$/, '') || '/'
+  return ROUTES.has(path) ? path : '/'
 }
 
-function BulletList({ items, meta = false }) {
+function ExternalLink({ href, children, className = '' }) {
+  const isWeb = href.startsWith('http')
+  return <a className={className} href={href} target={isWeb ? '_blank' : undefined} rel={isWeb ? 'noreferrer' : undefined}>{children}</a>
+}
+
+function InternalLink({ to, onNavigate, children, className = '' }) {
+  const handleClick = (event) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return
+    event.preventDefault()
+    onNavigate(to)
+  }
+
+  return <a className={className} href={to} onClick={handleClick}>{children}</a>
+}
+
+function EntryList({ items, limit }) {
+  const visible = typeof limit === 'number' ? items.slice(0, limit) : items
   return (
-    <ul className="bullet-list">
-      {items.map((item) => (
-        <li key={item[0]}>
-          <ExternalLink href={item[meta ? 2 : 1]}>{item[0]}</ExternalLink>
-          {meta && <span className="item-meta">({item[1]})</span>}
+    <ul className="bullet-list entry-list">
+      {visible.map((item) => (
+        <li key={`${item.name}-${item.url}`}>
+          <ExternalLink href={item.url}>{item.name}</ExternalLink>
+          {item.status && <span className="item-status">({item.status})</span>}
+          {item.description && <span className="entry-summary"> — {item.description}</span>}
         </li>
       ))}
     </ul>
+  )
+}
+
+function DetailList({ items }) {
+  return (
+    <ul className="detail-list">
+      {items.map((item) => (
+        <li key={`${item.name}-${item.url}`}>
+          <span className="entry-marker" aria-hidden="true">{item.marker || '•'}</span>
+          <div>
+            <p className="entry-name">
+              <ExternalLink href={item.url}>{item.name}</ExternalLink>
+              {item.status && <span className="item-status">({item.status})</span>}
+            </p>
+            {item.description && <p className="entry-description">{item.description}</p>}
+          </div>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function PageHeading({ title, children }) {
+  return (
+    <section className="page-heading">
+      <h1>{title}</h1>
+      <p>{children}</p>
+    </section>
+  )
+}
+
+function HomePage({ navigate }) {
+  return (
+    <>
+      <section className="intro">
+        <p>Apoorv Darshan is an AI-powered builder in Delhi, building web apps, mobile apps, bots, APIs, and everything in between.</p>
+        <p>{profile.intro.statement}</p>
+      </section>
+
+      <section>
+        <h2>Apps</h2>
+        <EntryList items={profile.apps} />
+      </section>
+
+      <section>
+        <h2>Chrome extensions</h2>
+        <EntryList items={profile.extensions} />
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <EntryList items={profile.projects} limit={8} />
+        <p className="after-list"><InternalLink to="/projects" onNavigate={navigate}>View all {profile.projects.length} projects →</InternalLink></p>
+      </section>
+
+      <section>
+        <h2>Open source</h2>
+        <EntryList items={profile.openSource} limit={8} />
+        <p className="after-list"><InternalLink to="/open-source" onNavigate={navigate}>View all {profile.openSource.length} contributions →</InternalLink></p>
+      </section>
+
+      <section>
+        <h2>More</h2>
+        <ul className="bullet-list">
+          <li><InternalLink to="/about" onNavigate={navigate}>Technologies, activity, recognition, links, and personal notes</InternalLink></li>
+          <li><ExternalLink href={profile.source.url}>Read the source GitHub profile README</ExternalLink></li>
+        </ul>
+      </section>
+
+      <section className="last-section">
+        <h2>Contact</h2>
+        <p>Email <a href="mailto:ad13dtu@gmail.com">ad13dtu@gmail.com</a>.</p>
+      </section>
+    </>
+  )
+}
+
+function ProjectsPage() {
+  return (
+    <>
+      <PageHeading title="Projects">Every project listed in Apoorv’s GitHub profile README. Each title opens the project or its live site.</PageHeading>
+      <section className="detail-section">
+        <DetailList items={profile.projects} />
+      </section>
+    </>
+  )
+}
+
+function OpenSourcePage() {
+  return (
+    <>
+      <PageHeading title="Open source">All {profile.openSource.length} contributions from Apoorv’s GitHub profile README. Select any project to open the pull request or contribution history.</PageHeading>
+      <section className="detail-section">
+        <DetailList items={profile.openSource} />
+      </section>
+    </>
+  )
+}
+
+function AboutPage() {
+  return (
+    <>
+      <PageHeading title="Complete profile">The remaining details from Apoorv’s GitHub profile README, kept together without using LinkedIn as a content source.</PageHeading>
+
+      <section>
+        <h2>Technologies</h2>
+        <p className="technology-list">{profile.technologies.join(' · ')}</p>
+      </section>
+
+      <section>
+        <h2>GitHub activity</h2>
+        <ExternalLink href={profile.activityImage}>
+          <img className="activity-graph" src={profile.activityImage} alt="Apoorv Darshan's merged GitHub contribution graph" />
+        </ExternalLink>
+      </section>
+
+      <section>
+        <h2>What I’m doing</h2>
+        <ul className="bullet-list entry-list">
+          {profile.currentWork.map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Writing</h2>
+        <ul className="bullet-list entry-list"><li><ExternalLink href={profile.writing.url}>{profile.writing.name}</ExternalLink><span className="entry-summary"> — {profile.writing.description}</span></li></ul>
+      </section>
+
+      <section>
+        <h2>Recognition</h2>
+        <ul className="bullet-list entry-list">{profile.recognition.map((item) => <li key={item}>{item}</li>)}</ul>
+      </section>
+
+      <section>
+        <h2>Connect</h2>
+        <ul className="bullet-list link-columns">{profile.connect.map((item) => <li key={item.name}><ExternalLink href={item.url}>{item.name}</ExternalLink></li>)}</ul>
+      </section>
+
+      <section>
+        <h2>Philosophy</h2>
+        <blockquote>{profile.philosophy}</blockquote>
+      </section>
+
+      <section className="last-section">
+        <h2>Random facts</h2>
+        <ul className="bullet-list">{profile.randomFacts.map((item) => <li key={item}>{item}</li>)}</ul>
+      </section>
+    </>
   )
 }
 
@@ -78,7 +191,7 @@ function App() {
     const saved = localStorage.getItem('apoorv-theme-v2')
     return saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
   })
-  const [repoCount, setRepoCount] = useState(259)
+  const [path, setPath] = useState(currentPath)
 
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? 'dark' : 'light'
@@ -87,11 +200,34 @@ function App() {
   }, [dark])
 
   useEffect(() => {
-    fetch('https://api.github.com/users/apoorvdarshan')
-      .then((response) => response.ok ? response.json() : Promise.reject())
-      .then((data) => setRepoCount(data.public_repos))
-      .catch(() => {})
+    const handlePopState = () => setPath(currentPath())
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
   }, [])
+
+  useEffect(() => {
+    const titles = {
+      '/': 'Apoorv Darshan — Developer',
+      '/projects': 'Projects — Apoorv Darshan',
+      '/open-source': 'Open Source — Apoorv Darshan',
+      '/about': 'Complete Profile — Apoorv Darshan',
+    }
+    document.title = titles[path]
+  }, [path])
+
+  const navigate = (to) => {
+    if (to === path) return
+    window.history.pushState({}, '', to)
+    setPath(to)
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
+  }
+
+  let page
+  if (path === '/projects') page = <ProjectsPage />
+  else if (path === '/open-source') page = <OpenSourcePage />
+  else if (path === '/about') page = <AboutPage />
+  else page = <HomePage navigate={navigate} />
 
   return (
     <div className="page-wrapper">
@@ -99,54 +235,20 @@ function App() {
 
       <header className="header">
         <div className="container header-container">
-          <a className="header-name" href="#top">Apoorv Darshan</a>
-          <button className="toggle-switch" type="button" onClick={() => setDark(!dark)} aria-label={`Use ${dark ? 'light' : 'dark'} color mode`} aria-pressed={dark}>
-            <span className="toggle-knob"></span>
-          </button>
+          <InternalLink className="header-name" to="/" onNavigate={navigate}>Apoorv Darshan</InternalLink>
+          <div className="header-actions">
+            {path !== '/' && <InternalLink className="home-link" to="/" onNavigate={navigate}>Home</InternalLink>}
+            <button className="toggle-switch" type="button" onClick={() => setDark(!dark)} aria-label={`Use ${dark ? 'light' : 'dark'} color mode`} aria-pressed={dark}>
+              <span className="toggle-knob"></span>
+            </button>
+          </div>
         </div>
       </header>
 
       <main className="page-main" id="content">
-        <article className="container" id="top">
-          <section className="intro">
-            <p>Apoorv Darshan is a developer in Delhi building open-source apps, practical tools, and internet experiments across iOS, Android, and the web.</p>
-            <p>His recent work includes <ExternalLink href="https://github.com/apoorvdarshan/fud-ai">Fud AI</ExternalLink>, a free AI calorie tracker with more than 4,000 downloads; <ExternalLink href="https://github.com/apoorvdarshan/verceltics">Verceltics</ExternalLink>, a native iPhone client for Vercel Analytics; and merged contributions to TensorFlow, Kubernetes, Flutter, Svelte, Spring Boot, jQuery, and .NET.</p>
-            <p>Apoorv studies computer science at the University of the People. Previously, he grew a YouTube channel to more than 21,500 subscribers. He is also an ACE Certified Personal Trainer and ranked in the top 1.5% of JEE candidates in 2023.</p>
-          </section>
-
-          <section>
-            <h2>Products</h2>
-            <BulletList items={products} meta />
-          </section>
-
-          <section>
-            <h2>Projects</h2>
-            <BulletList items={projects} />
-            <p className="after-list"><ExternalLink href="https://github.com/apoorvdarshan?tab=repositories">All {repoCount} public repositories</ExternalLink></p>
-          </section>
-
-          <section>
-            <h2>Open source</h2>
-            <BulletList items={contributions} meta />
-            <p className="after-list"><ExternalLink href="https://github.com/pulls?q=is%3Apr+author%3Aapoorvdarshan">All pull requests</ExternalLink></p>
-          </section>
-
-          <section>
-            <h2>Background</h2>
-            <ul className="bullet-list">
-              {background.map(([label, year]) => <li key={label}><span>{label}</span><span className="item-meta">({year})</span></li>)}
-            </ul>
-          </section>
-
-          <section>
-            <h2>Elsewhere</h2>
-            <BulletList items={elsewhere} />
-          </section>
-
-          <section className="last-section">
-            <h2>Contact</h2>
-            <p>Email <a href="mailto:ad13dtu@gmail.com">ad13dtu@gmail.com</a>.</p>
-          </section>
+        <article className="container page-enter" key={path}>
+          {page}
+          <p className="source-note">Content synced from the <ExternalLink href={profile.source.url}>{profile.source.label}</ExternalLink>.</p>
         </article>
       </main>
     </div>
