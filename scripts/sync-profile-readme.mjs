@@ -1,4 +1,4 @@
-import { access, writeFile } from 'node:fs/promises'
+import { access, readFile, writeFile } from 'node:fs/promises'
 import { constants } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
@@ -74,7 +74,7 @@ function badgeLinks(value) {
   })
 }
 
-async function attachStarCounts(data) {
+async function attachStarCounts(data, previousStarCounts = new Map()) {
   const queue = ['apps', 'extensions', 'projects', 'openSource']
     .flatMap((key) => data[key])
     .filter((item) => item.starBadgeUrl)
@@ -86,9 +86,11 @@ async function attachStarCounts(data) {
         const response = await fetch(item.starBadgeUrl, { headers: { 'User-Agent': 'apoorv-profile-build' } })
         if (!response.ok) throw new Error(`badge returned ${response.status}`)
         const svg = await response.text()
-        item.starCount = svg.match(/aria-label="★:\s*([^"]+)"/)?.[1] ?? ''
+        item.starCount = svg.match(/aria-label="★:\s*([^"]+)"/)?.[1]
+          || previousStarCounts.get(item.starBadgeUrl)
+          || ''
       } catch (error) {
-        item.starCount = ''
+        item.starCount = previousStarCounts.get(item.starBadgeUrl) ?? ''
         console.warn(`Star count unavailable for ${item.name}: ${error.message}`)
       }
     }
@@ -157,7 +159,19 @@ async function main() {
   }
 
   const data = parseReadme(readme)
-  await attachStarCounts(data)
+  let previousStarCounts = new Map()
+  try {
+    const previous = JSON.parse(await readFile(OUTPUT_URL, 'utf8'))
+    previousStarCounts = new Map(
+      ['apps', 'extensions', 'projects', 'openSource']
+        .flatMap((key) => previous[key] ?? [])
+        .filter((item) => item.starBadgeUrl && item.starCount)
+        .map((item) => [item.starBadgeUrl, item.starCount]),
+    )
+  } catch {
+    // The first sync has no committed snapshot to fall back to.
+  }
+  await attachStarCounts(data, previousStarCounts)
   await writeFile(fileURLToPath(OUTPUT_URL), `${JSON.stringify(data, null, 2)}\n`)
   console.log(`Synced GitHub README: ${data.apps.length} apps, ${data.extensions.length} extensions, ${data.projects.length} projects, ${data.openSource.length} open-source contributions.`)
 }
