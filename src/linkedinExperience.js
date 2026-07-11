@@ -1,5 +1,3 @@
-export const linkedinExperienceSource = 'https://www.linkedin.com/in/apoorvdarshan/details/experience/'
-
 export const linkedinExperience = [
   {
     role: 'Developer',

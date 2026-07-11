@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import profile from './profileData.generated.json'
-import { linkedinExperience, linkedinExperienceSource } from './linkedinExperience'
+import { linkedinExperience } from './linkedinExperience'
 
 const ROUTES = new Set(['/', '/experience', '/projects', '/open-source', '/about'])
 
@@ -298,7 +298,6 @@ function ExperiencePage() {
       <PageHeading title="Experience">All {linkedinExperience.length} roles from Apoorv’s LinkedIn experience profile.</PageHeading>
       <section className="detail-section">
         <ExperienceList />
-        <p className="after-list"><ExternalLink href={linkedinExperienceSource}>View source on LinkedIn →</ExternalLink></p>
       </section>
     </>
   )
@@ -388,7 +387,6 @@ function App() {
       <main className="page-main" id="content">
         <article className="container page-enter" key={path}>
           {page}
-          <p className="source-note">Content synced from the <ExternalLink href={profile.source.url}>{profile.source.label}</ExternalLink>.</p>
         </article>
       </main>
     </div>
