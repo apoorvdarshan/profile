@@ -7,6 +7,7 @@ export const linkedinExperience = [
     type: 'Self-employed',
     dates: 'Jul 2026 – Present',
     duration: '1 mo',
+    summary: 'Self-employed; building browser extensions end-to-end.',
     description: ['Building and shipping browser extensions solo from idea to published extension.'],
   },
   {
@@ -15,6 +16,7 @@ export const linkedinExperience = [
     type: 'Self-employed',
     dates: 'Apr 2026 – Present',
     duration: '4 mos',
+    summary: 'Self-employed; shipping Android apps to Google Play.',
     description: ['Solo indie dev shipping Android apps end-to-end to Play Store.'],
   },
   {
@@ -23,6 +25,7 @@ export const linkedinExperience = [
     type: 'Self-employed',
     dates: 'Feb 2026 – Present',
     duration: '6 mos',
+    summary: 'Self-employed; shipping iOS apps to the App Store.',
     description: ['Indie dev building and shipping iOS apps solo, from idea to launch.'],
   },
   {
@@ -32,6 +35,7 @@ export const linkedinExperience = [
     dates: 'Nov 2025 – Feb 2026',
     duration: '4 mos',
     location: 'Mumbai, Maharashtra, India · Remote',
+    summary: 'Full-stack CRM development and project leadership for a five-intern team.',
     highlights: [
       'Built and stabilized end-to-end CRM features covering Leads, Accounts, Authentication, Reminders, and Interactions with full CRUD, pagination, filtering, soft delete, and restore.',
       'Integrated frontend and backend APIs, resolving schema mismatches, UUID handling issues, and authentication/authorization gaps.',
@@ -50,6 +54,7 @@ export const linkedinExperience = [
     dates: 'Apr 2025',
     duration: '1 mo',
     location: 'Hyderabad, Telangana, India · Remote',
+    summary: 'Evaluated Gemini 2.5 Pro and ChatGPT-4o educational conversations for Project Ceres.',
     description: ['Evaluated educational conversations from Gemini 2.5 Pro (Experimental) and ChatGPT-4o under Project Ceres.'],
   },
   {
@@ -59,6 +64,7 @@ export const linkedinExperience = [
     dates: 'Feb 2025 – Mar 2025',
     duration: '2 mos',
     location: 'San Francisco, California, United States · Remote',
+    summary: 'Trained and evaluated multimodal AI systems across reasoning, tool use, and preference tasks.',
     highlights: [
       'Supervised AI function-calling processes and tool use in projects like Attenuation Stamp.',
       'Improved AI reasoning capabilities across multiple domains, including STEM and philosophy, in Mail Valley.',
@@ -73,6 +79,7 @@ export const linkedinExperience = [
     company: 'YouTube',
     dates: 'Nov 2019 – Dec 2024',
     duration: '5 yrs 2 mos',
+    summary: 'Grew a monetized channel to 21,500+ subscribers before its 2024 acquisition.',
     description: [
       'Built and grew a YouTube channel (originally Mr Alpha Delta, later Tales Through Toons) from Nov 2019 to Dec 2024, organically reaching 21,500+ subscribers — crossed at age 19. Monetized via YouTube Partner Program.',
       'Channel was acquired by a private buyer in December 2024 and has since been rebranded to Lootwala UPI Deals under new ownership. (Channel link attached.)',

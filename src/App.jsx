@@ -218,23 +218,15 @@ function ExperienceSection() {
   return (
     <section>
       <h2>Experience</h2>
-      <ol className="experience-list">
+      <ul className="bullet-list experience-list">
         {linkedinExperience.map((item) => (
           <li key={`${item.role}-${item.company}-${item.dates}`}>
-            <div className="experience-heading">
-              <p><strong>{item.role}</strong> · {item.company}{item.type && <span className="experience-type"> · {item.type}</span>}</p>
-              <p className="experience-dates">{item.dates} · {item.duration}</p>
-            </div>
-            {item.location && <p className="experience-location">{item.location}</p>}
-            {item.description?.map((paragraph) => <p className="experience-description" key={paragraph}>{paragraph}</p>)}
-            {item.highlights && (
-              <ul className="experience-highlights">
-                {item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-              </ul>
-            )}
+            <strong>{item.role}</strong> · {item.company}
+            <span className="item-status">({item.dates})</span>
+            <span className="entry-summary"> — {item.summary}</span>
           </li>
         ))}
-      </ol>
+      </ul>
       <p className="after-list"><ExternalLink href={linkedinExperienceSource}>View experience on LinkedIn →</ExternalLink></p>
     </section>
   )
