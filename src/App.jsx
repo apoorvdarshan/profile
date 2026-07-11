@@ -249,19 +249,6 @@ function HomePage({ navigate }) {
       </section>
 
       <ReadmeDetails />
-
-      <section>
-        <h2>More</h2>
-        <ul className="bullet-list">
-          <li><InternalLink to="/about" onNavigate={navigate}>Technologies and complete profile</InternalLink></li>
-          <li><ExternalLink href={profile.source.url}>Read the source GitHub profile README</ExternalLink></li>
-        </ul>
-      </section>
-
-      <section className="last-section">
-        <h2>Contact</h2>
-        <p>Email <a href="mailto:ad13dtu@gmail.com">ad13dtu@gmail.com</a>.</p>
-      </section>
     </>
   )
 }
