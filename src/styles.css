@@ -87,10 +87,11 @@ button { font: inherit; }
 .page-main { display: flex; flex: 1; flex-flow: column; }
 .intro p:last-child { margin-bottom: 0; }
 section + section { margin-top: 1.3em; }
-h1 { margin: 0 0 .35em; font-size: 1.6em; font-weight: 600; line-height: 1.1; }
+h1 { margin: 0; font-weight: 600; }
 h2 { margin: 0 0 .7em; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
-.page-heading { margin-bottom: 2.1em; }
-.page-heading p { margin-bottom: 0; color: var(--secondary); }
+.page-heading { margin-top: 2.6em; margin-bottom: 3em; }
+.page-heading h1 { max-width: 10ch; font-size: 3.15em; line-height: 1.02; letter-spacing: -.025em; }
+.page-heading p { max-width: 30rem; margin: 1em 0 0; color: var(--text); font-size: 1.06em; font-style: italic; line-height: 1.4; }
 
 .bullet-list { display: flex; flex-flow: column; gap: .8em; margin: 0; padding: 0; list-style: none; }
 .bullet-list li { padding-left: 1em; }
@@ -131,6 +132,8 @@ blockquote { margin: 0; padding: 0; }
   .container { width: 95%; }
   .header { margin-top: 0; }
   .link-columns { columns: 1; }
+  .page-heading { margin-top: 1.5em; margin-bottom: 2.25em; }
+  .page-heading h1 { font-size: 2.35em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
