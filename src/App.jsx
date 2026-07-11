@@ -258,7 +258,7 @@ function EducationSection({ navigate }) {
   return (
     <section>
       <h2>Education</h2>
-      <EducationList limit={4} />
+      <EducationList limit={3} />
       <p className="after-list"><InternalLink to="/education" onNavigate={navigate}>View all {linkedinEducation.length} education entries →</InternalLink></p>
     </section>
   )
