@@ -193,7 +193,15 @@ function ReadmeDetails() {
 
       <section>
         <h2>Connect</h2>
-        <ul className="bullet-list link-columns">{profile.connect.map((item) => <li key={item.name}><ExternalLink href={item.url}>{item.name}</ExternalLink></li>)}</ul>
+        <ul className="connect-badges">
+          {profile.connect.map((item) => (
+            <li key={item.name}>
+              <ExternalLink href={item.url}>
+                {item.badgeUrl ? <img src={item.badgeUrl} alt={item.name} loading="lazy" /> : item.name}
+              </ExternalLink>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section>
