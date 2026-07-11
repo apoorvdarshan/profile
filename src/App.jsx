@@ -102,6 +102,11 @@ function InternalLink({ to, onNavigate, children, className = '' }) {
   return <a className={className} href={to} onClick={handleClick}>{children}</a>
 }
 
+function StarBadge({ item }) {
+  if (!item.starBadgeUrl) return null
+  return <img className="star-badge" src={item.starBadgeUrl} alt={`${displayName(item.name)} GitHub star count`} loading="lazy" />
+}
+
 function EntryList({ items, limit }) {
   const visible = typeof limit === 'number' ? items.slice(0, limit) : items
   return (
@@ -109,6 +114,7 @@ function EntryList({ items, limit }) {
       {visible.map((item) => (
         <li key={`${item.name}-${item.url}`}>
           <ExternalLink href={item.url}>{displayName(item.name)}</ExternalLink>
+          <StarBadge item={item} />
           {item.status && <span className="item-status">({item.status})</span>}
           {item.description && <span className="entry-summary"> — {item.description}</span>}
         </li>
@@ -123,6 +129,7 @@ function DetailList({ items }) {
       {items.map((item) => (
         <li key={`${item.name}-${item.url}`}>
           <ExternalLink href={item.url}>{displayName(item.name)}</ExternalLink>
+          <StarBadge item={item} />
           {item.status && <span className="item-status">({item.status})</span>}
           {item.description && <span className="entry-summary"> — {item.description}</span>}
         </li>
