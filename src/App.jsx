@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import profile from './profileData.generated.json'
+import { linkedinExperience, linkedinExperienceSource } from './linkedinExperience'
 
 const ROUTES = new Set(['/', '/projects', '/open-source', '/about'])
 
@@ -213,6 +214,32 @@ function ReadmeDetails({ includeTechnologies = false, includeActivity = false })
   )
 }
 
+function ExperienceSection() {
+  return (
+    <section>
+      <h2>Experience</h2>
+      <ol className="experience-list">
+        {linkedinExperience.map((item) => (
+          <li key={`${item.role}-${item.company}-${item.dates}`}>
+            <div className="experience-heading">
+              <p><strong>{item.role}</strong> · {item.company}{item.type && <span className="experience-type"> · {item.type}</span>}</p>
+              <p className="experience-dates">{item.dates} · {item.duration}</p>
+            </div>
+            {item.location && <p className="experience-location">{item.location}</p>}
+            {item.description?.map((paragraph) => <p className="experience-description" key={paragraph}>{paragraph}</p>)}
+            {item.highlights && (
+              <ul className="experience-highlights">
+                {item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ol>
+      <p className="after-list"><ExternalLink href={linkedinExperienceSource}>View experience on LinkedIn →</ExternalLink></p>
+    </section>
+  )
+}
+
 function HomePage({ navigate }) {
   return (
     <>
@@ -220,6 +247,8 @@ function HomePage({ navigate }) {
         <p>Apoorv Darshan is an AI-powered builder in Delhi, building web apps, mobile apps, bots, APIs, and everything in between.</p>
         <p>{profile.intro.statement}</p>
       </section>
+
+      <ExperienceSection />
 
       <section>
         <h2>Apps</h2>
