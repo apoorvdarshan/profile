@@ -44,28 +44,32 @@
       "url": "https://github.com/apoorvdarshan/fud-ai",
       "description": "AI-powered calorie and nutrition tracker app (4K+ downloads)",
       "status": "",
-      "marker": "🥦"
+      "marker": "🥦",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/fud-ai&v=2"
     },
     {
       "name": "verceltics",
       "url": "https://github.com/apoorvdarshan/verceltics",
       "description": "iOS app to view your Vercel web analytics",
       "status": "",
-      "marker": "📈"
+      "marker": "📈",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/verceltics"
     },
     {
       "name": "scowld",
       "url": "https://github.com/apoorvdarshan/scowld",
       "description": "iOS AI companion with a live VRM avatar that sees you",
       "status": "",
-      "marker": "🤖"
+      "marker": "🤖",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/scowld"
     },
     {
       "name": "quit-all",
       "url": "https://apps.apple.com/us/app/quit-all-break-every-habit/id6760978934",
       "description": "iOS app to quit addictions like smoking, alcohol, social media, and more",
       "status": "closed source",
-      "marker": "🚫"
+      "marker": "🚫",
+      "starBadgeUrl": ""
     }
   ],
   "extensions": [
@@ -74,21 +78,24 @@
       "url": "https://github.com/apoorvdarshan/x-country-filter",
       "description": "Chrome extension that hides X (Twitter) posts from countries you pick",
       "status": "",
-      "marker": "🗺️"
+      "marker": "🗺️",
+      "starBadgeUrl": ""
     },
     {
       "name": "streaming-autopause",
       "url": "https://github.com/apoorvdarshan/streaming-autopause",
       "description": "Chrome extension that auto-pauses Netflix & Prime Video when you switch away",
       "status": "",
-      "marker": "⏸️"
+      "marker": "⏸️",
+      "starBadgeUrl": ""
     },
     {
       "name": "streaming-indian-filter",
       "url": "https://github.com/apoorvdarshan/streaming-indian-filter",
       "description": "Hides Indian shows from Netflix & Prime Video (personal preference, not a judgment)",
       "status": "",
-      "marker": "🎬"
+      "marker": "🎬",
+      "starBadgeUrl": ""
     }
   ],
   "projects": [
@@ -97,273 +104,312 @@
       "url": "https://github.com/apoorvdarshan/profile",
       "description": "My corner of the internet",
       "status": "",
-      "marker": "👤"
+      "marker": "👤",
+      "starBadgeUrl": ""
     },
     {
       "name": "crossposter",
       "url": "https://github.com/apoorvdarshan/crossposter",
       "description": "Open-source crossposter for X, LinkedIn, Bluesky, Mastodon, Instagram, YouTube, and more",
       "status": "",
-      "marker": "📣"
+      "marker": "📣",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/crossposter"
     },
     {
       "name": "TetherShot",
       "url": "https://github.com/apoorvdarshan/TetherShot",
       "description": "macOS menu-bar app that screenshots your USB-connected iPhone straight into a folder you choose",
       "status": "",
-      "marker": "📸"
+      "marker": "📸",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/TetherShot"
     },
     {
       "name": "macbook-24x7-agents",
       "url": "https://github.com/apoorvdarshan/macbook-24x7-agents",
       "description": "Run AI agents 24x7 on a MacBook: never sleep, lid closed, display off, fully reversible",
       "status": "",
-      "marker": "🌙"
+      "marker": "🌙",
+      "starBadgeUrl": ""
     },
     {
       "name": "wellfound-bot",
       "url": "https://github.com/apoorvdarshan/wellfound-bot",
       "description": "Automate your Wellfound (AngelList) job hunt with human-like Playwright browser automation",
       "status": "",
-      "marker": "🎯"
+      "marker": "🎯",
+      "starBadgeUrl": ""
     },
     {
       "name": "linkedin-connection-sender",
       "url": "https://github.com/apoorvdarshan/linkedin-connection-sender",
       "description": "Send LinkedIn connection requests by country and role at a human-like pace",
       "status": "",
-      "marker": "🤝"
+      "marker": "🤝",
+      "starBadgeUrl": ""
     },
     {
       "name": "rekisei",
       "url": "https://github.com/apoorvdarshan/rekisei",
       "description": "Edit a clean, concise LaTeX resume by chatting with Claude or Codex",
       "status": "",
-      "marker": "📝"
+      "marker": "📝",
+      "starBadgeUrl": ""
     },
     {
       "name": "opengraph-studio",
       "url": "https://github.com/apoorvdarshan/opengraph-studio",
       "description": "Live OpenGraph metadata editor and previewer for social platforms",
       "status": "",
-      "marker": "🌐"
+      "marker": "🌐",
+      "starBadgeUrl": ""
     },
     {
       "name": "nornlore",
       "url": "https://github.com/apoorvdarshan/nornlore",
       "description": "Discover what the universe was doing the day you were born",
       "status": "",
-      "marker": "🌌"
+      "marker": "🌌",
+      "starBadgeUrl": ""
     },
     {
       "name": "how-rich-are-you",
       "url": "https://github.com/apoorvdarshan/how-rich-are-you",
       "description": "90s-style income rank calculator with broke/rich meme GIF reactions",
       "status": "",
-      "marker": "💸"
+      "marker": "💸",
+      "starBadgeUrl": ""
     },
     {
       "name": "billionaire-smash",
       "url": "https://github.com/apoorvdarshan/billionaire-smash",
       "description": "Facemash for Forbes billionaires, vote on who wins head-to-head",
       "status": "",
-      "marker": "💰"
+      "marker": "💰",
+      "starBadgeUrl": ""
     },
     {
       "name": "github-readme-contribution-merger",
       "url": "https://github.com/apoorvdarshan/github-readme-contribution-merger",
       "description": "Merge multiple GitHub contribution graphs into one SVG heatmap",
       "status": "",
-      "marker": "📊"
+      "marker": "📊",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/github-readme-contribution-merger"
     },
     {
       "name": "daxerly",
       "url": "https://github.com/apoorvdarshan/daxerly",
       "description": "Proof of work, formatted as a receipt with a price tag on it",
       "status": "",
-      "marker": "🧾"
+      "marker": "🧾",
+      "starBadgeUrl": ""
     },
     {
       "name": "doodle-beats",
       "url": "https://github.com/apoorvdarshan/doodle-beats",
       "description": "Doodle-style web music player",
       "status": "",
-      "marker": "🎵"
+      "marker": "🎵",
+      "starBadgeUrl": ""
     },
     {
       "name": "dob-selector",
       "url": "https://github.com/apoorvdarshan/dob-selector",
       "description": "Intentionally bad UI date picker; viral on Reddit (130K+ views)",
       "status": "",
-      "marker": "🌍"
+      "marker": "🌍",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/dob-selector"
     },
     {
       "name": "slot-machine-date-picker",
       "url": "https://github.com/apoorvdarshan/slot-machine-date-picker",
       "description": "Slot machine date picker; intentionally bad UI",
       "status": "",
-      "marker": "🎰"
+      "marker": "🎰",
+      "starBadgeUrl": ""
     },
     {
       "name": "karasufumi",
       "url": "https://github.com/apoorvdarshan/karasufumi",
       "description": "Automated job hunt via Claude Code/Codex with Gmail MCP outreach",
       "status": "",
-      "marker": "🐦‍⬛"
+      "marker": "🐦‍⬛",
+      "starBadgeUrl": ""
     },
     {
       "name": "Xscore",
       "url": "https://github.com/apoorvdarshan/Xscore",
       "description": "X account engagement scorer using the open-source algorithm",
       "status": "",
-      "marker": "📊"
+      "marker": "📊",
+      "starBadgeUrl": ""
     },
     {
       "name": "zyro",
       "url": "https://github.com/apoorvdarshan/zyro",
       "description": "AI news website (GNews.io API, 100 req/day limit)",
       "status": "",
-      "marker": "📰"
+      "marker": "📰",
+      "starBadgeUrl": ""
     },
     {
       "name": "axentra-os-affiliate",
       "url": "https://affiliate.axentraos.com/",
       "description": "CRM platform built during internship at XIRCLS",
       "status": "closed source",
-      "marker": "💼"
+      "marker": "💼",
+      "starBadgeUrl": ""
     },
     {
       "name": "iitjee",
       "url": "https://iitjee.apoorvdarshan.com",
       "description": "Handwritten notes for IIT JEE prep (100+ organic visitors/month)",
       "status": "closed source",
-      "marker": "📚"
+      "marker": "📚",
+      "starBadgeUrl": ""
     },
     {
       "name": "claw-c",
       "url": "https://github.com/apoorvdarshan/claw-c",
       "description": "Claude Code reimplemented in pure C, the lowest level it's ever been done",
       "status": "",
-      "marker": "🦀"
+      "marker": "🦀",
+      "starBadgeUrl": ""
     },
     {
       "name": "resume-codes",
       "url": "https://github.com/apoorvdarshan/resume-codes",
       "description": "Resume builder with live preview",
       "status": "",
-      "marker": "📄"
+      "marker": "📄",
+      "starBadgeUrl": ""
     },
     {
       "name": "zombie-game",
       "url": "https://github.com/apoorvdarshan/zombie-game",
       "description": "3D zombie survival FPS with Three.js",
       "status": "",
-      "marker": "🎮"
+      "marker": "🎮",
+      "starBadgeUrl": ""
     },
     {
       "name": "gesture-keyboard",
       "url": "https://github.com/apoorvdarshan/gesture-keyboard",
       "description": "MediaPipe-powered hands-free virtual keyboard",
       "status": "",
-      "marker": "🖐️"
+      "marker": "🖐️",
+      "starBadgeUrl": ""
     },
     {
       "name": "drawtica",
       "url": "https://github.com/apoorvdarshan/drawtica",
       "description": "Hand-gesture drawing app",
       "status": "",
-      "marker": "🎨"
+      "marker": "🎨",
+      "starBadgeUrl": ""
     },
     {
       "name": "peek-a-pupil",
       "url": "https://github.com/apoorvdarshan/peek-a-pupil",
       "description": "Horror-themed interactive eye with gesture control",
       "status": "",
-      "marker": "👁️"
+      "marker": "👁️",
+      "starBadgeUrl": ""
     },
     {
       "name": "headshot-tracker",
       "url": "https://github.com/apoorvdarshan/headshot-tracker",
       "description": "Real-time face tracking with sci-fi HUD",
       "status": "",
-      "marker": "🎯"
+      "marker": "🎯",
+      "starBadgeUrl": ""
     },
     {
       "name": "compress-image",
       "url": "https://github.com/apoorvdarshan/compress-image",
       "description": "Client-side image compression (browser-only, nothing uploaded)",
       "status": "",
-      "marker": "🖼️"
+      "marker": "🖼️",
+      "starBadgeUrl": ""
     },
     {
       "name": "dtu-clone",
       "url": "https://github.com/apoorvdarshan/dtu-clone",
       "description": "DTU website with cyberpunk UI",
       "status": "",
-      "marker": "🏫"
+      "marker": "🏫",
+      "starBadgeUrl": ""
     },
     {
       "name": "redbull",
       "url": "https://github.com/apoorvdarshan/redbull",
       "description": "Red Bull landing page reimagined",
       "status": "",
-      "marker": "🐂"
+      "marker": "🐂",
+      "starBadgeUrl": ""
     },
     {
       "name": "simon-says",
       "url": "https://github.com/apoorvdarshan/simon-says",
       "description": "Fantasy-themed Simon Says memory game",
       "status": "",
-      "marker": "🐉"
+      "marker": "🐉",
+      "starBadgeUrl": ""
     },
     {
       "name": "toggle-button",
       "url": "https://github.com/apoorvdarshan/toggle-button",
       "description": "Star Wars themed dark/light mode toggle",
       "status": "",
-      "marker": "🌓"
+      "marker": "🌓",
+      "starBadgeUrl": ""
     },
     {
       "name": "bmw",
       "url": "https://github.com/apoorvdarshan/bmw",
       "description": "BMW landing page clone",
       "status": "",
-      "marker": "🚗"
+      "marker": "🚗",
+      "starBadgeUrl": ""
     },
     {
       "name": "monster-energy",
       "url": "https://github.com/apoorvdarshan/monster-energy",
       "description": "Monster Energy landing page",
       "status": "",
-      "marker": "🐉"
+      "marker": "🐉",
+      "starBadgeUrl": ""
     },
     {
       "name": "random-dog-images",
       "url": "https://github.com/apoorvdarshan/random-dog-images",
       "description": "Random dog images powered by Dog CEO API",
       "status": "",
-      "marker": "🐕"
+      "marker": "🐕",
+      "starBadgeUrl": ""
     },
     {
       "name": "random-cat-facts",
       "url": "https://github.com/apoorvdarshan/random-cat-facts",
       "description": "Cat facts powered by catfact.ninja API",
       "status": "",
-      "marker": "🐱"
+      "marker": "🐱",
+      "starBadgeUrl": ""
     },
     {
       "name": "todo-app",
       "url": "https://github.com/apoorvdarshan/todo-app",
       "description": "Harry Potter-themed To-Do app",
       "status": "",
-      "marker": "🧙"
+      "marker": "🧙",
+      "starBadgeUrl": ""
     },
     {
       "name": "spotify-clone",
       "url": "https://github.com/apoorvdarshan/spotify-clone",
       "description": "Spotify UI clone",
       "status": "",
-      "marker": "🎧"
+      "marker": "🎧",
+      "starBadgeUrl": ""
     }
   ],
   "openSource": [
@@ -372,357 +418,408 @@
       "url": "https://github.com/freeCodeCamp/freeCodeCamp/pull/66544",
       "description": "fix(curriculum): correct example for ochenta y uno gender rule",
       "status": "",
-      "marker": "🏕️"
+      "marker": "🏕️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=freeCodeCamp/freeCodeCamp"
     },
     {
       "name": "tensorflow",
       "url": "https://github.com/tensorflow/tensorflow/pull/110665",
       "description": "fix: resource misclassification for unsorted read-only inputs (by TensorFlow)",
       "status": "",
-      "marker": "🔶"
+      "marker": "🔶",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=tensorflow/tensorflow"
     },
     {
       "name": "flutter",
       "url": "https://github.com/flutter/flutter/pull/182546",
       "description": "remove material imports from navigator and overlay tests (by Flutter)",
       "status": "",
-      "marker": "🦋"
+      "marker": "🦋",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=flutter/flutter"
     },
     {
       "name": "dify",
       "url": "https://github.com/langgenius/dify/pull/32386",
       "description": "refactor(web): replace String.match() with RegExp.exec() for non-global regex",
       "status": "",
-      "marker": "🧠"
+      "marker": "🧠",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=langgenius/dify"
     },
     {
       "name": "kubernetes",
       "url": "https://github.com/kubernetes/kubernetes/pull/137095",
       "description": "migrate SignerName to declarative validation (by Kubernetes)",
       "status": "",
-      "marker": "☸️"
+      "marker": "☸️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=kubernetes/kubernetes"
     },
     {
       "name": "svelte",
       "url": "https://github.com/sveltejs/svelte/pull/17745",
       "description": "fix: keep select.__value current when effect is deferred (by Svelte)",
       "status": "",
-      "marker": "🔥"
+      "marker": "🔥",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=sveltejs/svelte"
     },
     {
       "name": "laravel",
       "url": "https://github.com/laravel/laravel/pull/6755",
       "description": "add APP_NAME fallback in mail config (merged by @taylorotwell, creator of Laravel)",
       "status": "",
-      "marker": "🔴"
+      "marker": "🔴",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=laravel/laravel"
     },
     {
       "name": "spring-boot",
       "url": "https://github.com/spring-projects/spring-boot/pull/49261",
       "description": "fix: align TestRestTemplate cookie handling with RestTemplate (by Spring)",
       "status": "",
-      "marker": "🍃"
+      "marker": "🍃",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=spring-projects/spring-boot"
     },
     {
       "name": "jquery",
       "url": "https://github.com/jquery/jquery/pull/5775",
       "description": "fix: use createElementNS for XSLT documents (by jQuery)",
       "status": "",
-      "marker": "💲"
+      "marker": "💲",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=jquery/jquery"
     },
     {
       "name": "julia",
       "url": "https://github.com/JuliaLang/julia/pull/61054",
       "description": "fix: quote Symbol values in @test failure output (by Julia)",
       "status": "",
-      "marker": "🟣"
+      "marker": "🟣",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=JuliaLang/julia"
     },
     {
       "name": "zx",
       "url": "https://github.com/google/zx/pulls?q=author%3Aapoorvdarshan",
       "description": "2 merged PRs: cwd validation + remote script error handling (by Google)",
       "status": "",
-      "marker": "🐚"
+      "marker": "🐚",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=google/zx"
     },
     {
       "name": "core",
       "url": "https://github.com/dotnet/core/pull/10349",
       "description": "add F# release notes for .NET 11 Preview 3 (by .NET)",
       "status": "",
-      "marker": "🔷"
+      "marker": "🔷",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=dotnet/core"
     },
     {
       "name": "luigi",
       "url": "https://github.com/spotify/luigi/pull/3410",
       "description": "fix: replace deprecated datetime.utcfromtimestamp() calls (by Spotify)",
       "status": "",
-      "marker": "🎵"
+      "marker": "🎵",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=spotify/luigi"
     },
     {
       "name": "runtime",
       "url": "https://github.com/dotnet/runtime/pull/124498",
       "description": "fix: fractional-token AttemptAcquire(0) behavior (by .NET)",
       "status": "",
-      "marker": "🔷"
+      "marker": "🔷",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=dotnet/runtime"
     },
     {
       "name": "CodexBar",
       "url": "https://github.com/steipete/CodexBar/pull/344/commits",
       "description": "fix: region-specific API endpoint for MiniMax (by @steipete, 🦞 OpenClaw)",
       "status": "",
-      "marker": "🛠️"
+      "marker": "🛠️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=steipete/CodexBar"
     },
     {
       "name": "react-spectrum",
       "url": "https://github.com/adobe/react-spectrum/pull/9678",
       "description": "fix: incorrect timezone conversion when setLocalTimeZone is used (by Adobe)",
       "status": "",
-      "marker": "🎨"
+      "marker": "🎨",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=adobe/react-spectrum"
     },
     {
       "name": "jupyterlab",
       "url": "https://github.com/jupyterlab/jupyterlab/pull/18530",
       "description": "fix: theme settings in non-English locales (by Jupyter)",
       "status": "",
-      "marker": "📓"
+      "marker": "📓",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=jupyterlab/jupyterlab"
     },
     {
       "name": "prowler",
       "url": "https://github.com/prowler-cloud/prowler/pull/10102",
       "description": "fix: remove return statements from finally blocks",
       "status": "",
-      "marker": "🛡️"
+      "marker": "🛡️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=prowler-cloud/prowler"
     },
     {
       "name": "omi",
       "url": "https://github.com/BasedHardware/omi/pull/7323",
       "description": "fix(backend): notify users about BYOK LLM key failures",
       "status": "",
-      "marker": "🎙️"
+      "marker": "🎙️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=BasedHardware/omi"
     },
     {
       "name": "sqlfluff",
       "url": "https://github.com/sqlfluff/sqlfluff/pulls?q=author%3Aapoorvdarshan",
       "description": "7 merged PRs: SQL dialect parsing, grammar, and Jinja encoding fixes",
       "status": "",
-      "marker": "❄️"
+      "marker": "❄️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=sqlfluff/sqlfluff"
     },
     {
       "name": "WeasyPrint",
       "url": "https://github.com/Kozea/WeasyPrint/pull/2831",
       "description": "fix: line_height() crash on calc() values",
       "status": "",
-      "marker": "📄"
+      "marker": "📄",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=Kozea/WeasyPrint"
     },
     {
       "name": "clawhub",
       "url": "https://github.com/openclaw/clawhub/pull/421",
       "description": "fix: use relative delay for Retry-After header on 429 (by @steipete, 🦞 OpenClaw)",
       "status": "",
-      "marker": "🦞"
+      "marker": "🦞",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=openclaw/clawhub"
     },
     {
       "name": "gitextensions",
       "url": "https://github.com/gitextensions/gitextensions/pull/12841",
       "description": "fix: console launch fails when Windows username contains spaces",
       "status": "",
-      "marker": "🔧"
+      "marker": "🔧",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=gitextensions/gitextensions"
     },
     {
       "name": "boa",
       "url": "https://github.com/boa-dev/boa/pull/4631",
       "description": "feat: implement BOM stripping and ignoreBOM option in TextDecoder",
       "status": "",
-      "marker": "🐍"
+      "marker": "🐍",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=boa-dev/boa"
     },
     {
       "name": "isort",
       "url": "https://github.com/PyCQA/isort/pull/2574",
       "description": "fix: honor # isort: skip when a __future__ import is present",
       "status": "",
-      "marker": "🔤"
+      "marker": "🔤",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=PyCQA/isort"
     },
     {
       "name": "up-for-grabs.net",
       "url": "https://github.com/up-for-grabs/up-for-grabs.net/pulls?q=author%3Aapoorvdarshan",
       "description": "8 merged PRs: add projects + fix forks badge cursor",
       "status": "",
-      "marker": "🆙"
+      "marker": "🆙",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=up-for-grabs/up-for-grabs.net"
     },
     {
       "name": "zenml",
       "url": "https://github.com/zenml-io/zenml/pull/4496",
       "description": "fix: include git submodule files in code archive",
       "status": "",
-      "marker": "🔮"
+      "marker": "🔮",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=zenml-io/zenml"
     },
     {
       "name": "typeshed",
       "url": "https://github.com/python/typeshed/pull/15989",
       "description": "fix: drop argument-less __init__ from frozendict constructor",
       "status": "",
-      "marker": "🏷️"
+      "marker": "🏷️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=python/typeshed"
     },
     {
       "name": "akka.net",
       "url": "https://github.com/akkadotnet/akka.net/pull/8048",
       "description": "fix: downgrade RemoveChild log from Warning to Debug",
       "status": "",
-      "marker": "⚡"
+      "marker": "⚡",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=akkadotnet/akka.net"
     },
     {
       "name": "geopy",
       "url": "https://github.com/geopy/geopy/pull/610",
       "description": "fix: guard Point.from_string against ReDoS on very long inputs",
       "status": "",
-      "marker": "📍"
+      "marker": "📍",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=geopy/geopy"
     },
     {
       "name": "fsharp",
       "url": "https://github.com/dotnet/fsharp/pull/19317",
       "description": "fix: Seq.empty serializer rendering (by .NET)",
       "status": "",
-      "marker": "🔷"
+      "marker": "🔷",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=dotnet/fsharp"
     },
     {
       "name": "tox",
       "url": "https://github.com/tox-dev/tox/pull/3976",
       "description": "fix: don't double-close the child pty fd (parallel Bad file descriptor)",
       "status": "",
-      "marker": "🧪"
+      "marker": "🧪",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=tox-dev/tox"
     },
     {
       "name": "pygments",
       "url": "https://github.com/pygments/pygments/pulls?q=author%3Aapoorvdarshan",
       "description": "2 merged PRs: add 'yml' alias for YAML lexer + Mathematica \\[Name] named-character escapes",
       "status": "",
-      "marker": "🖍️"
+      "marker": "🖍️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=pygments/pygments"
     },
     {
       "name": "voluptuous",
       "url": "https://github.com/alecthomas/voluptuous/pull/546",
       "description": "add __repr__ to Invalid so it surfaces the path and error type",
       "status": "",
-      "marker": "✅"
+      "marker": "✅",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=alecthomas/voluptuous"
     },
     {
       "name": "TEAMMATES",
       "url": "https://github.com/TEAMMATES/teammates/pull/13553",
       "description": "replace file-saver with native browser APIs",
       "status": "",
-      "marker": "👥"
+      "marker": "👥",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=TEAMMATES/teammates"
     },
     {
       "name": "mcp-server-kubernetes",
       "url": "https://github.com/Flux159/mcp-server-kubernetes/pull/320",
       "description": "fix: sync server metadata version with published package",
       "status": "",
-      "marker": "☸️"
+      "marker": "☸️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=Flux159/mcp-server-kubernetes"
     },
     {
       "name": "mpmath",
       "url": "https://github.com/mpmath/mpmath/pull/1123",
       "description": "fix: close leftover figure in plot/cplot/splot on error",
       "status": "",
-      "marker": "🧮"
+      "marker": "🧮",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=mpmath/mpmath"
     },
     {
       "name": "decorator",
       "url": "https://github.com/micheles/decorator/pull/186",
       "description": "fix: FunctionMaker.create() with return type annotation",
       "status": "",
-      "marker": "🎀"
+      "marker": "🎀",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=micheles/decorator"
     },
     {
       "name": "ccextractor",
       "url": "https://github.com/CCExtractor/ccextractor/pulls?q=author%3Aapoorvdarshan",
       "description": "2 merged PRs: fix null pointer dereference in Matroska parser + config file parsing bugs",
       "status": "",
-      "marker": "📺"
+      "marker": "📺",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=CCExtractor/ccextractor"
     },
     {
       "name": "pygraphviz",
       "url": "https://github.com/pygraphviz/pygraphviz/pull/639",
       "description": "fix: graph-level attribute masking node/edge default",
       "status": "",
-      "marker": "🕸️"
+      "marker": "🕸️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=pygraphviz/pygraphviz"
     },
     {
       "name": "kart",
       "url": "https://github.com/koordinates/kart/pull/1120",
       "description": "fix: export crash for generic GEOMETRY Z/M/ZM geometry types",
       "status": "",
-      "marker": "🗺️"
+      "marker": "🗺️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=koordinates/kart"
     },
     {
       "name": "styled-components-website",
       "url": "https://github.com/styled-components/styled-components-website/pull/993",
       "description": "fix: improve accessibility across site to meet WCAG 2.1 guidelines",
       "status": "",
-      "marker": "💅"
+      "marker": "💅",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=styled-components/styled-components-website"
     },
     {
       "name": "resend-mcp",
       "url": "https://github.com/resend/resend-mcp/pull/166",
       "description": "feat: better order of validation for command running",
       "status": "",
-      "marker": "📧"
+      "marker": "📧",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=resend/resend-mcp"
     },
     {
       "name": "giselle",
       "url": "https://github.com/giselles-ai/giselle/pull/2739",
       "description": "fix: use continue instead of return in handleEdgesChange",
       "status": "",
-      "marker": "🤖"
+      "marker": "🤖",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=giselles-ai/giselle"
     },
     {
       "name": "BancosBrasileiros",
       "url": "https://github.com/guibranco/BancosBrasileiros/pull/895",
       "description": "fix: redirected bank URLs reported by link checker",
       "status": "",
-      "marker": "🏦"
+      "marker": "🏦",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=guibranco/BancosBrasileiros"
     },
     {
       "name": "fork-commit-merge",
       "url": "https://github.com/fork-commit-merge/fork-commit-merge/pull/6370",
       "description": "solve: filter even numbers from array",
       "status": "",
-      "marker": "🍴"
+      "marker": "🍴",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=fork-commit-merge/fork-commit-merge"
     },
     {
       "name": "xsdata",
       "url": "https://github.com/tefra/xsdata/pull/1224",
       "description": "fix: wrapper binding when collection item element name is reused",
       "status": "",
-      "marker": "🧬"
+      "marker": "🧬",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=tefra/xsdata"
     },
     {
       "name": "moin",
       "url": "https://github.com/moinwiki/moin/pull/2166",
       "description": "fix: markdown parser crash on emphasized text inside HTML tags",
       "status": "",
-      "marker": "📝"
+      "marker": "📝",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=moinwiki/moin"
     },
     {
       "name": "radis",
       "url": "https://github.com/radis/radis/pull/918",
       "description": "fix: inconsistent spectral_points reporting",
       "status": "",
-      "marker": "🔬"
+      "marker": "🔬",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=radis/radis"
     },
     {
       "name": "docs-desktop",
       "url": "https://github.com/dotnet/docs-desktop/pull/2197",
       "description": "fix: MD001 heading violations in WinForms docs (by .NET)",
       "status": "",
-      "marker": "🔷"
+      "marker": "🔷",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=dotnet/docs-desktop"
     },
     {
       "name": "markdown-reader",
       "url": "https://github.com/petertzy/markdown-reader/pull/84",
       "description": "fix: NameError in choose_bg_color when color picker is cancelled",
       "status": "",
-      "marker": "📖"
+      "marker": "📖",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=petertzy/markdown-reader"
     }
   ],
   "activityImage": "https://github-contribution-merger.apoorvdarshan.com/api/merge?users=apoorvdarshan%2Capoorvxircls&mode=overlay&colors=39d353%2C58a6ff",

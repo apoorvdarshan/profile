@@ -32,6 +32,7 @@ function htmlEntries(readme, start, end) {
 
     const prefix = line.slice(0, line.indexOf('<strong>'))
     const marker = plainText(prefix).replace(/^•\s*/, '').trim()
+    const starBadgeUrl = decode(line.match(/<img alt="Stars" src="([^"]+)"/)?.[1] ?? '')
     const rawTail = plainText(match[3])
     const status = rawTail.match(/^\(([^)]+)\)/)?.[1] ?? ''
     const description = rawTail
@@ -47,6 +48,7 @@ function htmlEntries(readme, start, end) {
       description,
       status,
       marker,
+      starBadgeUrl,
     }]
   })
 }
