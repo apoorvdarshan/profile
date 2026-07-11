@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import profile from './profileData.generated.json'
 import { linkedinExperience, linkedinExperienceSource } from './linkedinExperience'
 
-const ROUTES = new Set(['/', '/projects', '/open-source', '/about'])
+const ROUTES = new Set(['/', '/experience', '/projects', '/open-source', '/about'])
 
 const NAME_OVERRIDES = {
   'fud-ai': 'Fud AI',
@@ -214,20 +214,27 @@ function ReadmeDetails({ includeTechnologies = false, includeActivity = false })
   )
 }
 
-function ExperienceSection() {
+function ExperienceList({ limit }) {
+  const visible = typeof limit === 'number' ? linkedinExperience.slice(0, limit) : linkedinExperience
+  return (
+    <ul className="bullet-list experience-list">
+      {visible.map((item) => (
+        <li key={`${item.role}-${item.company}-${item.dates}`}>
+          <strong>{item.role}</strong> · {item.company}
+          <span className="item-status">({item.dates})</span>
+          <span className="entry-summary"> — {item.summary}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function ExperienceSection({ navigate }) {
   return (
     <section>
       <h2>Experience</h2>
-      <ul className="bullet-list experience-list">
-        {linkedinExperience.map((item) => (
-          <li key={`${item.role}-${item.company}-${item.dates}`}>
-            <strong>{item.role}</strong> · {item.company}
-            <span className="item-status">({item.dates})</span>
-            <span className="entry-summary"> — {item.summary}</span>
-          </li>
-        ))}
-      </ul>
-      <p className="after-list"><ExternalLink href={linkedinExperienceSource}>View experience on LinkedIn →</ExternalLink></p>
+      <ExperienceList limit={4} />
+      <p className="after-list"><InternalLink to="/experience" onNavigate={navigate}>View all {linkedinExperience.length} experiences →</InternalLink></p>
     </section>
   )
 }
@@ -240,7 +247,7 @@ function HomePage({ navigate }) {
         <p>{profile.intro.statement}</p>
       </section>
 
-      <ExperienceSection />
+      <ExperienceSection navigate={navigate} />
 
       <section>
         <h2>Apps</h2>
@@ -280,6 +287,18 @@ function ProjectsPage() {
       <PageHeading title="Projects">Every project listed in Apoorv’s GitHub profile README. Each title opens the project or its live site.</PageHeading>
       <section className="detail-section">
         <DetailList items={profile.projects} />
+      </section>
+    </>
+  )
+}
+
+function ExperiencePage() {
+  return (
+    <>
+      <PageHeading title="Experience">All {linkedinExperience.length} roles from Apoorv’s LinkedIn experience profile.</PageHeading>
+      <section className="detail-section">
+        <ExperienceList />
+        <p className="after-list"><ExternalLink href={linkedinExperienceSource}>View source on LinkedIn →</ExternalLink></p>
       </section>
     </>
   )
@@ -327,6 +346,7 @@ function App() {
   useEffect(() => {
     const titles = {
       '/': 'Apoorv Darshan — Developer',
+      '/experience': 'Experience — Apoorv Darshan',
       '/projects': 'Projects — Apoorv Darshan',
       '/open-source': 'Open Source — Apoorv Darshan',
       '/about': 'Complete Profile — Apoorv Darshan',
@@ -343,7 +363,8 @@ function App() {
   }
 
   let page
-  if (path === '/projects') page = <ProjectsPage />
+  if (path === '/experience') page = <ExperiencePage />
+  else if (path === '/projects') page = <ProjectsPage />
   else if (path === '/open-source') page = <OpenSourcePage />
   else if (path === '/about') page = <AboutPage />
   else page = <HomePage navigate={navigate} />
