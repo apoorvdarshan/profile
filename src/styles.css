@@ -114,9 +114,8 @@ h2 { margin: 0 0 .7em; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
 :root[data-theme='dark'] .activity-graph-light { display: none; }
 :root[data-theme='dark'] .activity-graph-dark { display: block; }
 :root[data-theme='dark'] .activity-placeholder { background: rgba(240, 238, 230, .07); }
-.connect-badges { display: flex; flex-wrap: wrap; gap: .38em .42em; margin: 0; padding: 0; list-style: none; }
-.connect-badges a { display: block; line-height: 0; text-decoration: none; }
-.connect-badges img { display: block; width: auto; height: 1.05em; }
+.link-columns { display: block; columns: 2; column-gap: 2em; }
+.link-columns li { margin-bottom: .5em; break-inside: avoid; }
 blockquote { margin: 0; padding: 0; font-style: italic; }
 .random-facts summary { cursor: pointer; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
 .random-facts summary::marker { font-size: .72em; }
@@ -136,6 +135,7 @@ blockquote { margin: 0; padding: 0; font-style: italic; }
 @media screen and (max-width: 479px) {
   .container { width: 95%; }
   .header { margin-top: 0; }
+  .link-columns { columns: 1; }
   .page-heading { margin-top: 1.5em; margin-bottom: 2.25em; }
   .page-heading h1 { font-size: 2.35em; }
 }

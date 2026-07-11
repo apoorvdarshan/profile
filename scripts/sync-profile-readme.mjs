@@ -69,12 +69,8 @@ function namedBullets(value) {
 
 function badgeLinks(value) {
   return value.split('\n').flatMap((line) => {
-    const match = line.match(/^\[!\[([^\]]+)\]\(([^)]+)\)\]\(([^)]+)\)/)
-    return match ? [{
-      name: plainText(match[1]).replace(/^[-★\s]+$/, 'X'),
-      badgeUrl: decode(match[2]),
-      url: decode(match[3]),
-    }] : []
+    const match = line.match(/^\[!\[([^\]]+)\]\([^)]*\)\]\(([^)]+)\)/)
+    return match ? [{ name: plainText(match[1]).replace(/^[-★\s]+$/, 'X'), url: decode(match[2]) }] : []
   })
 }
 
