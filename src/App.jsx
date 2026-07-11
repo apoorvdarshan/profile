@@ -95,6 +95,14 @@ function PageHeading({ title, children }) {
   )
 }
 
+function GitHubActivity() {
+  return (
+    <ExternalLink className="activity-link" href={profile.activityImage}>
+      <img className="activity-graph" src={profile.activityImage} alt="Apoorv Darshan's merged GitHub contribution graph" />
+    </ExternalLink>
+  )
+}
+
 function HomePage({ navigate }) {
   return (
     <>
@@ -123,6 +131,11 @@ function HomePage({ navigate }) {
         <h2>Open source</h2>
         <EntryList items={profile.openSource} limit={8} />
         <p className="after-list"><InternalLink to="/open-source" onNavigate={navigate}>View all {profile.openSource.length} contributions →</InternalLink></p>
+      </section>
+
+      <section>
+        <h2>GitHub activity</h2>
+        <GitHubActivity />
       </section>
 
       <section>
@@ -175,9 +188,7 @@ function AboutPage() {
 
       <section>
         <h2>GitHub activity</h2>
-        <ExternalLink href={profile.activityImage}>
-          <img className="activity-graph" src={profile.activityImage} alt="Apoorv Darshan's merged GitHub contribution graph" />
-        </ExternalLink>
+        <GitHubActivity />
       </section>
 
       <section>
