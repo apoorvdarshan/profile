@@ -3,6 +3,40 @@ import profile from './profileData.generated.json'
 
 const ROUTES = new Set(['/', '/projects', '/open-source', '/about'])
 
+const NAME_OVERRIDES = {
+  'fud-ai': 'Fud AI',
+  'freeCodeCamp': 'freeCodeCamp',
+  tensorflow: 'TensorFlow',
+  jquery: 'jQuery',
+  jupyterlab: 'JupyterLab',
+  springboot: 'Spring Boot',
+  'spring-boot': 'Spring Boot',
+  'opengraph-studio': 'OpenGraph Studio',
+  'github-readme-contribution-merger': 'GitHub README Contribution Merger',
+  'macbook-24x7-agents': 'MacBook 24×7 Agents',
+  'linkedin-connection-sender': 'LinkedIn Connection Sender',
+  'axentra-os-affiliate': 'Axentra OS Affiliate',
+  iitjee: 'IIT JEE',
+  Xscore: 'XScore',
+  WeasyPrint: 'WeasyPrint',
+  TEAMMATES: 'TEAMMATES',
+  CodexBar: 'CodexBar',
+}
+
+const WORD_FORMS = {
+  ai: 'AI', api: 'API', bmw: 'BMW', cli: 'CLI', css: 'CSS', dob: 'DOB',
+  github: 'GitHub', html: 'HTML', ios: 'iOS', macos: 'macOS', mcp: 'MCP',
+  os: 'OS', pr: 'PR', readme: 'README', sql: 'SQL', ui: 'UI', url: 'URL',
+}
+
+function displayName(name) {
+  if (NAME_OVERRIDES[name]) return NAME_OVERRIDES[name]
+  return name
+    .split(/[-_]/)
+    .map((word) => WORD_FORMS[word.toLowerCase()] || `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
+    .join(' ')
+}
+
 function currentPath() {
   const path = window.location.pathname.replace(/\/$/, '') || '/'
   return ROUTES.has(path) ? path : '/'
@@ -26,12 +60,17 @@ function InternalLink({ to, onNavigate, children, className = '' }) {
 function EntryList({ items, limit }) {
   const visible = typeof limit === 'number' ? items.slice(0, limit) : items
   return (
-    <ul className="bullet-list entry-list">
+    <ul className="entry-list">
       {visible.map((item) => (
         <li key={`${item.name}-${item.url}`}>
-          <ExternalLink href={item.url}>{item.name}</ExternalLink>
-          {item.status && <span className="item-status">({item.status})</span>}
-          {item.description && <span className="entry-summary"> — {item.description}</span>}
+          <div className="entry-title-line">
+            <ExternalLink className="entry-link" href={item.url}>
+              <span>{displayName(item.name)}</span>
+              <span className="external-arrow" aria-hidden="true">↗</span>
+            </ExternalLink>
+            {item.status && <span className="item-status">{item.status}</span>}
+          </div>
+          {item.description && <p className="entry-summary">{item.description}</p>}
         </li>
       ))}
     </ul>
@@ -43,14 +82,14 @@ function DetailList({ items }) {
     <ul className="detail-list">
       {items.map((item) => (
         <li key={`${item.name}-${item.url}`}>
-          <span className="entry-marker" aria-hidden="true">{item.marker || '•'}</span>
-          <div>
-            <p className="entry-name">
-              <ExternalLink href={item.url}>{item.name}</ExternalLink>
-              {item.status && <span className="item-status">({item.status})</span>}
-            </p>
-            {item.description && <p className="entry-description">{item.description}</p>}
+          <div className="entry-title-line">
+            <ExternalLink className="entry-link" href={item.url}>
+              <span>{displayName(item.name)}</span>
+              <span className="external-arrow" aria-hidden="true">↗</span>
+            </ExternalLink>
+            {item.status && <span className="item-status">{item.status}</span>}
           </div>
+          {item.description && <p className="entry-description">{item.description}</p>}
         </li>
       ))}
     </ul>
@@ -98,7 +137,7 @@ function HomePage({ navigate }) {
 
       <section>
         <h2>More</h2>
-        <ul className="bullet-list">
+        <ul className="text-link-list">
           <li><InternalLink to="/about" onNavigate={navigate}>Technologies, activity, recognition, links, and personal notes</InternalLink></li>
           <li><ExternalLink href={profile.source.url}>Read the source GitHub profile README</ExternalLink></li>
         </ul>
@@ -153,24 +192,24 @@ function AboutPage() {
 
       <section>
         <h2>What I’m doing</h2>
-        <ul className="bullet-list entry-list">
+        <ul className="prose-list">
           {profile.currentWork.map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
         </ul>
       </section>
 
       <section>
         <h2>Writing</h2>
-        <ul className="bullet-list entry-list"><li><ExternalLink href={profile.writing.url}>{profile.writing.name}</ExternalLink><span className="entry-summary"> — {profile.writing.description}</span></li></ul>
+        <ul className="prose-list"><li><ExternalLink href={profile.writing.url}>{profile.writing.name}</ExternalLink><span className="muted-copy"> — {profile.writing.description}</span></li></ul>
       </section>
 
       <section>
         <h2>Recognition</h2>
-        <ul className="bullet-list entry-list">{profile.recognition.map((item) => <li key={item}>{item}</li>)}</ul>
+        <ul className="prose-list">{profile.recognition.map((item) => <li key={item}>{item}</li>)}</ul>
       </section>
 
       <section>
         <h2>Connect</h2>
-        <ul className="bullet-list link-columns">{profile.connect.map((item) => <li key={item.name}><ExternalLink href={item.url}>{item.name}</ExternalLink></li>)}</ul>
+        <ul className="link-columns">{profile.connect.map((item) => <li key={item.name}><ExternalLink href={item.url}>{item.name}<span className="external-arrow" aria-hidden="true">↗</span></ExternalLink></li>)}</ul>
       </section>
 
       <section>
@@ -180,7 +219,7 @@ function AboutPage() {
 
       <section className="last-section">
         <h2>Random facts</h2>
-        <ul className="bullet-list">{profile.randomFacts.map((item) => <li key={item}>{item}</li>)}</ul>
+        <ul className="prose-list">{profile.randomFacts.map((item) => <li key={item}>{item}</li>)}</ul>
       </section>
     </>
   )
@@ -196,7 +235,7 @@ function App() {
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? 'dark' : 'light'
     localStorage.setItem('apoorv-theme-v2', dark ? 'dark' : 'light')
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#1f1e1d' : '#f0eee6')
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#1f1e1d' : '#f2f0e8')
   }, [dark])
 
   useEffect(() => {
