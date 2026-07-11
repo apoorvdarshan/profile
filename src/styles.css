@@ -105,7 +105,6 @@ h2 { margin: 0 0 .7em; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
 
 .detail-section { margin-top: 0; }
 .detail-list { gap: 1em; }
-.technology-list { line-height: 1.75; }
 .activity-link { display: block; text-decoration: none; }
 .activity-graph { display: block; width: 100%; height: auto; }
 .activity-graph-dark { display: none; }
