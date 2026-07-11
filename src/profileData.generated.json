@@ -619,6 +619,15 @@
       "starCount": "9.1k"
     },
     {
+      "name": "tenacity",
+      "url": "https://github.com/jd/tenacity/pull/653",
+      "description": "fix: keep statistics visible when @retry is further wrapped",
+      "status": "",
+      "marker": "🔁",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=jd/tenacity",
+      "starCount": "8.7k"
+    },
+    {
       "name": "gitextensions",
       "url": "https://github.com/gitextensions/gitextensions/pull/12841",
       "description": "fix: console launch fails when Windows username contains spaces",
@@ -752,6 +761,15 @@
       "marker": "🧮",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=mpmath/mpmath",
       "starCount": "1.2k"
+    },
+    {
+      "name": "djLint",
+      "url": "https://github.com/djlint/djLint/pull/2206",
+      "description": "fix: keep template variable in HTML attribute name on one line",
+      "status": "",
+      "marker": "🧹",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=djlint/djLint",
+      "starCount": "936"
     },
     {
       "name": "decorator",
