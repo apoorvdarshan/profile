@@ -859,7 +859,7 @@
       "status": "",
       "marker": "🧬",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=tefra/xsdata",
-      "starCount": "445"
+      "starCount": "446"
     },
     {
       "name": "moin",
@@ -887,6 +887,15 @@
       "marker": "🔷",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=dotnet/docs-desktop",
       "starCount": "233"
+    },
+    {
+      "name": "asttokens",
+      "url": "https://github.com/gristlabs/asttokens/pull/174",
+      "description": "fix: IndexError when source mixes lone CR with LF line endings",
+      "status": "",
+      "marker": "🌳",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=gristlabs/asttokens",
+      "starCount": "192"
     },
     {
       "name": "markdown-reader",
