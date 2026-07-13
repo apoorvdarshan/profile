@@ -46,7 +46,7 @@
       "status": "",
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/fud-ai&v=2",
-      "starCount": "266"
+      "starCount": "267"
     },
     {
       "name": "verceltics",
@@ -652,7 +652,7 @@
       "status": "",
       "marker": "🔤",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=PyCQA/isort",
-      "starCount": "6.9k"
+      "starCount": "7k"
     },
     {
       "name": "up-for-grabs.net",
@@ -662,6 +662,15 @@
       "marker": "🆙",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=up-for-grabs/up-for-grabs.net",
       "starCount": "6k"
+    },
+    {
+      "name": "websockets",
+      "url": "https://github.com/python-websockets/websockets/pull/1726",
+      "description": "fix: handle rejected handshakes cleanly in the threading server",
+      "status": "",
+      "marker": "🔌",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=python-websockets/websockets",
+      "starCount": "5.7k"
     },
     {
       "name": "zenml",
@@ -823,7 +832,7 @@
       "status": "",
       "marker": "📧",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=resend/resend-mcp",
-      "starCount": "551"
+      "starCount": "552"
     },
     {
       "name": "giselle",
@@ -841,7 +850,7 @@
       "status": "",
       "marker": "🏦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=guibranco/BancosBrasileiros",
-      "starCount": "528"
+      "starCount": "529"
     },
     {
       "name": "fork-commit-merge",
@@ -850,7 +859,7 @@
       "status": "",
       "marker": "🍴",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=fork-commit-merge/fork-commit-merge",
-      "starCount": "504"
+      "starCount": "505"
     },
     {
       "name": "xsdata",
