@@ -75,7 +75,7 @@ function badgeLinks(value) {
 }
 
 async function attachStarCounts(data, previousStarCounts = new Map()) {
-  const queue = ['apps', 'extensions', 'projects', 'openSource']
+  const queue = ['apps', 'games', 'extensions', 'projects', 'openSource']
     .flatMap((key) => data[key])
     .filter((item) => item.starBadgeUrl)
 
@@ -128,7 +128,8 @@ function parseReadme(readme) {
       statement: plainText(statement),
     },
     technologies,
-    apps: htmlEntries(readme, '## Apps', '## Chrome Extensions'),
+    apps: htmlEntries(readme, '## Apps', '## Games'),
+    games: htmlEntries(readme, '## Games', '## Chrome Extensions'),
     extensions: htmlEntries(readme, '## Chrome Extensions', '## Projects'),
     projects: htmlEntries(readme, '## Projects', '### Open Source Contributions'),
     openSource: htmlEntries(readme, '### Open Source Contributions', '## GitHub Activity'),
@@ -163,7 +164,7 @@ async function main() {
   try {
     const previous = JSON.parse(await readFile(OUTPUT_URL, 'utf8'))
     previousStarCounts = new Map(
-      ['apps', 'extensions', 'projects', 'openSource']
+      ['apps', 'games', 'extensions', 'projects', 'openSource']
         .flatMap((key) => previous[key] ?? [])
         .filter((item) => item.starBadgeUrl && item.starCount)
         .map((item) => [item.starBadgeUrl, item.starCount]),
@@ -173,7 +174,7 @@ async function main() {
   }
   await attachStarCounts(data, previousStarCounts)
   await writeFile(fileURLToPath(OUTPUT_URL), `${JSON.stringify(data, null, 2)}\n`)
-  console.log(`Synced GitHub README: ${data.apps.length} apps, ${data.extensions.length} extensions, ${data.projects.length} projects, ${data.openSource.length} open-source contributions.`)
+  console.log(`Synced GitHub README: ${data.apps.length} apps, ${data.games.length} games, ${data.extensions.length} extensions, ${data.projects.length} projects, ${data.openSource.length} open-source contributions.`)
 }
 
 await main()

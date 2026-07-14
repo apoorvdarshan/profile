@@ -73,7 +73,9 @@
       "status": "closed source",
       "marker": "🚫",
       "starBadgeUrl": ""
-    },
+    }
+  ],
+  "games": [
     {
       "name": "abysm",
       "url": "https://apps.apple.com/app/id6783505799",
