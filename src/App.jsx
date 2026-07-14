@@ -285,6 +285,11 @@ function HomePage({ navigate }) {
       </section>
 
       <section>
+        <h2>Games</h2>
+        <EntryList items={profile.games} />
+      </section>
+
+      <section>
         <h2>Chrome extensions</h2>
         <EntryList items={profile.extensions} />
       </section>
