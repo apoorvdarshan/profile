@@ -826,6 +826,15 @@
       "starCount": "621"
     },
     {
+      "name": "docformatter",
+      "url": "https://github.com/PyCQA/docformatter/pull/360",
+      "description": "fix: prevent ValueError crash on blank lines with trailing whitespace",
+      "status": "",
+      "marker": "📏",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=PyCQA/docformatter",
+      "starCount": "594"
+    },
+    {
       "name": "resend-mcp",
       "url": "https://github.com/resend/resend-mcp/pull/166",
       "description": "feat: better order of validation for command running",
