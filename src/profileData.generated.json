@@ -46,7 +46,7 @@
       "status": "",
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/fud-ai&v=2",
-      "starCount": "267"
+      "starCount": "274"
     },
     {
       "name": "verceltics",
@@ -626,7 +626,7 @@
       "status": "",
       "marker": "🦞",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=openclaw/clawhub",
-      "starCount": "9.1k"
+      "starCount": "9.2k"
     },
     {
       "name": "tenacity",
@@ -788,7 +788,7 @@
       "status": "",
       "marker": "🧹",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=djlint/djLint",
-      "starCount": "936"
+      "starCount": "937"
     },
     {
       "name": "decorator",
@@ -818,13 +818,22 @@
       "starCount": "843"
     },
     {
+      "name": "flynt",
+      "url": "https://github.com/ikamensh/flynt/pull/254",
+      "description": "fix: don't convert %c percent formatting to f-strings",
+      "status": "",
+      "marker": "🪶",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=ikamensh/flynt",
+      "starCount": "732"
+    },
+    {
       "name": "kart",
       "url": "https://github.com/koordinates/kart/pull/1120",
       "description": "fix: export crash for generic GEOMETRY Z/M/ZM geometry types",
       "status": "",
       "marker": "🗺️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=koordinates/kart",
-      "starCount": "674"
+      "starCount": "676"
     },
     {
       "name": "styled-components-website",
@@ -851,7 +860,7 @@
       "status": "",
       "marker": "📧",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=resend/resend-mcp",
-      "starCount": "552"
+      "starCount": "553"
     },
     {
       "name": "giselle",
@@ -860,7 +869,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=giselles-ai/giselle",
-      "starCount": "542"
+      "starCount": "543"
     },
     {
       "name": "BancosBrasileiros",
@@ -878,7 +887,7 @@
       "status": "",
       "marker": "🍴",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=fork-commit-merge/fork-commit-merge",
-      "starCount": "505"
+      "starCount": "506"
     },
     {
       "name": "xsdata",
@@ -896,7 +905,7 @@
       "status": "",
       "marker": "📝",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=moinwiki/moin",
-      "starCount": "372"
+      "starCount": "373"
     },
     {
       "name": "radis",
