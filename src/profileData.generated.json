@@ -46,7 +46,7 @@
       "status": "",
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/fud-ai&v=2",
-      "starCount": "274"
+      "starCount": "275"
     },
     {
       "name": "verceltics",
@@ -503,6 +503,15 @@
       "starCount": "81k"
     },
     {
+      "name": "ansible",
+      "url": "https://github.com/ansible/ansible/pull/87212",
+      "description": "ansible-config: default to checking all plugin configs",
+      "status": "",
+      "marker": "⚙️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=ansible/ansible",
+      "starCount": "70k"
+    },
+    {
       "name": "jquery",
       "url": "https://github.com/jquery/jquery/pull/5775",
       "description": "fix: use createElementNS for XSLT documents (by jQuery)",
@@ -563,7 +572,7 @@
       "status": "",
       "marker": "🛠️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=steipete/CodexBar",
-      "starCount": "18k"
+      "starCount": "19k"
     },
     {
       "name": "react-spectrum",
@@ -815,7 +824,7 @@
       "status": "",
       "marker": "🕸️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=pygraphviz/pygraphviz",
-      "starCount": "843"
+      "starCount": "844"
     },
     {
       "name": "flynt",
@@ -860,7 +869,7 @@
       "status": "",
       "marker": "📧",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=resend/resend-mcp",
-      "starCount": "554"
+      "starCount": "556"
     },
     {
       "name": "giselle",
