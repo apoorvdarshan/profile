@@ -42,20 +42,20 @@
     {
       "name": "fud-ai",
       "url": "https://github.com/apoorvdarshan/fud-ai",
-      "description": "AI-powered calorie and nutrition tracker app (4K+ downloads)",
+      "description": "AI-powered calorie and nutrition tracker app (5K+ downloads)",
       "status": "",
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/fud-ai&v=2",
-      "starCount": "275"
+      "starCount": "277"
     },
     {
       "name": "verceltics",
       "url": "https://github.com/apoorvdarshan/verceltics",
-      "description": "Open-source iOS workspace for hosting, domains, deployments, analytics, and uptime",
+      "description": "Open-source iOS hub for hosting, domains, analytics, and uptime (1K+ downloads)",
       "status": "",
       "marker": "📈",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/verceltics",
-      "starCount": "22"
+      "starCount": "23"
     },
     {
       "name": "scowld",
@@ -797,7 +797,7 @@
       "status": "",
       "marker": "🧹",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=djlint/djLint",
-      "starCount": "937"
+      "starCount": "938"
     },
     {
       "name": "decorator",
@@ -815,7 +815,7 @@
       "status": "",
       "marker": "📺",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=CCExtractor/ccextractor",
-      "starCount": "890"
+      "starCount": "891"
     },
     {
       "name": "pygraphviz",
@@ -878,7 +878,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=giselles-ai/giselle",
-      "starCount": "544"
+      "starCount": "545"
     },
     {
       "name": "BancosBrasileiros",
@@ -896,7 +896,7 @@
       "status": "",
       "marker": "🍴",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=fork-commit-merge/fork-commit-merge",
-      "starCount": "506"
+      "starCount": "505"
     },
     {
       "name": "xsdata",
@@ -923,7 +923,7 @@
       "status": "",
       "marker": "🔬",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=radis/radis",
-      "starCount": "279"
+      "starCount": "278"
     },
     {
       "name": "docs-desktop",
@@ -1078,7 +1078,6 @@
   "recognition": [
     "President's List on the University of the People (CGPA 3.85–4.00, B.S. CS, Term 3)",
     "Over 12K+ followers on LinkedIn",
-    "Fud AI app reached 4K+ downloads",
     "Dean's List on the University of the People (CGPA 3.50–3.84, B.S. CS, Term 2)",
     "LOR for outstanding performance in Mathematics from Mr. Eddy Kamboh, University of the People",
     "Diamond Badge on CodeChef",
