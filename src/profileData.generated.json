@@ -147,14 +147,6 @@
       "starBadgeUrl": ""
     },
     {
-      "name": "wellfound-bot",
-      "url": "https://github.com/apoorvdarshan/wellfound-bot",
-      "description": "Automate your Wellfound (AngelList) job hunt with human-like Playwright browser automation",
-      "status": "",
-      "marker": "🎯",
-      "starBadgeUrl": ""
-    },
-    {
       "name": "linkedin-connection-sender",
       "url": "https://github.com/apoorvdarshan/linkedin-connection-sender",
       "description": "Send LinkedIn connection requests by country and role at a human-like pace",
@@ -242,6 +234,14 @@
       "description": "Slot machine date picker; intentionally bad UI",
       "status": "",
       "marker": "🎰",
+      "starBadgeUrl": ""
+    },
+    {
+      "name": "wellfound-bot",
+      "url": "https://github.com/apoorvdarshan/wellfound-bot",
+      "description": "Automate your Wellfound (AngelList) job hunt with human-like Playwright browser automation",
+      "status": "",
+      "marker": "🎯",
       "starBadgeUrl": ""
     },
     {
