@@ -746,6 +746,15 @@
       "starCount": "3.9k"
     },
     {
+      "name": "python-markdown2",
+      "url": "https://github.com/trentm/python-markdown2/pull/713",
+      "description": "fix: prevent duplicate IDs from the header-ids extra",
+      "status": "",
+      "marker": "📝",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=trentm/python-markdown2",
+      "starCount": ""
+    },
+    {
       "name": "pygments",
       "url": "https://github.com/pygments/pygments/pulls?q=author%3Aapoorvdarshan",
       "description": "2 merged PRs: add 'yml' alias for YAML lexer + Mathematica \\[Name] named-character escapes",
