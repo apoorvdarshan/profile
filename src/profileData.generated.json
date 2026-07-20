@@ -46,7 +46,7 @@
       "status": "",
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/fud-ai&v=2",
-      "starCount": "278"
+      "starCount": "279"
     },
     {
       "name": "verceltics",
@@ -72,6 +72,14 @@
       "description": "iOS app to quit addictions like smoking, alcohol, social media, and more",
       "status": "closed source",
       "marker": "🚫",
+      "starBadgeUrl": ""
+    },
+    {
+      "name": "iitjee",
+      "url": "https://iitjee.apoorvdarshan.com",
+      "description": "Offline handwritten PCM notes for JEE Main, JEE Advanced & NEET on iPhone and iPad",
+      "status": "closed source",
+      "marker": "📚",
       "starBadgeUrl": ""
     }
   ],
@@ -277,14 +285,6 @@
       "starBadgeUrl": ""
     },
     {
-      "name": "iitjee",
-      "url": "https://iitjee.apoorvdarshan.com",
-      "description": "Handwritten notes for IIT JEE prep (100+ organic visitors/month)",
-      "status": "closed source",
-      "marker": "📚",
-      "starBadgeUrl": ""
-    },
-    {
       "name": "claw-c",
       "url": "https://github.com/apoorvdarshan/claw-c",
       "description": "Claude Code reimplemented in pure C, the lowest level it's ever been done",
@@ -464,7 +464,7 @@
       "status": "",
       "marker": "🧠",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=langgenius/dify",
-      "starCount": "149k"
+      "starCount": "150k"
     },
     {
       "name": "kubernetes",
@@ -851,7 +851,7 @@
       "status": "",
       "marker": "🗺️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=koordinates/kart",
-      "starCount": "676"
+      "starCount": "677"
     },
     {
       "name": "styled-components-website",
