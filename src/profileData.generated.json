@@ -46,7 +46,7 @@
       "status": "",
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=apoorvdarshan/fud-ai&v=2",
-      "starCount": "277"
+      "starCount": "278"
     },
     {
       "name": "verceltics",
@@ -771,6 +771,15 @@
       "marker": "👥",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=TEAMMATES/teammates",
       "starCount": "1.8k"
+    },
+    {
+      "name": "argcomplete",
+      "url": "https://github.com/kislyuk/argcomplete/pull/553",
+      "description": "fix: expand ~ in DirectoriesCompleter",
+      "status": "",
+      "marker": "⌨️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=kislyuk/argcomplete",
+      "starCount": "1.6k"
     },
     {
       "name": "mcp-server-kubernetes",
