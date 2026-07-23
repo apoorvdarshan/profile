@@ -746,6 +746,15 @@
       "starCount": "3.9k"
     },
     {
+      "name": "django-oauth-toolkit",
+      "url": "https://github.com/django-oauth/django-oauth-toolkit/pull/1750",
+      "description": "fix: validate Netlify double-dash wildcard redirect URIs",
+      "status": "",
+      "marker": "🔐",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.workers.dev/api/stars?repo=django-oauth/django-oauth-toolkit&v=3",
+      "starCount": "3.3k"
+    },
+    {
       "name": "python-markdown2",
       "url": "https://github.com/trentm/python-markdown2/pull/713",
       "description": "fix: prevent duplicate IDs from the header-ids extra",
