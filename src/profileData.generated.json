@@ -129,6 +129,14 @@
       "starBadgeUrl": ""
     },
     {
+      "name": "helios-01",
+      "url": "https://github.com/apoorvdarshan/helios-01",
+      "description": "Editable Blender pocket orrery with an animated mechanical solar system",
+      "status": "",
+      "marker": "🪐",
+      "starBadgeUrl": ""
+    },
+    {
       "name": "crossposter",
       "url": "https://github.com/apoorvdarshan/crossposter",
       "description": "Open-source crossposter for X, LinkedIn, Bluesky, Mastodon, Instagram, YouTube, and more",
