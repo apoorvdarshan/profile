@@ -57,7 +57,7 @@
       "status": "",
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/fud-ai&v=3",
-      "starCount": "384"
+      "starCount": "394"
     },
     {
       "name": "verceltics",
@@ -66,7 +66,7 @@
       "status": "",
       "marker": "📈",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/verceltics&v=3",
-      "starCount": "29"
+      "starCount": "30"
     },
     {
       "name": "scowld",
@@ -75,7 +75,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/scowld&v=3",
-      "starCount": "18"
+      "starCount": "19"
     },
     {
       "name": "quit-all",
@@ -280,7 +280,7 @@
       "status": "",
       "marker": "📊",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/github-readme-contribution-merger&v=3",
-      "starCount": "13"
+      "starCount": "14"
     },
     {
       "name": "daxerly",
@@ -538,7 +538,7 @@
       "status": "",
       "marker": "🔶",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=tensorflow/tensorflow&v=3",
-      "starCount": "198k"
+      "starCount": "199k"
     },
     {
       "name": "flutter",
@@ -556,7 +556,7 @@
       "status": "",
       "marker": "🧠",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=langgenius/dify&v=3",
-      "starCount": "154k"
+      "starCount": "155k"
     },
     {
       "name": "kubernetes",
@@ -700,6 +700,15 @@
       "status": "",
       "marker": "🦀",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=tracel-ai/burn&v=3",
+      "starCount": "16k"
+    },
+    {
+      "name": "Effect",
+      "url": "https://github.com/Effect-TS/effect/pull/7533",
+      "description": "fix(atom-solid): forward default idle TTL",
+      "status": "",
+      "marker": "⚡",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=Effect-TS/effect&v=3",
       "starCount": "16k"
     },
     {
@@ -997,7 +1006,7 @@
       "status": "",
       "marker": "👥",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=TEAMMATES/teammates&v=3",
-      "starCount": "1.8k"
+      "starCount": "1.9k"
     },
     {
       "name": "simplejson",
@@ -1114,7 +1123,7 @@
       "status": "",
       "marker": "🕸️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=pygraphviz/pygraphviz&v=3",
-      "starCount": "845"
+      "starCount": "846"
     },
     {
       "name": "flynt",
@@ -1171,6 +1180,15 @@
       "starCount": "566"
     },
     {
+      "name": "IMAPClient",
+      "url": "https://github.com/mjs/imapclient/pull/644",
+      "description": "fix: reset IMAP state to AUTH after unselect_folder()",
+      "status": "",
+      "marker": "📬",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=mjs/imapclient&v=3",
+      "starCount": "562"
+    },
+    {
       "name": "giselle",
       "url": "https://github.com/giselles-ai/giselle/pull/2739",
       "description": "fix: use continue instead of return in handleEdgesChange",
@@ -1186,7 +1204,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "604"
+      "starCount": "632"
     },
     {
       "name": "BancosBrasileiros",
@@ -1195,7 +1213,7 @@
       "status": "",
       "marker": "🏦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=guibranco/BancosBrasileiros&v=3",
-      "starCount": "544"
+      "starCount": "545"
     },
     {
       "name": "vermin",
@@ -1249,7 +1267,7 @@
       "status": "",
       "marker": "🔀",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
-      "starCount": "459"
+      "starCount": "462"
     },
     {
       "name": "WebOb",
@@ -1276,7 +1294,7 @@
       "status": "",
       "marker": "🧪",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=aregtech/areg-sdk&v=3",
-      "starCount": "364"
+      "starCount": "365"
     },
     {
       "name": "radis",
@@ -1285,7 +1303,7 @@
       "status": "",
       "marker": "🔬",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=radis/radis&v=3",
-      "starCount": "279"
+      "starCount": "280"
     },
     {
       "name": "click-repl",
@@ -1339,7 +1357,7 @@
       "status": "",
       "marker": "📖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=petertzy/markdown-reader&v=3",
-      "starCount": "31"
+      "starCount": "32"
     },
     {
       "name": "awesome-mac",
