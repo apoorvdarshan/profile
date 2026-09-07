@@ -866,8 +866,8 @@
     },
     {
       "name": "typeshed",
-      "url": "https://github.com/python/typeshed/pull/15989",
-      "description": "fix: drop argument-less __init__ from frozendict constructor",
+      "url": "https://github.com/python/typeshed/pulls?q=author%3Aapoorvdarshan",
+      "description": "2 merged PRs: drop argument-less __init__ from frozendict constructor + add functools.partial.__get__ for Python 3.14",
       "status": "",
       "marker": "🏷️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=python/typeshed&v=3",
