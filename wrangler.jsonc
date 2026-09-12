@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "apoorv-profile",
+  "main": "src/worker/index.js",
   "compatibility_date": "2026-07-11",
   "workers_dev": false,
   "preview_urls": false,
@@ -12,6 +13,8 @@
   ],
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "single-page-application"
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/resume", "/resume/"]
   }
 }
