@@ -732,7 +732,7 @@
     {
       "name": "omi",
       "url": "https://github.com/BasedHardware/omi/pulls?q=author%3Aapoorvdarshan",
-      "description": "5 merged PRs: BYOK alerts, markdown headers, stall retry, integration URL refresh, disconnect/WAL/speech-profile",
+      "description": "7 merged PRs: BYOK alerts, headers, stall retry, URL refresh, disconnect/WAL/speech-profile, BigText chat notifs, Retry-After abort",
       "status": "",
       "marker": "🎙️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=BasedHardware/omi&v=3",
