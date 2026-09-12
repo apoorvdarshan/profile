@@ -856,6 +856,15 @@
       "starCount": "5.7k"
     },
     {
+      "name": "tortoise-orm",
+      "url": "https://github.com/tortoise/tortoise-orm/pull/2243",
+      "description": "fix: IntEnumField/CharEnumField return type to Field[EnumType]",
+      "status": "",
+      "marker": "🐢",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=tortoise/tortoise-orm&v=3",
+      "starCount": "5.6k"
+    },
+    {
       "name": "zenml",
       "url": "https://github.com/zenml-io/zenml/pull/4496",
       "description": "fix: include git submodule files in code archive",
