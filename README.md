@@ -39,7 +39,7 @@ It brings together shipped apps, games, Chrome extensions, projects, open-source
 
 ## Resume
 
-The public downloadable resume lives at [`public/Apoorv_Darshan_Resume.pdf`](public/Apoorv_Darshan_Resume.pdf) and is served at [apoorvdarshan.com/Apoorv_Darshan_Resume.pdf](https://apoorvdarshan.com/Apoorv_Darshan_Resume.pdf). Keep this file in sync with `~/Documents/Apoorv_Darshan_Resume.pdf` when updating from rekisei builds.
+The public share link is [apoorvdarshan.com/resume](https://apoorvdarshan.com/resume) (PDF file: [`public/Apoorv_Darshan_Resume.pdf`](public/Apoorv_Darshan_Resume.pdf); downloads as `Apoorv_Darshan_Resume.pdf`). Keep this file in sync with `~/Documents/Apoorv_Darshan_Resume.pdf` on every rekisei rebuild, then commit/push/deploy. GitHub profile Resume badges must point at `/resume`.
 
 ## Content model
 
