@@ -6,6 +6,9 @@ import { SEO_BY_PATH, SOCIAL_IMAGE, canonicalUrl, structuredData } from './seo'
 
 const ROUTES = new Set(['/', '/experience', '/education', '/projects', '/open-source'])
 
+const RESUME_URL = '/Apoorv_Darshan_Resume.pdf'
+const RESUME_FILENAME = 'Apoorv_Darshan_Resume.pdf'
+
 const NAME_OVERRIDES = {
   'fud-ai': 'Fud AI',
   'freeCodeCamp': 'freeCodeCamp',
@@ -214,6 +217,14 @@ function ReadmeDetails() {
         <h2>What I’m doing</h2>
         <ul className="bullet-list">
           {profile.currentWork.map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Resume</h2>
+        <ul className="bullet-list resume-links">
+          <li><a href={RESUME_URL} target="_blank" rel="noreferrer">View</a></li>
+          <li><a href={RESUME_URL} download={RESUME_FILENAME}>Download</a></li>
         </ul>
       </section>
 
@@ -452,6 +463,7 @@ function App() {
           <InternalLink className="header-name" to="/" onNavigate={navigate}>Apoorv Darshan</InternalLink>
           <div className="header-actions">
             {path !== '/' && <InternalLink className="home-link" to="/" onNavigate={navigate}>Home</InternalLink>}
+            <a className="home-link" href={RESUME_URL} target="_blank" rel="noreferrer">Resume</a>
             <button className="toggle-switch" type="button" onClick={() => setDark(!dark)} aria-label={`Use ${dark ? 'light' : 'dark'} color mode`} aria-pressed={dark}>
               <span className="toggle-knob"></span>
             </button>
