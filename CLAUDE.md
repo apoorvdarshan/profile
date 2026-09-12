@@ -1,19 +1,17 @@
-# Claude notes — apoorvdarshan.com profile
+# Profile site — CLAUDE.md
 
-This repo powers [apoorvdarshan.com](https://apoorvdarshan.com): a Vite React SPA deployed to Cloudflare Workers static assets, with a small Worker for `/resume`.
+Guidance for agents working on `apoorvdarshan/profile` (https://apoorvdarshan.com): a Vite React SPA on Cloudflare Workers static assets, with a small Worker for `/resume`.
 
-## Resume updates
+## Resume public download
 
-After rebuilding the resume in [rekisei](https://github.com/apoorvdarshan/rekisei):
-
-1. **Copy the PDF** from `~/Documents/Apoorv_Darshan_Resume.pdf` to [`public/Apoorv_Darshan_Resume.pdf`](public/Apoorv_Darshan_Resume.pdf). The filename must stay exactly `Apoorv_Darshan_Resume.pdf`.
-2. **Commit and deploy** — push to `main`; Cloudflare Workers Builds runs `npm run build` and `wrangler deploy`.
-3. **Keep public links at `/resume`** — the canonical share URL is [apoorvdarshan.com/resume](https://apoorvdarshan.com/resume). On-site links in `src/App.jsx` use `/resume`; the Connect badge URL is normalized in `scripts/sync-profile-readme.mjs`. Do not change these to the long PDF path.
-4. **Do not upload to LinkedIn** — the site is the public resume; LinkedIn profile experience/education live in `src/linkedinExperience.js` and `src/linkedinEducation.js` separately.
-
-The long path `/Apoorv_Darshan_Resume.pdf` remains a fallback after deploy; prefer `/resume` for sharing.
+- Canonical share URL: `https://apoorvdarshan.com/resume` (serves the PDF; downloads/views as `Apoorv_Darshan_Resume.pdf`).
+- Source file in this repo: `public/Apoorv_Darshan_Resume.pdf` (fallback also at `/Apoorv_Darshan_Resume.pdf` after build).
+- After every rekisei resume rebuild: copy the compiled PDF into `public/Apoorv_Darshan_Resume.pdf`, commit, push, and `npm run deploy` so GitHub + site View/Download stay current.
+- Keep site header / Resume section links pointing at `/resume`. `scripts/sync-profile-readme.mjs` normalizes the Connect Resume badge to that URL.
+- Do not auto-upload resumes to LinkedIn.
+- Keep `CLAUDE.md` and `AGENTS.md` parallel when changing this guidance.
 
 ## Other content
 
-- **GitHub profile README** → synced into `src/profileData.generated.json` via `scripts/sync-profile-readme.mjs` on build/dev.
-- **LinkedIn experience/education** → hand-maintained JS snapshots; not auto-synced from LinkedIn.
+- GitHub profile README syncs into `src/profileData.generated.json` via `scripts/sync-profile-readme.mjs` on build/dev.
+- LinkedIn experience/education are hand-maintained in `src/linkedinExperience.js` and `src/linkedinEducation.js`.
