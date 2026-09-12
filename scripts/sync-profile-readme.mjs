@@ -175,6 +175,10 @@ async function main() {
   } catch {
     // The first sync has no committed snapshot to fall back to.
   }
+  for (const item of data.connect) {
+    if (item.name === 'Resume') item.url = 'https://apoorvdarshan.com/resume'
+  }
+
   await attachStarCounts(data, previousStarCounts)
   await writeFile(fileURLToPath(OUTPUT_URL), `${JSON.stringify(data, null, 2)}\n`)
   console.log(`Synced GitHub README: ${data.apps.length} apps, ${data.games.length} games, ${data.extensions.length} extensions, ${data.projects.length} projects, ${data.openSource.length} open-source contributions.`)
