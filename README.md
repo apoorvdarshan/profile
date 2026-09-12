@@ -37,6 +37,10 @@ It brings together shipped apps, games, Chrome extensions, projects, open-source
 | [`/projects`](https://apoorvdarshan.com/projects) | All listed projects |
 | [`/open-source`](https://apoorvdarshan.com/open-source) | All open-source contributions |
 
+## Resume
+
+The public downloadable resume lives at [`public/Apoorv_Darshan_Resume.pdf`](public/Apoorv_Darshan_Resume.pdf) and is served at [apoorvdarshan.com/Apoorv_Darshan_Resume.pdf](https://apoorvdarshan.com/Apoorv_Darshan_Resume.pdf). Keep this file in sync with `~/Documents/Apoorv_Darshan_Resume.pdf` when updating from rekisei builds.
+
 ## Content model
 
 The website deliberately keeps its data sources separate:

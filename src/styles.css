@@ -116,6 +116,9 @@ h2 { margin: 0 0 .7em; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
 :root[data-theme='dark'] .activity-placeholder { background: rgba(240, 238, 230, .07); }
 .link-columns { display: block; columns: 2; column-gap: 2em; }
 .link-columns li { margin-bottom: .5em; break-inside: avoid; }
+.resume-links { flex-flow: row; gap: 1.2em; }
+.resume-links li { padding-left: 0; }
+.resume-links li::before { content: none; }
 blockquote { margin: 0; padding: 0; font-style: italic; }
 .random-facts summary { cursor: pointer; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
 .random-facts summary::marker { font-size: .72em; }
