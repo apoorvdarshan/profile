@@ -6,7 +6,7 @@ import { SEO_BY_PATH, SOCIAL_IMAGE, canonicalUrl, structuredData } from './seo'
 
 const ROUTES = new Set(['/', '/experience', '/education', '/projects', '/open-source'])
 
-const RESUME_URL = '/Apoorv_Darshan_Resume.pdf'
+const RESUME_URL = '/resume'
 const RESUME_FILENAME = 'Apoorv_Darshan_Resume.pdf'
 
 const NAME_OVERRIDES = {
