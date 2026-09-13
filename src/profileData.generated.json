@@ -77,6 +77,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/scowld&v=3",
+      "downloads": "100+",
       "starCount": "21"
     },
     {
@@ -85,7 +86,8 @@
       "description": "iOS app to quit smoking, alcohol, social media, and more",
       "status": "closed source",
       "marker": "🚫",
-      "starBadgeUrl": ""
+      "starBadgeUrl": "",
+      "downloads": "10+"
     },
     {
       "name": "iitjee",
@@ -93,7 +95,8 @@
       "description": "Offline PCM notes for JEE Main/Advanced & NEET (iPhone/iPad)",
       "status": "closed source",
       "marker": "📚",
-      "starBadgeUrl": ""
+      "starBadgeUrl": "",
+      "downloads": "30+"
     }
   ],
   "games": [
@@ -103,7 +106,8 @@
       "description": "Calm pixel-art dive past 75 real sea creatures to Challenger Deep",
       "status": "closed source",
       "marker": "🌊",
-      "starBadgeUrl": ""
+      "starBadgeUrl": "",
+      "downloads": "20+"
     }
   ],
   "extensions": [
@@ -692,12 +696,12 @@
       "starCount": "18k"
     },
     {
-      "name": "react-spectrum",
-      "url": "https://github.com/adobe/react-spectrum/pull/9678",
-      "description": "fix: incorrect timezone conversion when setLocalTimeZone is used (by Adobe)",
+      "name": "Effect",
+      "url": "https://github.com/Effect-TS/effect/pull/7533",
+      "description": "fix(atom-solid): forward default idle TTL",
       "status": "",
-      "marker": "🎨",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=adobe/react-spectrum&v=3",
+      "marker": "⚡",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=Effect-TS/effect&v=3",
       "starCount": "16k"
     },
     {
@@ -710,12 +714,12 @@
       "starCount": "16k"
     },
     {
-      "name": "Effect",
-      "url": "https://github.com/Effect-TS/effect/pull/7533",
-      "description": "fix(atom-solid): forward default idle TTL",
+      "name": "react-spectrum",
+      "url": "https://github.com/adobe/react-spectrum/pull/9678",
+      "description": "fix: incorrect timezone conversion when setLocalTimeZone is used (by Adobe)",
       "status": "",
-      "marker": "⚡",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=Effect-TS/effect&v=3",
+      "marker": "🎨",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=adobe/react-spectrum&v=3",
       "starCount": "16k"
     },
     {
@@ -926,21 +930,21 @@
       "starCount": "4.4k"
     },
     {
-      "name": "dynaconf",
-      "url": "https://github.com/dynaconf/dynaconf/pull/1421",
-      "description": "feat: support list values for environment configuration",
-      "status": "",
-      "marker": "🧰",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=dynaconf/dynaconf&v=3",
-      "starCount": "4.3k"
-    },
-    {
       "name": "fsharp",
       "url": "https://github.com/dotnet/fsharp/pull/19317",
       "description": "fix: Seq.empty serializer rendering (by .NET)",
       "status": "",
       "marker": "🔷",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=dotnet/fsharp&v=3",
+      "starCount": "4.3k"
+    },
+    {
+      "name": "dynaconf",
+      "url": "https://github.com/dynaconf/dynaconf/pull/1421",
+      "description": "feat: support list values for environment configuration",
+      "status": "",
+      "marker": "🧰",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=dynaconf/dynaconf&v=3",
       "starCount": "4.3k"
     },
     {
@@ -1007,21 +1011,21 @@
       "starCount": "2.2k"
     },
     {
-      "name": "voluptuous",
-      "url": "https://github.com/alecthomas/voluptuous/pull/546",
-      "description": "add __repr__ to Invalid so it surfaces the path and error type",
-      "status": "",
-      "marker": "✅",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=alecthomas/voluptuous&v=3",
-      "starCount": "1.9k"
-    },
-    {
       "name": "TEAMMATES",
       "url": "https://github.com/TEAMMATES/teammates/pull/13553",
       "description": "replace file-saver with native browser APIs",
       "status": "",
       "marker": "👥",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=TEAMMATES/teammates&v=3",
+      "starCount": "1.9k"
+    },
+    {
+      "name": "voluptuous",
+      "url": "https://github.com/alecthomas/voluptuous/pull/546",
+      "description": "add __repr__ to Invalid so it surfaces the path and error type",
+      "status": "",
+      "marker": "✅",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=alecthomas/voluptuous&v=3",
       "starCount": "1.9k"
     },
     {
@@ -1034,21 +1038,21 @@
       "starCount": "1.7k"
     },
     {
-      "name": "pyfiglet",
-      "url": "https://github.com/pwaller/pyfiglet/pull/161",
-      "description": "fix: return False from isValidFont for missing fonts",
-      "status": "",
-      "marker": "🔤",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=pwaller/pyfiglet&v=3",
-      "starCount": "1.6k"
-    },
-    {
       "name": "awesome-swift-macos-apps",
       "url": "https://github.com/jaywcjlove/awesome-swift-macos-apps/pull/101",
       "description": "add TetherShot to the curated Swift macOS apps list",
       "status": "",
       "marker": "🍎",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=jaywcjlove/awesome-swift-macos-apps&v=3",
+      "starCount": "1.6k"
+    },
+    {
+      "name": "pyfiglet",
+      "url": "https://github.com/pwaller/pyfiglet/pull/161",
+      "description": "fix: return False from isValidFont for missing fonts",
+      "status": "",
+      "marker": "🔤",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=pwaller/pyfiglet&v=3",
       "starCount": "1.6k"
     },
     {
@@ -1160,6 +1164,15 @@
       "starCount": "679"
     },
     {
+      "name": "awesome-ai-companion",
+      "url": "https://github.com/DasterProkio/awesome-ai-companion/pull/10",
+      "description": "docs: add Scowld companion client",
+      "status": "",
+      "marker": "🤖",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
+      "starCount": "674"
+    },
+    {
       "name": "python-barcode",
       "url": "https://github.com/WhyNotHugo/python-barcode/commit/73316bf7e485b8aefcf89f3aaab8f76b8f261375",
       "description": "fix: make Code128 build() deterministic across repeated calls",
@@ -1214,15 +1227,6 @@
       "starCount": "555"
     },
     {
-      "name": "awesome-ai-companion",
-      "url": "https://github.com/DasterProkio/awesome-ai-companion/pull/10",
-      "description": "docs: add Scowld companion client",
-      "status": "",
-      "marker": "🤖",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "674"
-    },
-    {
       "name": "BancosBrasileiros",
       "url": "https://github.com/guibranco/BancosBrasileiros/pull/895",
       "description": "fix: redirected bank URLs reported by link checker",
@@ -1259,6 +1263,15 @@
       "starCount": "481"
     },
     {
+      "name": "awesome-openrouter",
+      "url": "https://github.com/OpenRouterTeam/awesome-openrouter/pull/103",
+      "description": "add Fud AI to the OpenRouter app directory",
+      "status": "",
+      "marker": "🔀",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
+      "starCount": "469"
+    },
+    {
       "name": "mail-parser",
       "url": "https://github.com/SpamScope/mail-parser/pull/161",
       "description": "fix: address parsing on Python versions before 3.13",
@@ -1275,15 +1288,6 @@
       "marker": "🧬",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=tefra/xsdata&v=3",
       "starCount": "450"
-    },
-    {
-      "name": "awesome-openrouter",
-      "url": "https://github.com/OpenRouterTeam/awesome-openrouter/pull/103",
-      "description": "add Fud AI to the OpenRouter app directory",
-      "status": "",
-      "marker": "🔀",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
-      "starCount": "469"
     },
     {
       "name": "WebOb",
