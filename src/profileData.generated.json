@@ -58,7 +58,7 @@
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/fud-ai&v=3",
       "downloads": "8K+",
-      "starCount": "406"
+      "starCount": "407"
     },
     {
       "name": "verceltics",
@@ -576,7 +576,7 @@
       "status": "",
       "marker": "☸️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=kubernetes/kubernetes&v=3",
-      "starCount": "127k"
+      "starCount": "128k"
     },
     {
       "name": "svelte",
@@ -657,7 +657,7 @@
       "status": "",
       "marker": "🔍",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=soxoj/maigret&v=3",
-      "starCount": "37k"
+      "starCount": "38k"
     },
     {
       "name": "core",
@@ -743,7 +743,7 @@
     {
       "name": "omi",
       "url": "https://github.com/BasedHardware/omi/pulls?q=author%3Aapoorvdarshan",
-      "description": "12 merged PRs: BYOK alerts, headers, stall retry, URL refresh, disconnect/WAL/speech-profile, BigText chat notifs, Retry-After abort, RN entrypoints, empty HTTP bodies, Claude export row, BLE callback tests, CI sink checker",
+      "description": "17 merged PRs: BYOK alerts through CI sink checker, plus automation sidebar, mentor transcript uid, app-store branding, CI SHA guard, duplicate-capture fold",
       "status": "",
       "marker": "🎙️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=BasedHardware/omi&v=3",
@@ -1170,7 +1170,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "674"
+      "starCount": "676"
     },
     {
       "name": "python-barcode",
@@ -1269,7 +1269,7 @@
       "status": "",
       "marker": "🔀",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
-      "starCount": "469"
+      "starCount": "471"
     },
     {
       "name": "mail-parser",
@@ -1377,7 +1377,7 @@
       "status": "",
       "marker": "📖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=petertzy/markdown-reader&v=3",
-      "starCount": "33"
+      "starCount": "34"
     },
     {
       "name": "awesome-mac",
