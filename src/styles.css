@@ -130,6 +130,22 @@ blockquote { margin: 0; padding: 0; font-style: italic; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+
+/* Desktop: keep Apps/Games/Extensions/Projects/Open-source rows to one line */
+@media screen and (min-width: 992px) {
+  .entry-list li,
+  .detail-list li,
+  .experience-list > li > .entry-summary,
+  section .bullet-list.entry-list li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .entry-summary {
+    /* stay inline with the title on one line */
+  }
+}
+
 @media screen and (max-width: 991px) {
   .container { width: 80%; max-width: none; padding-inline: 10px; }
   .header { position: sticky; top: 0; }
