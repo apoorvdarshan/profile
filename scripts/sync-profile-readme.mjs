@@ -36,12 +36,17 @@ function htmlEntries(readme, start, end) {
     const starBadgeUrl = decode(line.match(/<img alt="Stars" src="([^"]+)"/)?.[1] ?? '')
     const rawTail = plainText(match[3])
     const status = rawTail.match(/^\(([^)]+)\)/)?.[1] ?? ''
-    const description = rawTail
+    let description = rawTail
       .replace(/^\([^)]+\)\s*/, '')
       .replace(/^\s*-\s*/, '')
       .replace(/\(by\s*\)/g, '')
       .replace(/\s+/g, ' ')
       .trim()
+    const downloadsMatch = description.match(/\((\d+[KkMm]?\+?)\s+downloads\)\s*$/i)
+    const downloads = downloadsMatch?.[1] ?? ''
+    if (downloadsMatch) {
+      description = description.slice(0, downloadsMatch.index).replace(/\s+$/, '').trim()
+    }
 
     return [{
       name: plainText(match[2]),
@@ -50,6 +55,7 @@ function htmlEntries(readme, start, end) {
       status,
       marker,
       starBadgeUrl,
+      ...(downloads ? { downloads } : {}),
     }]
   })
 }

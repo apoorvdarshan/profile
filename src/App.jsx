@@ -147,6 +147,17 @@ function StarBadge({ item }) {
   )
 }
 
+
+function DownloadBadge({ item }) {
+  if (!item.downloads) return null
+
+  return (
+    <span className="download-count" aria-label={`${displayName(item.name)} has ${item.downloads} downloads`}>
+      <span aria-hidden="true">↓ {item.downloads}</span>
+    </span>
+  )
+}
+
 function EntryList({ items, limit }) {
   const visible = typeof limit === 'number' ? items.slice(0, limit) : items
   return (
@@ -155,6 +166,7 @@ function EntryList({ items, limit }) {
         <li key={`${item.name}-${item.url}`}>
           <ExternalLink href={item.url}>{displayName(item.name)}</ExternalLink>
           <StarBadge item={item} />
+          <DownloadBadge item={item} />
           {item.status && <span className="item-status">({item.status})</span>}
           {item.description && <span className="entry-summary"> — {item.description}</span>}
         </li>
@@ -170,6 +182,7 @@ function DetailList({ items }) {
         <li key={`${item.name}-${item.url}`}>
           <ExternalLink href={item.url}>{displayName(item.name)}</ExternalLink>
           <StarBadge item={item} />
+          <DownloadBadge item={item} />
           {item.status && <span className="item-status">({item.status})</span>}
           {item.description && <span className="entry-summary"> — {item.description}</span>}
         </li>

@@ -53,19 +53,21 @@
     {
       "name": "fud-ai",
       "url": "https://github.com/apoorvdarshan/fud-ai",
-      "description": "AI-powered calorie and nutrition tracker app (8K+ downloads)",
+      "description": "AI-powered calorie and nutrition tracker app",
       "status": "",
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/fud-ai&v=3",
+      "downloads": "8K+",
       "starCount": "406"
     },
     {
       "name": "verceltics",
       "url": "https://github.com/apoorvdarshan/verceltics",
-      "description": "Open-source iOS hub for hosting, domains, analytics, and uptime (1K+ downloads)",
+      "description": "Open-source iOS hub for hosting, domains, analytics, and uptime",
       "status": "",
       "marker": "📈",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/verceltics&v=3",
+      "downloads": "1K+",
       "starCount": "30"
     },
     {
@@ -160,10 +162,11 @@
     {
       "name": "browser-cookie-bridge",
       "url": "https://github.com/apoorvdarshan/browser-cookie-bridge",
-      "description": "Local Chromium cookie/session transfer to Codex on macOS (2K+ downloads)",
+      "description": "Local Chromium cookie/session transfer to Codex on macOS",
       "status": "",
       "marker": "🍪",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/browser-cookie-bridge&v=3",
+      "downloads": "2K+",
       "starCount": "7"
     },
     {
@@ -177,10 +180,11 @@
     {
       "name": "hash-harbor",
       "url": "https://github.com/apoorvdarshan/hash-harbor",
-      "description": "Local torrent streamer/downloader with a browser UI (300+ downloads)",
+      "description": "Local torrent streamer/downloader with a browser UI",
       "status": "",
       "marker": "⚓",
-      "starBadgeUrl": ""
+      "starBadgeUrl": "",
+      "downloads": "300+"
     },
     {
       "name": "multi-account-gmail-mcp",
@@ -202,19 +206,21 @@
     {
       "name": "crossposter",
       "url": "https://github.com/apoorvdarshan/crossposter",
-      "description": "Cross-post to X, LinkedIn, Bluesky, Mastodon, IG, YouTube & more (4K+ downloads)",
+      "description": "Cross-post to X, LinkedIn, Bluesky, Mastodon, IG, YouTube & more",
       "status": "",
       "marker": "📣",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/crossposter&v=3",
+      "downloads": "4K+",
       "starCount": "33"
     },
     {
       "name": "TetherShot",
       "url": "https://github.com/apoorvdarshan/TetherShot",
-      "description": "macOS menu-bar iPhone screenshots to a folder you choose (2K+ downloads)",
+      "description": "macOS menu-bar iPhone screenshots to a folder you choose",
       "status": "",
       "marker": "📸",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/TetherShot&v=3",
+      "downloads": "2K+",
       "starCount": "16"
     },
     {
@@ -337,10 +343,11 @@
     {
       "name": "Xscore",
       "url": "https://github.com/apoorvdarshan/Xscore",
-      "description": "X engagement scorer using the open-source algorithm (300+ downloads)",
+      "description": "X engagement scorer using the open-source algorithm",
       "status": "",
       "marker": "📊",
-      "starBadgeUrl": ""
+      "starBadgeUrl": "",
+      "downloads": "300+"
     },
     {
       "name": "zyro",
