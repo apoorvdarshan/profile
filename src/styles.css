@@ -99,23 +99,7 @@ h2 { margin: 0 0 .7em; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
 .bullet-list li::before { content: '•'; display: inline-block; margin-left: -.7em; margin-right: .3em; font-size: 1em; }
 .bullet-list a { margin-right: .25em; }
 .star-count { display: inline-block; margin-right: .3em; color: var(--secondary); font-size: .72em; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.download-count {
-  display: inline-block;
-  margin-right: .3em;
-  padding: .05em .42em;
-  border-radius: .35em;
-  background: #8B1A1A;
-  color: #f0eee6;
-  font-size: .72em;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-  line-height: 1.35;
-  vertical-align: baseline;
-}
-:root[data-theme='dark'] .download-count {
-  background: #B83A3A;
-  color: #f0eee6;
-}
+.download-count { display: inline-block; margin-right: .3em; color: var(--secondary); font-size: .72em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .item-status { margin-left: .25em; font-size: .85em; }
 .entry-summary { color: var(--secondary); }
 .after-list { margin: .8em 0 0 1em; }
