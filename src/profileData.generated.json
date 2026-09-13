@@ -80,7 +80,7 @@
     {
       "name": "quit-all",
       "url": "https://apps.apple.com/us/app/quit-all-break-every-habit/id6760978934",
-      "description": "iOS app to quit addictions like smoking, alcohol, social media, and more",
+      "description": "iOS app to quit smoking, alcohol, social media, and more",
       "status": "closed source",
       "marker": "🚫",
       "starBadgeUrl": ""
@@ -88,7 +88,7 @@
     {
       "name": "iitjee",
       "url": "https://apps.apple.com/us/app/pcm-notes-jee-neet/id6792598227",
-      "description": "Offline handwritten PCM notes for JEE Main, JEE Advanced & NEET on iPhone and iPad",
+      "description": "Offline PCM notes for JEE Main/Advanced & NEET (iPhone/iPad)",
       "status": "closed source",
       "marker": "📚",
       "starBadgeUrl": ""
@@ -116,7 +116,7 @@
     {
       "name": "newest-youtube-search",
       "url": "https://github.com/apoorvdarshan/newest-youtube-search",
-      "description": "Chrome extension for true newest-first YouTube video search using the YouTube Data API",
+      "description": "Chrome extension for true newest-first YouTube search",
       "status": "",
       "marker": "🆕",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/newest-youtube-search&v=3",
@@ -125,7 +125,7 @@
     {
       "name": "streaming-autopause",
       "url": "https://github.com/apoorvdarshan/streaming-autopause",
-      "description": "Chrome extension that auto-pauses Netflix & Prime Video when you switch away",
+      "description": "Auto-pauses Netflix & Prime Video when you switch away",
       "status": "",
       "marker": "⏸️",
       "starBadgeUrl": ""
@@ -133,7 +133,7 @@
     {
       "name": "streaming-indian-filter",
       "url": "https://github.com/apoorvdarshan/streaming-indian-filter",
-      "description": "Hides Indian shows from Netflix & Prime Video (personal preference, not a judgment)",
+      "description": "Hides Indian Netflix & Prime Video titles (personal preference)",
       "status": "",
       "marker": "🎬",
       "starBadgeUrl": ""
@@ -160,7 +160,7 @@
     {
       "name": "browser-cookie-bridge",
       "url": "https://github.com/apoorvdarshan/browser-cookie-bridge",
-      "description": "Local cookie and session transfer between Chromium browsers and Codex on macOS",
+      "description": "Local Chromium cookie/session transfer to Codex on macOS (2K+ downloads)",
       "status": "",
       "marker": "🍪",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/browser-cookie-bridge&v=3",
@@ -169,7 +169,7 @@
     {
       "name": "machina-cordis",
       "url": "https://github.com/apoorvdarshan/machina-cordis",
-      "description": "Fully editable, animated mechanical heart reactor built procedurally in Blender",
+      "description": "Editable animated mechanical heart reactor in Blender",
       "status": "",
       "marker": "🫀",
       "starBadgeUrl": ""
@@ -177,7 +177,7 @@
     {
       "name": "hash-harbor",
       "url": "https://github.com/apoorvdarshan/hash-harbor",
-      "description": "Local torrent streamer and downloader with a native engine and browser UI",
+      "description": "Local torrent streamer/downloader with a browser UI (300+ downloads)",
       "status": "",
       "marker": "⚓",
       "starBadgeUrl": ""
@@ -185,7 +185,7 @@
     {
       "name": "multi-account-gmail-mcp",
       "url": "https://github.com/apoorvdarshan/multi-account-gmail-mcp",
-      "description": "Local Codex plugin and MCP server for explicit multi-account Gmail access",
+      "description": "Local Codex/MCP plugin for multi-account Gmail access",
       "status": "",
       "marker": "📬",
       "starBadgeUrl": ""
@@ -202,7 +202,7 @@
     {
       "name": "crossposter",
       "url": "https://github.com/apoorvdarshan/crossposter",
-      "description": "Open-source crossposter for X, LinkedIn, Bluesky, Mastodon, Instagram, YouTube, and more",
+      "description": "Cross-post to X, LinkedIn, Bluesky, Mastodon, IG, YouTube & more (4K+ downloads)",
       "status": "",
       "marker": "📣",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/crossposter&v=3",
@@ -211,7 +211,7 @@
     {
       "name": "TetherShot",
       "url": "https://github.com/apoorvdarshan/TetherShot",
-      "description": "macOS menu-bar app that screenshots your USB-connected iPhone straight into a folder you choose",
+      "description": "macOS menu-bar iPhone screenshots to a folder you choose (2K+ downloads)",
       "status": "",
       "marker": "📸",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/TetherShot&v=3",
@@ -220,7 +220,7 @@
     {
       "name": "macbook-24x7-agents",
       "url": "https://github.com/apoorvdarshan/macbook-24x7-agents",
-      "description": "Run AI agents 24x7 on a MacBook: never sleep, lid closed, display off, fully reversible",
+      "description": "Run AI agents 24x7 on a MacBook (sleep/lid/display off; reversible)",
       "status": "",
       "marker": "🌙",
       "starBadgeUrl": ""
@@ -228,7 +228,7 @@
     {
       "name": "linkedin-connection-sender",
       "url": "https://github.com/apoorvdarshan/linkedin-connection-sender",
-      "description": "Send LinkedIn connection requests by country and role at a human-like pace",
+      "description": "Send LinkedIn connection requests by country/role at a human pace",
       "status": "",
       "marker": "🤝",
       "starBadgeUrl": ""
@@ -276,7 +276,7 @@
     {
       "name": "github-readme-contribution-merger",
       "url": "https://github.com/apoorvdarshan/github-readme-contribution-merger",
-      "description": "Merge multiple GitHub contribution graphs into one SVG heatmap",
+      "description": "Merge GitHub contribution graphs into one SVG heatmap",
       "status": "",
       "marker": "📊",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/github-readme-contribution-merger&v=3",
@@ -337,7 +337,7 @@
     {
       "name": "Xscore",
       "url": "https://github.com/apoorvdarshan/Xscore",
-      "description": "X account engagement scorer using the open-source algorithm",
+      "description": "X engagement scorer using the open-source algorithm (300+ downloads)",
       "status": "",
       "marker": "📊",
       "starBadgeUrl": ""
@@ -1213,7 +1213,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "673"
+      "starCount": "674"
     },
     {
       "name": "BancosBrasileiros",
@@ -1417,10 +1417,6 @@
     {
       "name": "GitHub",
       "url": "https://github.com/apoorvdarshan"
-    },
-    {
-      "name": "Resume",
-      "url": "https://apoorvdarshan.com/resume"
     },
     {
       "name": "LinkedIn",
