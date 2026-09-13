@@ -23,6 +23,8 @@ Guidance for agents working on `apoorvdarshan/profile` (https://apoorvdarshan.co
 - Site/resume **Fud AI 8K+** = ASC first-time (~6K) + Play/other (~2K). Do not replace 8K+ with the ASC all-events total.
 - GitHub README uses maroon download shield tiles (`alt="Downloads: N"`); the site sync parses those (fallback: trailing `(Nk+ downloads)`) into a `downloads` field and renders plain `↓ {count}` text beside ★ — same `.star-count` look (secondary color), **not** a maroon pill/tile.
 
+- Chrome Web Store public listings may use README `Users: N` shields; sync maps those into the same `downloads` / ↓ chip on the site.
+
 ## Description Length
 
 - Descriptions in **Apps**, **Games**, **Chrome Extensions**, **Projects**, and **Open Source Contributions** must stay on **one rendered line** at normal desktop width (GitHub README profile view and apoorvdarshan.com).

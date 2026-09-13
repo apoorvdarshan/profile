@@ -117,7 +117,8 @@
       "description": "Chrome extension that hides X (Twitter) posts from countries you pick",
       "status": "",
       "marker": "🗺️",
-      "starBadgeUrl": ""
+      "starBadgeUrl": "",
+      "downloads": "10+"
     },
     {
       "name": "newest-youtube-search",

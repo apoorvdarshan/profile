@@ -15,7 +15,7 @@ const decode = (value = '') => value
   .replaceAll('&lt;', '<')
 
 const plainText = (value = '') => decode(value)
-  .replace(/<img[^>]*alt="([^"]*)"[^>]*>/g, (_, alt) => (alt === 'Stars' || alt.startsWith('Downloads:')) ? '' : alt)
+  .replace(/<img[^>]*alt="([^"]*)"[^>]*>/g, (_, alt) => (alt === 'Stars' || alt.startsWith('Downloads:') || alt.startsWith('Users:')) ? '' : alt)
   .replace(/<[^>]+>/g, '')
   .replace(/\s+/g, ' ')
   .trim()
@@ -43,8 +43,9 @@ function htmlEntries(readme, start, end) {
       .replace(/\s+/g, ' ')
       .trim()
     const downloadsFromBadge = line.match(/<img[^>]*alt="Downloads:\s*([^"]+)"[^>]*>/i)?.[1]?.trim() ?? ''
+    const usersFromBadge = line.match(/<img[^>]*alt="Users:\s*([^"]+)"[^>]*>/i)?.[1]?.trim() ?? ''
     const downloadsMatch = description.match(/\((\d+[KkMm]?\+?)\s+downloads\)\s*$/i)
-    const downloads = downloadsFromBadge || (downloadsMatch?.[1] ?? '')
+    const downloads = downloadsFromBadge || usersFromBadge || (downloadsMatch?.[1] ?? '')
     if (downloadsMatch) {
       description = description.slice(0, downloadsMatch.index).replace(/\s+$/, '').trim()
     }
