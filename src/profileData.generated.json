@@ -57,7 +57,7 @@
       "status": "",
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/fud-ai&v=3",
-      "starCount": "403"
+      "starCount": "406"
     },
     {
       "name": "verceltics",
@@ -556,7 +556,7 @@
       "status": "",
       "marker": "🧠",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=langgenius/dify&v=3",
-      "starCount": "155k"
+      "starCount": "156k"
     },
     {
       "name": "kubernetes",
@@ -732,7 +732,7 @@
     {
       "name": "omi",
       "url": "https://github.com/BasedHardware/omi/pulls?q=author%3Aapoorvdarshan",
-      "description": "7 merged PRs: BYOK alerts, headers, stall retry, URL refresh, disconnect/WAL/speech-profile, BigText chat notifs, Retry-After abort",
+      "description": "12 merged PRs: BYOK alerts, headers, stall retry, URL refresh, disconnect/WAL/speech-profile, BigText chat notifs, Retry-After abort, RN entrypoints, empty HTTP bodies, Claude export row, BLE callback tests, CI sink checker",
       "status": "",
       "marker": "🎙️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=BasedHardware/omi&v=3",
@@ -1096,7 +1096,7 @@
       "status": "",
       "marker": "🧹",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=djlint/djLint&v=3",
-      "starCount": "947"
+      "starCount": "948"
     },
     {
       "name": "decorator",
@@ -1213,7 +1213,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "670"
+      "starCount": "673"
     },
     {
       "name": "BancosBrasileiros",
@@ -1276,7 +1276,7 @@
       "status": "",
       "marker": "🔀",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
-      "starCount": "467"
+      "starCount": "469"
     },
     {
       "name": "WebOb",
