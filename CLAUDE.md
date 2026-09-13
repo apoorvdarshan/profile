@@ -15,3 +15,10 @@ Guidance for agents working on `apoorvdarshan/profile` (https://apoorvdarshan.co
 
 - GitHub profile README syncs into `src/profileData.generated.json` via `scripts/sync-profile-readme.mjs` on build/dev.
 - LinkedIn experience/education are hand-maintained in `src/linkedinExperience.js` and `src/linkedinEducation.js`.
+
+## Download counts (ASC)
+
+- Snapshot: `~/Documents/asc_downloads.json` (App Store Connect Analytics, App Downloads Standard).
+- For badges/copy use **first-time** downloads, never the all-events `total` (updates inflate it — Fud AI ~37K all-events vs ~6K first-time as of 2026-09-11).
+- Site/resume **Fud AI 8K+** = ASC first-time (~6K) + Play/other (~2K). Do not replace 8K+ with the ASC all-events total.
+- GitHub README uses maroon download shield tiles (`alt="Downloads: N"`); the site sync parses those (fallback: trailing `(Nk+ downloads)`) into a `downloads` field and renders plain `↓ {count}` text beside ★ — same `.star-count` look (secondary color), **not** a maroon pill/tile.
