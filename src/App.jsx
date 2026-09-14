@@ -235,8 +235,13 @@ function ReadmeDetails() {
 
       <section>
         <h2>What I use</h2>
+        <h3>Hardware</h3>
         <ul className="bullet-list">
-          {(profile.uses ?? []).map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
+          {(profile.uses?.hardware ?? []).map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
+        </ul>
+        <h3>Software</h3>
+        <ul className="bullet-list">
+          {(profile.uses?.software ?? []).map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
         </ul>
       </section>
 
