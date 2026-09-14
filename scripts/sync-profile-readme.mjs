@@ -142,7 +142,13 @@ function parseReadme(readme) {
     openSource: htmlEntries(readme, '### Open Source Contributions', '## GitHub Activity'),
     activityImage,
     currentWork: namedBullets(section(readme, "## What I'm Doing", '## What I Use')),
-    uses: namedBullets(section(readme, '## What I Use', '## Resume')),
+    uses: (() => {
+      const usesSection = section(readme, '## What I Use', '## Resume')
+      return {
+        hardware: namedBullets(section(usesSection, '### Hardware', '### Software')),
+        software: namedBullets(section(usesSection, '### Software')),
+      }
+    })(),
     connect: badgeLinks(section(readme, '## Connect', '### Recognition')),
     recognition: markdownBullets(section(readme, '### Recognition', '### Philosophy')),
     philosophy: plainText(philosophy),
