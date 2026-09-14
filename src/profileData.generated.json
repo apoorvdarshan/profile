@@ -1469,7 +1469,7 @@
       },
       {
         "name": "Grok Bot",
-        "badgeUrl": "https://img.shields.io/badge/-Grok_Bot-000000?style=flat-square&logo=https%3A%2F%2Fraw.githubusercontent.com%2Fapoorvdarshan%2Fapoorvdarshan%2Fmain%2F.github%2Fgrok-bot.png",
+        "badgeUrl": "https://raw.githubusercontent.com/apoorvdarshan/apoorvdarshan/main/.github/grok-bot-badge.svg",
         "url": "https://x.ai/bot"
       }
     ]
