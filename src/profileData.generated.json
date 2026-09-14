@@ -1418,6 +1418,20 @@
       "description": "Shipping PRs to [omi](https://github.com/BasedHardware/omi) and other upstreams"
     }
   ],
+  "uses": [
+    {
+      "name": "MacBook Air 13\"",
+      "description": "Daily driver for coding and shipping"
+    },
+    {
+      "name": "ViewSonic VX2779-HD-PRO",
+      "description": "27\" FHD 180Hz IPS external display"
+    },
+    {
+      "name": "iPhone 16",
+      "description": "Daily phone"
+    }
+  ],
   "connect": [
     {
       "name": "Profile",

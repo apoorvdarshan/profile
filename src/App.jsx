@@ -234,6 +234,13 @@ function ReadmeDetails() {
       </section>
 
       <section>
+        <h2>What I use</h2>
+        <ul className="bullet-list">
+          {(profile.uses ?? []).map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
+        </ul>
+      </section>
+
+      <section>
         <h2>Resume</h2>
         <ul className="bullet-list resume-links">
           <li><a href={RESUME_URL} target="_blank" rel="noreferrer">View</a></li>
