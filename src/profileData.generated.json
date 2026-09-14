@@ -58,7 +58,7 @@
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/fud-ai&v=3",
       "downloads": "8K+",
-      "starCount": "408"
+      "starCount": "409"
     },
     {
       "name": "verceltics",
@@ -1172,7 +1172,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "678"
+      "starCount": "680"
     },
     {
       "name": "python-barcode",
@@ -1244,7 +1244,7 @@
       "status": "",
       "marker": "🐍",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=netromdk/vermin&v=3",
-      "starCount": "530"
+      "starCount": "529"
     },
     {
       "name": "fork-commit-merge",
@@ -1253,7 +1253,7 @@
       "status": "",
       "marker": "🍴",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=fork-commit-merge/fork-commit-merge&v=3",
-      "starCount": "512"
+      "starCount": "511"
     },
     {
       "name": "poetry-core",
@@ -1362,6 +1362,15 @@
       "marker": "🕰️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=adbar/htmldate&v=3",
       "starCount": "157"
+    },
+    {
+      "name": "awesome-ai-companions",
+      "url": "https://github.com/tomasz-buczek/awesome-ai-companions/pull/18",
+      "description": "add Scowld to open-source companions",
+      "status": "",
+      "marker": "🤖",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=tomasz-buczek/awesome-ai-companions&v=3",
+      "starCount": "47"
     },
     {
       "name": "elemo",
