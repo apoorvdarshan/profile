@@ -58,7 +58,7 @@
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/fud-ai&v=3",
       "downloads": "8K+",
-      "starCount": "409"
+      "starCount": "410"
     },
     {
       "name": "verceltics",
@@ -68,7 +68,7 @@
       "marker": "📈",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/verceltics&v=3",
       "downloads": "1K+",
-      "starCount": "30"
+      "starCount": "31"
     },
     {
       "name": "scowld",
@@ -745,7 +745,7 @@
     {
       "name": "omi",
       "url": "https://github.com/BasedHardware/omi/pulls?q=author%3Aapoorvdarshan",
-      "description": "17 merged PRs: BYOK alerts through duplicate-capture fold",
+      "description": "19 merged PRs: BYOK alerts through offline sync + model-id fixes",
       "status": "",
       "marker": "🎙️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=BasedHardware/omi&v=3",
@@ -1109,7 +1109,7 @@
       "status": "",
       "marker": "🧹",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=djlint/djLint&v=3",
-      "starCount": "948"
+      "starCount": "947"
     },
     {
       "name": "decorator",
@@ -1190,7 +1190,7 @@
       "status": "",
       "marker": "💅",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=styled-components/styled-components-website&v=3",
-      "starCount": "620"
+      "starCount": "619"
     },
     {
       "name": "docformatter",
@@ -1208,7 +1208,7 @@
       "status": "",
       "marker": "📧",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=resend/resend-mcp&v=3",
-      "starCount": "569"
+      "starCount": "570"
     },
     {
       "name": "IMAPClient",
@@ -1226,7 +1226,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=giselles-ai/giselle&v=3",
-      "starCount": "555"
+      "starCount": "554"
     },
     {
       "name": "BancosBrasileiros",
@@ -1271,7 +1271,7 @@
       "status": "",
       "marker": "🔀",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
-      "starCount": "471"
+      "starCount": "472"
     },
     {
       "name": "mail-parser",
@@ -1280,7 +1280,7 @@
       "status": "",
       "marker": "✉️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=SpamScope/mail-parser&v=3",
-      "starCount": "455"
+      "starCount": "456"
     },
     {
       "name": "xsdata",
