@@ -1172,7 +1172,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "676"
+      "starCount": "678"
     },
     {
       "name": "python-barcode",
@@ -1208,7 +1208,7 @@
       "status": "",
       "marker": "📧",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=resend/resend-mcp&v=3",
-      "starCount": "568"
+      "starCount": "569"
     },
     {
       "name": "IMAPClient",
@@ -1384,7 +1384,7 @@
     {
       "name": "awesome-mac",
       "url": "https://github.com/abordage/awesome-mac/pulls?q=author%3Aapoorvdarshan",
-      "description": "3 merged PRs: add Hash Harbor, MacBook 24x7 Agents, and Browser Cookie Bridge",
+      "description": "4 merged PRs: Hash Harbor, MacBook 24x7 Agents, Browser Cookie Bridge, TetherShot",
       "status": "",
       "marker": "🍎",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=abordage/awesome-mac&v=3",
