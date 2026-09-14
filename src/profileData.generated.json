@@ -1411,11 +1411,11 @@
     },
     {
       "name": "Learning in public",
-      "description": "Sharing projects and experiments on GitHub, LinkedIn, and X"
+      "description": "Sharing projects and experiments on GitHub, LinkedIn, X, and Product Hunt"
     },
     {
       "name": "Contributing to open source",
-      "description": "Giving back to the community"
+      "description": "Shipping PRs to [omi](https://github.com/BasedHardware/omi) and other upstreams"
     }
   ],
   "connect": [
