@@ -85,6 +85,19 @@ function badgeLinks(value) {
   })
 }
 
+function badgeTiles(value) {
+  return value.split('\n').flatMap((line) => {
+    const match = line.match(/^\[!\[([^\]]+)\]\(([^)]*)\)\]\(([^)]+)\)/)
+    if (!match) return []
+    const sourceName = plainText(match[1]).replace(/^[-★\s]+$/, 'X')
+    return [{
+      name: sourceName === 'Twitter' ? 'X' : sourceName,
+      badgeUrl: decode(match[2]),
+      url: decode(match[3]),
+    }]
+  })
+}
+
 async function attachStarCounts(data, previousStarCounts = new Map()) {
   const queue = ['apps', 'games', 'extensions', 'projects', 'openSource']
     .flatMap((key) => data[key])
@@ -145,8 +158,8 @@ function parseReadme(readme) {
     uses: (() => {
       const usesSection = section(readme, '## What I Use', '## Resume')
       return {
-        hardware: markdownBullets(section(usesSection, '### Hardware', '### Software')),
-        software: markdownBullets(section(usesSection, '### Software')),
+        hardware: badgeTiles(section(usesSection, '### Hardware', '### Software')),
+        software: badgeTiles(section(usesSection, '### Software')),
       }
     })(),
     connect: badgeLinks(section(readme, '## Connect', '### Recognition')),

@@ -236,13 +236,21 @@ function ReadmeDetails() {
       <section>
         <h2>What I use</h2>
         <h3>Hardware</h3>
-        <ul className="bullet-list">
-          {(profile.uses?.hardware ?? []).map((item) => <li key={item}>{item}</li>)}
-        </ul>
+        <div className="badge-tiles">
+          {(profile.uses?.hardware ?? []).map((item) => (
+            <ExternalLink key={item.name} href={item.url}>
+              <img src={item.badgeUrl} alt={item.name} />
+            </ExternalLink>
+          ))}
+        </div>
         <h3>Software</h3>
-        <ul className="bullet-list">
-          {(profile.uses?.software ?? []).map((item) => <li key={item}>{item}</li>)}
-        </ul>
+        <div className="badge-tiles">
+          {(profile.uses?.software ?? []).map((item) => (
+            <ExternalLink key={item.name} href={item.url}>
+              <img src={item.badgeUrl} alt={item.name} />
+            </ExternalLink>
+          ))}
+        </div>
       </section>
 
       <section>
