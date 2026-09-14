@@ -1420,48 +1420,18 @@
   ],
   "uses": {
     "hardware": [
-      {
-        "name": "MacBook Air 13\"",
-        "description": "Daily driver for coding and shipping"
-      },
-      {
-        "name": "ViewSonic VX2779-HD-PRO",
-        "description": "27\" FHD 180Hz IPS external display"
-      },
-      {
-        "name": "iPhone 16",
-        "description": "Daily phone"
-      }
+      "💻 MacBook Air 13\"",
+      "🖥️ ViewSonic VX2779-HD-PRO",
+      "📱 iPhone 16"
     ],
     "software": [
-      {
-        "name": "Google Chrome",
-        "description": "Browser"
-      },
-      {
-        "name": "Raycast",
-        "description": "Launcher and shortcuts"
-      },
-      {
-        "name": "Notion",
-        "description": "Notes and docs"
-      },
-      {
-        "name": "cmux",
-        "description": "Native macOS terminal for coding agents"
-      },
-      {
-        "name": "Cursor",
-        "description": "AI code editor"
-      },
-      {
-        "name": "OpenCode",
-        "description": "Open-source AI coding agent"
-      },
-      {
-        "name": "Grok Bot",
-        "description": "Desktop AI assistant"
-      }
+      "🌐 Google Chrome",
+      "🚀 Raycast",
+      "📝 Notion",
+      "⌨️ cmux",
+      "✨ Cursor",
+      "🤖 OpenCode",
+      "🪄 Grok Bot"
     ]
   },
   "connect": [

@@ -145,8 +145,8 @@ function parseReadme(readme) {
     uses: (() => {
       const usesSection = section(readme, '## What I Use', '## Resume')
       return {
-        hardware: namedBullets(section(usesSection, '### Hardware', '### Software')),
-        software: namedBullets(section(usesSection, '### Software')),
+        hardware: markdownBullets(section(usesSection, '### Hardware', '### Software')),
+        software: markdownBullets(section(usesSection, '### Software')),
       }
     })(),
     connect: badgeLinks(section(readme, '## Connect', '### Recognition')),
