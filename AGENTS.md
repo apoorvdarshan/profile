@@ -14,7 +14,7 @@ Guidance for agents working on `apoorvdarshan/profile` (https://apoorvdarshan.co
 ## Other content
 
 - GitHub profile README syncs into `src/profileData.generated.json` via `scripts/sync-profile-readme.mjs` on build/dev.
-- `## What I Use` has `### Hardware` / `### Software` named bullets → `uses.hardware` / `uses.software` on the site (after What I’m doing). GitHub + site only — never the resume.
+- `## What I Use` `### Hardware` / `### Software` emoji title bullets → `uses.hardware` / `uses.software` string lists on the site. GitHub + site only — never the resume.
 - LinkedIn experience/education are hand-maintained in `src/linkedinExperience.js` and `src/linkedinEducation.js`.
 
 ## Download counts (ASC)
