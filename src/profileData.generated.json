@@ -135,7 +135,8 @@
       "description": "Auto-pauses Netflix & Prime Video when you switch away",
       "status": "",
       "marker": "⏸️",
-      "starBadgeUrl": ""
+      "starBadgeUrl": "",
+      "downloads": "4"
     },
     {
       "name": "streaming-indian-filter",
