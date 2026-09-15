@@ -1235,7 +1235,7 @@
       "status": "",
       "marker": "🏦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=guibranco/BancosBrasileiros&v=3",
-      "starCount": "548"
+      "starCount": "549"
     },
     {
       "name": "vermin",
@@ -1447,9 +1447,9 @@
     ],
     "software": [
       {
-        "name": "Google Chrome",
-        "badgeUrl": "https://img.shields.io/badge/-Google_Chrome-000000?style=flat-square&logo=googlechrome",
-        "url": "https://www.google.com/chrome/"
+        "name": "Brave",
+        "badgeUrl": "https://img.shields.io/badge/-Brave-000000?style=flat-square&logo=brave&logoColor=white",
+        "url": "https://brave.com/"
       },
       {
         "name": "Raycast",
