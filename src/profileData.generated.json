@@ -66,7 +66,7 @@
       "marker": "\ud83e\udd66",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/fud-ai&v=3",
       "downloads": "8K+",
-      "starCount": "414"
+      "starCount": "415"
     },
     {
       "name": "verceltics",
@@ -235,7 +235,7 @@
       "marker": "\ud83d\udcf8",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/TetherShot&v=3",
       "downloads": "2K+",
-      "starCount": "17"
+      "starCount": "18"
     },
     {
       "name": "macbook-24x7-agents",
@@ -634,6 +634,15 @@
       "starCount": "60k"
     },
     {
+      "name": "pandas",
+      "url": "https://github.com/pandas-dev/pandas/pull/66117",
+      "description": "fix: interpolate leaving NAs unfilled for pyarrow dtypes (by pandas)",
+      "status": "",
+      "marker": "\ud83d\udc3c",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=pandas-dev/pandas&v=3",
+      "starCount": "50k"
+    },
+    {
       "name": "open-source-ios-apps",
       "url": "https://github.com/dkhamsing/open-source-ios-apps/pull/2313",
       "description": "add Scowld to the open-source iOS app catalog",
@@ -685,7 +694,7 @@
       "status": "",
       "marker": "\ud83d\udee0\ufe0f",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=steipete/CodexBar&v=3",
-      "starCount": "21k"
+      "starCount": "22k"
     },
     {
       "name": "luigi",
@@ -753,7 +762,7 @@
     {
       "name": "omi",
       "url": "https://github.com/BasedHardware/omi/pulls?q=author%3Aapoorvdarshan",
-      "description": "23 merged PRs: BYOK alerts through export/timezone/session fixes",
+      "description": "24 merged PRs: BYOK alerts through DFU bond recovery and export/timezone fixes",
       "status": "",
       "marker": "\ud83c\udf99\ufe0f",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=BasedHardware/omi&v=3",
@@ -1117,7 +1126,7 @@
       "status": "",
       "marker": "\ud83e\uddf9",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=djlint/djLint&v=3",
-      "starCount": "948"
+      "starCount": "947"
     },
     {
       "name": "decorator",
@@ -1135,7 +1144,7 @@
       "status": "",
       "marker": "\ud83d\udcfa",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=CCExtractor/ccextractor&v=3",
-      "starCount": "902"
+      "starCount": "903"
     },
     {
       "name": "pyserde",
@@ -1153,7 +1162,7 @@
       "status": "",
       "marker": "\ud83d\udd78\ufe0f",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=pygraphviz/pygraphviz&v=3",
-      "starCount": "847"
+      "starCount": "846"
     },
     {
       "name": "flynt",
@@ -1180,7 +1189,7 @@
       "status": "",
       "marker": "\ud83e\udd16",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "685"
+      "starCount": "697"
     },
     {
       "name": "python-barcode",
@@ -1234,7 +1243,7 @@
       "status": "",
       "marker": "\ud83e\udd16",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=giselles-ai/giselle&v=3",
-      "starCount": "556"
+      "starCount": "557"
     },
     {
       "name": "BancosBrasileiros",
@@ -1279,7 +1288,7 @@
       "status": "",
       "marker": "\ud83d\udd00",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
-      "starCount": "473"
+      "starCount": "474"
     },
     {
       "name": "mail-parser",
