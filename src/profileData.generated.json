@@ -1485,6 +1485,11 @@
         "url": "https://opencode.ai/"
       },
       {
+        "name": "Cloudflare",
+        "badgeUrl": "https://img.shields.io/badge/-Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white",
+        "url": "https://www.cloudflare.com/"
+      },
+      {
         "name": "Grok Bot",
         "badgeUrl": "https://raw.githubusercontent.com/apoorvdarshan/apoorvdarshan/main/.github/grok-bot-badge.svg",
         "url": "https://x.ai/bot"
