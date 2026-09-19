@@ -12,7 +12,7 @@ Guidance for agents working on `apoorvdarshan/profile` (https://apoorvdarshan.co
 
 ## Other content
 
-- GitHub profile README syncs into `src/profileData.generated.json` via `scripts/sync-profile-readme.mjs` on build/dev.
+- GitHub profile README syncs into `src/profileData.generated.json` via `scripts/sync-profile-readme.mjs` on build/dev. Cloudflare Workers `prebuild` re-runs that sync so a redeploy picks up the current README.
 - LinkedIn experience/education are hand-maintained in `src/linkedinExperience.js` and `src/linkedinEducation.js`.
 
 ## Download counts (ASC)
