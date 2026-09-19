@@ -66,7 +66,7 @@
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/fud-ai&v=3",
       "downloads": "8K+",
-      "starCount": "419"
+      "starCount": "421"
     },
     {
       "name": "verceltics",
@@ -946,7 +946,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=alvinreal/awesome-opensource-ai&v=3",
-      "starCount": "4.7k"
+      "starCount": "4.8k"
     },
     {
       "name": "returns",
@@ -1135,7 +1135,7 @@
       "status": "",
       "marker": "🧹",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=djlint/djLint&v=3",
-      "starCount": "947"
+      "starCount": "945"
     },
     {
       "name": "decorator",
@@ -1198,7 +1198,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "703"
+      "starCount": "707"
     },
     {
       "name": "python-barcode",
@@ -1234,7 +1234,7 @@
       "status": "",
       "marker": "📧",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=resend/resend-mcp&v=3",
-      "starCount": "571"
+      "starCount": "572"
     },
     {
       "name": "IMAPClient",
@@ -1261,7 +1261,7 @@
       "status": "",
       "marker": "🏦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=guibranco/BancosBrasileiros&v=3",
-      "starCount": "549"
+      "starCount": "550"
     },
     {
       "name": "vermin",
@@ -1270,7 +1270,7 @@
       "status": "",
       "marker": "🐍",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=netromdk/vermin&v=3",
-      "starCount": "530"
+      "starCount": "531"
     },
     {
       "name": "fork-commit-merge",
@@ -1297,7 +1297,7 @@
       "status": "",
       "marker": "🔀",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
-      "starCount": "476"
+      "starCount": "477"
     },
     {
       "name": "mail-parser",
@@ -1342,7 +1342,7 @@
       "status": "",
       "marker": "🧪",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=aregtech/areg-sdk&v=3",
-      "starCount": "366"
+      "starCount": "367"
     },
     {
       "name": "radis",
@@ -1351,7 +1351,7 @@
       "status": "",
       "marker": "🔬",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=radis/radis&v=3",
-      "starCount": "281"
+      "starCount": "280"
     },
     {
       "name": "click-repl",
@@ -1423,7 +1423,7 @@
       "status": "",
       "marker": "🍎",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=abordage/awesome-mac&v=3",
-      "starCount": "23"
+      "starCount": "24"
     }
   ],
   "activityImage": "https://github-contribution-merger.apoorvdarshan.com/api/merge?users=apoorvdarshan%2Capoorvxircls&mode=overlay&colors=39d353%2C58a6ff&v=20260824",
@@ -1478,9 +1478,9 @@
         "url": "https://brave.com/"
       },
       {
-        "name": "Raycast",
-        "badgeUrl": "https://img.shields.io/badge/-Raycast-FF6363?style=flat-square&logo=raycast&logoColor=white",
-        "url": "https://www.raycast.com/"
+        "name": "Tinycast",
+        "badgeUrl": "https://img.shields.io/badge/-Tinycast-111111?style=flat-square&logo=apple&logoColor=white",
+        "url": "https://github.com/abue-ammar/tinycast"
       },
       {
         "name": "Notion",
