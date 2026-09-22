@@ -66,7 +66,7 @@
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/fud-ai&v=3",
       "downloads": "8K+",
-      "starCount": "423"
+      "starCount": "427"
     },
     {
       "name": "verceltics",
@@ -76,7 +76,7 @@
       "marker": "📈",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/verceltics&v=3",
       "downloads": "1K+",
-      "starCount": "32"
+      "starCount": "33"
     },
     {
       "name": "scowld",
@@ -841,6 +841,15 @@
       "starCount": "8.6k"
     },
     {
+      "name": "asyncpg",
+      "url": "https://github.com/MagicStack/asyncpg/pull/1333",
+      "description": "fix: segfault in Record.get() with invalid positional argument count",
+      "status": "",
+      "marker": "🐘",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=MagicStack/asyncpg&v=3",
+      "starCount": "8.1k"
+    },
+    {
       "name": "boa",
       "url": "https://github.com/boa-dev/boa/pull/4631",
       "description": "feat: implement BOM stripping and ignoreBOM option in TextDecoder",
@@ -1198,7 +1207,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "713"
+      "starCount": "723"
     },
     {
       "name": "python-barcode",
@@ -1216,7 +1225,7 @@
       "status": "",
       "marker": "💅",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=styled-components/styled-components-website&v=3",
-      "starCount": "619"
+      "starCount": "618"
     },
     {
       "name": "docformatter",
@@ -1234,7 +1243,7 @@
       "status": "",
       "marker": "📧",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=resend/resend-mcp&v=3",
-      "starCount": "572"
+      "starCount": "575"
     },
     {
       "name": "IMAPClient",
@@ -1261,7 +1270,7 @@
       "status": "",
       "marker": "🏦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=guibranco/BancosBrasileiros&v=3",
-      "starCount": "550"
+      "starCount": "551"
     },
     {
       "name": "vermin",
@@ -1297,7 +1306,7 @@
       "status": "",
       "marker": "🔀",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
-      "starCount": "477"
+      "starCount": "479"
     },
     {
       "name": "mail-parser",
@@ -1405,7 +1414,7 @@
       "status": "",
       "marker": "📋",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=opcotech/elemo&v=3",
-      "starCount": "36"
+      "starCount": "37"
     },
     {
       "name": "markdown-reader",
