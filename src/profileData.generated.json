@@ -1485,9 +1485,9 @@
         "url": "https://brave.com/"
       },
       {
-        "name": "Raycast",
-        "badgeUrl": "https://img.shields.io/badge/-Raycast-FF6363?style=flat-square&logo=raycast&logoColor=white",
-        "url": "https://www.raycast.com/"
+        "name": "Tinycast",
+        "badgeUrl": "https://img.shields.io/badge/-Tinycast-111111?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ2Ij48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0xKSBzY2FsZSgyKSI%2BPHBhdGggZmlsbD0iIzg2M2JmZiIgZD0iTTE4LjgyLDkuMThBMiwyLDAsMCwwLDE3LDhIMTUuMTlsMS4zMy0zLjI2YTIsMiwwLDAsMC0uMTktMS44NEEyLjA2LDIuMDYsMCwwLDAsMTQuNjIsMkgxMC4yOEEyLDIsMCwwLDAsOC4zNywzLjI3bC0zLjIzLDhhMiwyLDAsMCwwLC4yLDEuODMsMi4wNiwyLjA2LDAsMCwwLDEuNzEuOUg5LjgxTDgsMjAuNzRhMSwxLDAsMCwwLC41LDEuMTVBMS4xMiwxLjEyLDAsMCwwLDksMjJhMSwxLDAsMCwwLC43Ni0uMzVsOC44LTEwLjM3QTIsMiwwLDAsMCwxOC44Miw5LjE4WiIvPjwvZz48L3N2Zz4%3D",
+        "url": "https://tinycast.dev/"
       },
       {
         "name": "Notion",
