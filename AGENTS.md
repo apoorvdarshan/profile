@@ -8,7 +8,6 @@ Guidance for agents working on `apoorvdarshan/profile` (https://apoorvdarshan.co
 - Source file in this repo: `public/Apoorv_Darshan_Resume.pdf` (fallback also at `/Apoorv_Darshan_Resume.pdf` after build).
 - After every rekisei resume rebuild: copy the compiled PDF into `public/Apoorv_Darshan_Resume.pdf`, commit, push, and `npm run deploy` so GitHub + site View/Download stay current.
 - Keep site header / Resume section links pointing at `/resume`. Do **not** put a Resume badge in Connect (Resume has its own section).
-- Keep `AGENTS.md` and `CLAUDE.md` parallel when changing this guidance.
 
 ## Other content
 
