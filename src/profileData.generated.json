@@ -155,11 +155,11 @@
   ],
   "projects": [
     {
-      "name": "profile",
-      "url": "https://github.com/apoorvdarshan/profile",
-      "description": "My corner of the internet",
+      "name": "agent-cloud-toolkit",
+      "url": "https://github.com/apoorvdarshan/agent-cloud-toolkit",
+      "description": "Run AI coding agents in parallel on Modal + Freestyle cloud VMs from a macOS menu bar",
       "status": "",
-      "marker": "👤",
+      "marker": "☁️",
       "starBadgeUrl": ""
     },
     {
@@ -241,6 +241,14 @@
       "description": "Run AI agents 24x7 on a MacBook (sleep/lid/display off; reversible)",
       "status": "",
       "marker": "🌙",
+      "starBadgeUrl": ""
+    },
+    {
+      "name": "profile",
+      "url": "https://github.com/apoorvdarshan/profile",
+      "description": "My corner of the internet",
+      "status": "",
+      "marker": "👤",
       "starBadgeUrl": ""
     },
     {
