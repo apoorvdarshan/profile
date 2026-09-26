@@ -556,9 +556,9 @@
       "starCount": "3"
     }
   ],
-  "projectCategories": [
+  "projectSections": [
     {
-      "name": "🧠 AI & Agents",
+      "name": "AI & Agents",
       "items": [
         {
           "name": "agent-cloud-toolkit",
@@ -635,7 +635,7 @@
       ]
     },
     {
-      "name": "🖥️ Apps & Utilities",
+      "name": "Apps & Utilities",
       "items": [
         {
           "name": "DesktopWorm",
@@ -675,7 +675,7 @@
       ]
     },
     {
-      "name": "🌐 Web Apps & Tools",
+      "name": "Web Apps & Tools",
       "items": [
         {
           "name": "crossposter",
@@ -770,7 +770,7 @@
       ]
     },
     {
-      "name": "🎨 Creative, 3D & Vision",
+      "name": "Creative, 3D & Vision",
       "items": [
         {
           "name": "machina-cordis",
@@ -831,7 +831,7 @@
       ]
     },
     {
-      "name": "🧪 Experiments & Fun",
+      "name": "Experiments & Fun",
       "items": [
         {
           "name": "how-rich-are-you",

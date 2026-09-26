@@ -191,21 +191,10 @@ function DetailList({ items }) {
   )
 }
 
-function projectCategoryGroups() {
-  return profile.projectCategories?.length
-    ? profile.projectCategories
+function projectSectionGroups() {
+  return profile.projectSections?.length
+    ? profile.projectSections
     : [{ name: 'Projects', items: profile.projects }]
-}
-
-function ProjectCategoryList({ detail = false, homeLimit }) {
-  return projectCategoryGroups().map((category) => (
-    <div className="project-category" key={category.name}>
-      <h3>{category.name}</h3>
-      {detail
-        ? <DetailList items={category.items} />
-        : <EntryList items={category.items} limit={homeLimit} />}
-    </div>
-  ))
 }
 
 function PageHeading({ title, children }) {
@@ -372,9 +361,14 @@ function HomePage({ navigate }) {
         <EntryList items={profile.extensions} />
       </section>
 
+      {projectSectionGroups().map((projectSection) => (
+        <section key={projectSection.name}>
+          <h2>{projectSection.name}</h2>
+          <EntryList items={projectSection.items} limit={3} />
+        </section>
+      ))}
+
       <section>
-        <h2>Projects</h2>
-        <ProjectCategoryList homeLimit={3} />
         <p className="after-list"><InternalLink to="/projects" onNavigate={navigate}>View all {profile.projects.length} projects →</InternalLink></p>
       </section>
 
@@ -398,9 +392,12 @@ function ProjectsPage() {
   return (
     <>
       <PageHeading title="Projects">Every project listed in Apoorv’s GitHub profile README. Each title opens the project or its live site.</PageHeading>
-      <section className="detail-section">
-        <ProjectCategoryList detail />
-      </section>
+      {projectSectionGroups().map((projectSection) => (
+        <section className="detail-section" key={projectSection.name}>
+          <h2>{projectSection.name}</h2>
+          <DetailList items={projectSection.items} />
+        </section>
+      ))}
     </>
   )
 }
