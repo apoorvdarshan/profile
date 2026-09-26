@@ -26,8 +26,8 @@ function section(readme, start, end) {
   return startIndex === -1 ? '' : readme.slice(startIndex, endIndex === -1 ? readme.length : endIndex)
 }
 
-function htmlEntries(readme, start, end) {
-  return section(readme, start, end).split('\n').flatMap((line) => {
+function htmlEntriesFrom(text) {
+  return text.split('\n').flatMap((line) => {
     const match = line.match(/<strong><a href="([^"]+)">([^<]+)<\/a><\/strong>(.*?)(?:<\/li>|<\/div>)/)
     if (!match) return []
 
@@ -59,6 +59,18 @@ function htmlEntries(readme, start, end) {
       starBadgeUrl,
       ...(downloads ? { downloads } : {}),
     }]
+  })
+}
+
+function htmlEntries(readme, start, end) {
+  return htmlEntriesFrom(section(readme, start, end))
+}
+
+function projectCategories(readme) {
+  const block = section(readme, '## Projects', '### Open Source Contributions')
+  return block.split(/\n(?=### )/).flatMap((part) => {
+    const heading = part.match(/^### (.+)$/m)?.[1]
+    return heading ? [{ name: plainText(heading).trim(), items: htmlEntriesFrom(part) }] : []
   })
 }
 
@@ -152,6 +164,7 @@ function parseReadme(readme) {
     games: htmlEntries(readme, '## Games', '## Chrome Extensions'),
     extensions: htmlEntries(readme, '## Chrome Extensions', '## Projects'),
     projects: htmlEntries(readme, '## Projects', '### Open Source Contributions'),
+    projectCategories: projectCategories(readme),
     openSource: htmlEntries(readme, '### Open Source Contributions', '## GitHub Activity'),
     activityImage,
     currentWork: namedBullets(section(readme, "## What I'm Doing", '## What I Use')),
