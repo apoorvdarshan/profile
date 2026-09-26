@@ -91,7 +91,6 @@ section + section { margin-top: 1.3em; }
 h1 { margin: 0; font-weight: 600; }
 h2 { margin: 0 0 .7em; font-size: 1.2em; font-weight: 600; line-height: 1.2; }
 h3 { margin: 0 0 .6em; font-size: 1.05em; font-weight: 600; line-height: 1.2; }
-.project-category + .project-category { margin-top: 1.4em; }
 .page-heading { margin-top: 2.6em; margin-bottom: 3em; }
 .page-heading h1 { max-width: 10ch; font-size: 3.15em; line-height: 1.02; letter-spacing: -.025em; }
 .page-heading p { max-width: 30rem; margin: 1em 0 0; color: var(--text); font-size: 1.06em; font-style: italic; line-height: 1.4; }

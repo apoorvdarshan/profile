@@ -66,11 +66,14 @@ function htmlEntries(readme, start, end) {
   return htmlEntriesFrom(section(readme, start, end))
 }
 
-function projectCategories(readme) {
-  const block = section(readme, '## Projects', '### Open Source Contributions')
-  return block.split(/\n(?=### )/).flatMap((part) => {
-    const heading = part.match(/^### (.+)$/m)?.[1]
-    return heading ? [{ name: plainText(heading).trim(), items: htmlEntriesFrom(part) }] : []
+function projectSections(readme) {
+  const block = section(readme, '## Chrome Extensions', '### Open Source Contributions')
+  return block.split(/\n(?=## )/).flatMap((part) => {
+    const heading = part.match(/^## (.+)$/m)?.[1]
+    if (!heading) return []
+    const name = plainText(heading).replace(/^[^A-Za-z0-9]+/, '').trim()
+    if (name === 'Chrome Extensions') return []
+    return [{ name, items: htmlEntriesFrom(part) }]
   })
 }
 
@@ -162,9 +165,9 @@ function parseReadme(readme) {
     technologies,
     apps: htmlEntries(readme, '## Apps', '## Games'),
     games: htmlEntries(readme, '## Games', '## Chrome Extensions'),
-    extensions: htmlEntries(readme, '## Chrome Extensions', '## Projects'),
-    projects: htmlEntries(readme, '## Projects', '### Open Source Contributions'),
-    projectCategories: projectCategories(readme),
+    extensions: htmlEntries(readme, '## Chrome Extensions', '## 🧠 AI & Agents'),
+    projects: projectSections(readme).flatMap((section) => section.items),
+    projectSections: projectSections(readme),
     openSource: htmlEntries(readme, '### Open Source Contributions', '## GitHub Activity'),
     activityImage,
     currentWork: namedBullets(section(readme, "## What I'm Doing", '## What I Use')),
