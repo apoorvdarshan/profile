@@ -155,14 +155,6 @@
   ],
   "projects": [
     {
-      "name": "agent-cloud-toolkit",
-      "url": "https://github.com/apoorvdarshan/agent-cloud-toolkit",
-      "description": "Run AI coding agents in parallel on Modal + Freestyle cloud VMs from a macOS menu bar",
-      "status": "",
-      "marker": "☁️",
-      "starBadgeUrl": ""
-    },
-    {
       "name": "opencode-gemini-imagegen-plugin",
       "url": "https://github.com/apoorvdarshan/opencode-gemini-imagegen-plugin",
       "description": "OpenCode plugin for AI image generation via Google Gemini (Nano Banana) models",
@@ -560,14 +552,6 @@
     {
       "name": "AI & Agents",
       "items": [
-        {
-          "name": "agent-cloud-toolkit",
-          "url": "https://github.com/apoorvdarshan/agent-cloud-toolkit",
-          "description": "Run AI coding agents in parallel on Modal + Freestyle cloud VMs from a macOS menu bar",
-          "status": "",
-          "marker": "☁️",
-          "starBadgeUrl": ""
-        },
         {
           "name": "opencode-gemini-imagegen-plugin",
           "url": "https://github.com/apoorvdarshan/opencode-gemini-imagegen-plugin",
