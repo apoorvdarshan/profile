@@ -347,7 +347,7 @@ function HomePage({ navigate }) {
       <EducationSection navigate={navigate} />
 
       <section>
-        <h2>Apps</h2>
+        <h2>Mobile Apps</h2>
         <EntryList items={profile.apps} />
       </section>
 

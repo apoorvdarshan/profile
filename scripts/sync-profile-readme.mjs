@@ -139,7 +139,7 @@ async function attachStarCounts(data, previousStarCounts = new Map()) {
 }
 
 function parseReadme(readme) {
-  const beforeApps = section(readme, '# Hi,', '## Apps')
+  const beforeApps = section(readme, '# Hi,', '## Mobile Apps')
   const technologyMatches = [...beforeApps.matchAll(/!\[([^\]]+)\]\(https:\/\/img\.shields\.io\/badge/g)]
   const technologies = technologyMatches.map((match) => match[1])
   const tagline = readme.split('\n').find((line) => line.includes('AI-powered builder')) ?? ''
@@ -163,9 +163,9 @@ function parseReadme(readme) {
       statement: plainText(statement),
     },
     technologies,
-    apps: htmlEntries(readme, '## Apps', '## Games'),
+    apps: htmlEntries(readme, '## Mobile Apps', '## Games'),
     games: htmlEntries(readme, '## Games', '## Chrome Extensions'),
-    extensions: htmlEntries(readme, '## Chrome Extensions', '## 🧠 AI & Agents'),
+    extensions: htmlEntries(readme, '## Chrome Extensions', '## AI & Agents'),
     projects: projectSections(readme).flatMap((section) => section.items),
     projectSections: projectSections(readme),
     openSource: htmlEntries(readme, '### Open Source Contributions', '## GitHub Activity'),
