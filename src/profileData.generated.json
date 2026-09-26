@@ -163,6 +163,14 @@
       "starBadgeUrl": ""
     },
     {
+      "name": "opencode-gemini-imagegen-plugin",
+      "url": "https://github.com/apoorvdarshan/opencode-gemini-imagegen-plugin",
+      "description": "OpenCode plugin for AI image generation via Google Gemini (Nano Banana) models",
+      "status": "",
+      "marker": "🖼️",
+      "starBadgeUrl": ""
+    },
+    {
       "name": "DesktopWorm",
       "url": "https://github.com/apoorvdarshan/DesktopWorm",
       "description": "Native macOS desktop C. elegans driven by the OpenWorm c302 connectome",
