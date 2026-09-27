@@ -1,4 +1,4 @@
-const RESUME_ASSET_PATH = '/Apoorv_Darshan_Resume.pdf'
+const RESUME_ASSET_PATH = '/Apoorv_Darshan_Resume.pdf?v=31'
 const RESUME_FILENAME = 'Apoorv_Darshan_Resume.pdf'
 
 function isResumePath(pathname) {
