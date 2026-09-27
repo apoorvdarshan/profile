@@ -1900,6 +1900,11 @@
         "url": "https://opencode.ai/"
       },
       {
+        "name": "DeepSeek",
+        "badgeUrl": "https://img.shields.io/badge/-DeepSeek-5786FE?style=flat-square&logo=deepseek&logoColor=white",
+        "url": "https://www.deepseek.com/"
+      },
+      {
         "name": "Cloudflare",
         "badgeUrl": "https://img.shields.io/badge/-Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white",
         "url": "https://www.cloudflare.com/"
