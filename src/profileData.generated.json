@@ -1863,8 +1863,8 @@
   "uses": {
     "hardware": [
       {
-        "name": "MacBook Air 13\"",
-        "badgeUrl": "https://img.shields.io/badge/-MacBook_Air_13%22-000000?style=flat-square&logo=apple&logoColor=white",
+        "name": "MacBook Air M4",
+        "badgeUrl": "https://img.shields.io/badge/-MacBook_Air_M4-000000?style=flat-square&logo=apple&logoColor=white",
         "url": "https://www.apple.com/macbook-air/"
       },
       {
