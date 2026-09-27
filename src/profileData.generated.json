@@ -622,6 +622,14 @@
       "name": "Apps & Utilities",
       "items": [
         {
+          "name": "lithosai-bar",
+          "url": "https://github.com/apoorvdarshan/lithosai-bar",
+          "description": "macOS menu bar app for LithosAI spend: balance, daily usage, and per-model breakdown",
+          "status": "",
+          "marker": "📊",
+          "starBadgeUrl": ""
+        },
+        {
           "name": "DesktopWorm",
           "url": "https://github.com/apoorvdarshan/DesktopWorm",
           "description": "Native macOS desktop C. elegans driven by the OpenWorm c302 connectome",
