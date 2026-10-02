@@ -1176,7 +1176,7 @@
     {
       "name": "omi",
       "url": "https://github.com/BasedHardware/omi/pulls?q=author%3Aapoorvdarshan",
-      "description": "33 merged PRs: BYOK, device sync, speaker profiles, app metadata, and Windows updater safety",
+      "description": "33 merged PRs: BYOK, device sync, speaker profiles, and Windows updates",
       "status": "",
       "marker": "🎙️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=BasedHardware/omi&v=3",
