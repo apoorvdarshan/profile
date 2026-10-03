@@ -84,7 +84,7 @@
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/scowld&v=3",
       "downloads": "100+",
-      "starCount": "24"
+      "starCount": "26"
     },
     {
       "name": "quit-all",
@@ -1144,7 +1144,7 @@
       "status": "",
       "marker": "⚡",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=Effect-TS/effect&v=3",
-      "starCount": "16k"
+      "starCount": "17k"
     },
     {
       "name": "react-spectrum",
@@ -1176,7 +1176,7 @@
     {
       "name": "omi",
       "url": "https://github.com/BasedHardware/omi/pulls?q=author%3Aapoorvdarshan",
-      "description": "33 merged PRs: BYOK, device sync, speaker profiles, and Windows updates",
+      "description": "34 merged PRs: BYOK, device sync, speaker profiles, updates, and onboarding",
       "status": "",
       "marker": "🎙️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=BasedHardware/omi&v=3",
@@ -1612,7 +1612,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "843"
+      "starCount": "852"
     },
     {
       "name": "kart",
@@ -1648,7 +1648,7 @@
       "status": "",
       "marker": "📏",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=PyCQA/docformatter&v=3",
-      "starCount": "598"
+      "starCount": "599"
     },
     {
       "name": "resend-mcp",
@@ -1693,7 +1693,7 @@
       "status": "",
       "marker": "🐍",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=netromdk/vermin&v=3",
-      "starCount": "533"
+      "starCount": "534"
     },
     {
       "name": "fork-commit-merge",
@@ -1720,7 +1720,7 @@
       "status": "",
       "marker": "🔀",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
-      "starCount": "497"
+      "starCount": "498"
     },
     {
       "name": "mail-parser",
@@ -1819,7 +1819,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=tomasz-buczek/awesome-ai-companions&v=3",
-      "starCount": "51"
+      "starCount": "52"
     },
     {
       "name": "elemo",
