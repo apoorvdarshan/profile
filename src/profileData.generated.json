@@ -1896,9 +1896,9 @@
     ],
     "software": [
       {
-        "name": "Brave",
-        "badgeUrl": "https://img.shields.io/badge/-Brave-FB542B?style=flat-square&logo=brave&logoColor=white",
-        "url": "https://brave.com/"
+        "name": "Chrome",
+        "badgeUrl": "https://img.shields.io/badge/-Chrome-4285F4?style=flat-square&logo=googlechrome&logoColor=white",
+        "url": "https://www.google.com/chrome/"
       },
       {
         "name": "Raycast",
