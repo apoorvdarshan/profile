@@ -1944,11 +1944,6 @@
         "name": "Spark Mail",
         "badgeUrl": "https://img.shields.io/badge/-Spark_Mail-FFFFFF?style=flat-square&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOMSURBVHgBvVdLSFRRGP6ONzOZTINIeixsERUUGNFzY7RpVy2CdhVEi1ZFq3baqhZFUpBkD4W0KAlcmyARQWrqVEZlUZqPsgxnxkeO93H6z2NmrqYz9wzaN3xzztx77vn%2F%2F%2Fv%2Fe%2BYchjTgnJdSc5i4n1iiGQQRYpj4jFjLGOuFCchwCbGFLxxqxJxBjZ8ljvLFwblMxstNZhv3FA1Rni5yI5wY8iSzQFKJnETOqamEAZ5OcCzPYbLfTH1DlGubygFCBQxRHwNCjEOYrovBFEXEGumA9uSEwcMy%2BmEH0ngBiSD6zRMwxX6yXSoUOAlD1OuIGX1CVsqpLHBEOFBm8kQieoFiiysZCG%2FiioYoEw6UmjxRFxFFO4se0aV7o8YqlAgHioKObhrj%2BD7F4U4remQ0n%2BhQX7AzxvF60siJkhyT0Q0jPGlM0HU58um667t274eZCkuCDgyPc%2FSQApyn8u7pWhCGoS93UL9rjGF7AQs0b2AF7gx6OkoyaEO2xRaD6%2FgU0bz9zQ06bTAHOqMcr36TA%2FGUEVUDHCGIFMCXGqBtxENHJFgqAjlw66urIrTJgK0M2boIQwz6nlIl0a%2F67ASZOnMNDP3haPvlytdNIlEC9CUUEJA1oK%2FJhga3DgPtIxZ2rkofY0YFbvY4sOM6%2BkSE1IrfQgHBREqStWCrcTfeZ1YhrQKD9E4%2F%2BeL6okuGCPFZkweM2UymBXpR8uPlkIvWnx52r54%2FzrQKXO92UpHZvjVA98UKWGDBF7lPibhqK8PTyKRAL%2BbYbA7Qe9%2FQYyeDniFCQgixBEOlRAuDVJGo3y%2F6XQzQ%2BrF%2B7nUhMq8D17psGU1qYmDFUoZT25YgStHdfevgaruwzGSk53fkyjGPPzroj6WKUjh4pT2OygPL5nIgzKhiK6hT7r%2FaTx7vfTCpVj3C3rUWTm%2FLxcENqmRi5MCu%2B5PSEQERXfvxUPL5Rx9sVFMA3ZR%2FrhX5dGY5CvP%2BUeGimLFxtgOFS4FNhQxbV1k4tiUX%2B9ZZM55aQRMd3WihutOWau8pnlnLxzbnSgr5H74jR4Y9cpbmzZttH7VKqSzOAM%2F7HL7ycpQXXYryvojLs0ANZAKR3JR2weCvWeBC0xSi9PdcdSgfWWDDjBOT2Crz%2F4e5Dyh0o4IvPirS6sIXTwlx3DsXKDlcHU5r%2BcKhhc9zOGWZHIHatpdBbV6DFmmvpjieN1Kxhecb%2BBcIj4pZwZrhLQAAAABJRU5ErkJggg%3D%3D",
         "url": "https://sparkmailapp.com/"
-      },
-      {
-        "name": "Bitwarden",
-        "badgeUrl": "https://img.shields.io/badge/-Bitwarden-175DDC?style=flat-square&logo=bitwarden&logoColor=white",
-        "url": "https://bitwarden.com/"
       }
     ]
   },
