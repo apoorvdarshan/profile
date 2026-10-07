@@ -1921,6 +1921,11 @@
         "url": "https://github.com/trycua/cua/tree/main/libs/cua-driver"
       },
       {
+        "name": "agent-browser",
+        "badgeUrl": "https://img.shields.io/badge/-agent--browser-000000?style=flat-square&logo=vercel&logoColor=white",
+        "url": "https://agent-browser.dev/"
+      },
+      {
         "name": "Claude Code",
         "badgeUrl": "https://img.shields.io/badge/-Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white",
         "url": "https://claude.com/product/claude-code"
