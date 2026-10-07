@@ -1558,7 +1558,7 @@
       "status": "",
       "marker": "🧹",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=djlint/djLint&v=3",
-      "starCount": "950"
+      "starCount": "949"
     },
     {
       "name": "decorator",
@@ -1612,7 +1612,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "884"
+      "starCount": "888"
     },
     {
       "name": "kart",
@@ -1630,7 +1630,7 @@
       "status": "",
       "marker": "🏷️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=WhyNotHugo/python-barcode&v=3",
-      "starCount": "657"
+      "starCount": "658"
     },
     {
       "name": "styled-components-website",
@@ -1720,7 +1720,7 @@
       "status": "",
       "marker": "🔀",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
-      "starCount": "505"
+      "starCount": "506"
     },
     {
       "name": "mail-parser",
@@ -1774,7 +1774,7 @@
       "status": "",
       "marker": "🔬",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=radis/radis&v=3",
-      "starCount": "284"
+      "starCount": "285"
     },
     {
       "name": "click-repl",
@@ -1909,6 +1909,11 @@
         "name": "Notion",
         "badgeUrl": "https://img.shields.io/badge/-Notion-FFFFFF?style=flat-square&logo=notion&logoColor=black",
         "url": "https://www.notion.com/"
+      },
+      {
+        "name": "Claude Code",
+        "badgeUrl": "https://img.shields.io/badge/-Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white",
+        "url": "https://claude.com/product/claude-code"
       },
       {
         "name": "Codex",
