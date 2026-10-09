@@ -10,20 +10,7 @@
     "tagline": "📍 Delhi | 🤖 AI-powered builder | 🚀 Building web, apps, bots, APIs, and everything in between",
     "statement": "I build things people actually use: apps, tools, and open-source fixes."
   },
-  "technologies": [
-    "Swift",
-    "SwiftUI",
-    "Kotlin",
-    "Flutter",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Python",
-    "Go",
-    "Chrome Extensions",
-    "MCP"
-  ],
+  "technologies": [],
   "apps": [
     {
       "name": "fud-ai",
