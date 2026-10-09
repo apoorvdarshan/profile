@@ -142,7 +142,7 @@ function parseReadme(readme) {
   const beforeApps = section(readme, '# Hi,', '## Mobile Apps')
   const technologyMatches = [...beforeApps.matchAll(/!\[([^\]]+)\]\(https:\/\/img\.shields\.io\/badge/g)]
   const technologies = technologyMatches.map((match) => match[1])
-  const tagline = readme.split('\n').find((line) => line.includes('AI-powered builder')) ?? ''
+  const tagline = readme.split('\n').find((line) => line.startsWith('📍')) ?? ''
   const statement = beforeApps.split('\n').find((line) => line.startsWith('> '))?.slice(2) ?? ''
   const activitySection = section(readme, '## GitHub Activity', '## What I\'m Doing')
   const activityImage = activitySection.match(/<img src="([^"]+)"/)?.[1] ?? ''
