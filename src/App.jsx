@@ -240,6 +240,13 @@ function ReadmeDetails() {
       </section>
 
       <section>
+        <h2>My agent setup</h2>
+        <ul className="bullet-list">
+          {(profile.agentSetup ?? []).map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
+        </ul>
+      </section>
+
+      <section>
         <h2>What I use</h2>
         <h3>Hardware</h3>
         <ul className="bullet-list link-columns">

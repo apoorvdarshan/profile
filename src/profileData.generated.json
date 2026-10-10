@@ -1586,7 +1586,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "908"
+      "starCount": "909"
     },
     {
       "name": "kart",
@@ -1847,7 +1847,33 @@
     },
     {
       "name": "Contributing to open source",
-      "description": "Shipping PRs to [omi](https://github.com/BasedHardware/omi) and other upstreams"
+      "description": "Shipping PRs to omi and other upstreams"
+    }
+  ],
+  "agentSetup": [
+    {
+      "name": "Harnesses",
+      "description": "Claude Code, Codex, and Pi; OpenCode as a backup"
+    },
+    {
+      "name": "Browser",
+      "description": "agent-browser runs headless and logged out by default, and switches to my Chrome profile when a site needs my login"
+    },
+    {
+      "name": "Computer use",
+      "description": "Cua Driver controls Mac apps directly"
+    },
+    {
+      "name": "Mail",
+      "description": "my own multi-account Gmail MCP handles all three inboxes"
+    },
+    {
+      "name": "Always on",
+      "description": "agents run 24x7 on a MacBook with the lid closed (macbook-24x7-agents)"
+    },
+    {
+      "name": "Rules",
+      "description": "every change gets committed and pushed, and app changes get built and installed on my phones"
     }
   ],
   "uses": {
