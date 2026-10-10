@@ -1824,32 +1824,6 @@
     }
   ],
   "activityImage": "https://github-contribution-merger.apoorvdarshan.com/api/merge?users=apoorvdarshan%2Capoorvxircls&mode=overlay&colors=39d353%2C58a6ff&v=20260824",
-  "currentWork": [
-    {
-      "name": "Building iOS apps",
-      "description": "Building with Swift and SwiftUI"
-    },
-    {
-      "name": "Building Android apps",
-      "description": "Building with Kotlin and Jetpack Compose"
-    },
-    {
-      "name": "Building full-stack apps",
-      "description": "From frontend to backend, databases to deployment"
-    },
-    {
-      "name": "Building Chrome extensions",
-      "description": "Little tools that fix everyday browsing annoyances"
-    },
-    {
-      "name": "Learning in public",
-      "description": "Sharing projects and experiments on GitHub, LinkedIn, X, and Product Hunt"
-    },
-    {
-      "name": "Contributing to open source",
-      "description": "Shipping PRs to [omi](https://github.com/BasedHardware/omi) and other upstreams"
-    }
-  ],
   "agentSetup": [
     {
       "name": "Harness",

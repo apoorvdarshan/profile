@@ -241,9 +241,9 @@ function ReadmeDetails() {
   return (
     <>
       <section>
-        <h2>What I’m doing</h2>
+        <h2>My agent setup</h2>
         <ul className="bullet-list">
-          {profile.currentWork.map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — <LinkedText text={item.description} /></span></li>)}
+          {(profile.agentSetup ?? []).map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — <LinkedText text={item.description} /></span></li>)}
         </ul>
       </section>
 
@@ -256,13 +256,6 @@ function ReadmeDetails() {
         <h3>Software</h3>
         <ul className="bullet-list link-columns">
           {(profile.uses?.software ?? []).map((item) => <li key={item.name}><ExternalLink href={item.url}>{item.name}</ExternalLink></li>)}
-        </ul>
-      </section>
-
-      <section>
-        <h2>My agent setup</h2>
-        <ul className="bullet-list">
-          {(profile.agentSetup ?? []).map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — <LinkedText text={item.description} /></span></li>)}
         </ul>
       </section>
 
