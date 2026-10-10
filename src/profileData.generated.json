@@ -223,6 +223,14 @@
       "starCount": "19"
     },
     {
+      "name": "ringtone-cropper",
+      "url": "https://github.com/apoorvdarshan/ringtone-cropper",
+      "description": "Crop any audio into an iPhone ringtone (.m4r) in your browser",
+      "status": "",
+      "marker": "🔔",
+      "starBadgeUrl": ""
+    },
+    {
       "name": "crossposter",
       "url": "https://github.com/apoorvdarshan/crossposter",
       "description": "Cross-post to X, LinkedIn, Bluesky, Mastodon, IG, YouTube & more",
@@ -231,14 +239,6 @@
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/crossposter&v=3",
       "downloads": "4K+",
       "starCount": "37"
-    },
-    {
-      "name": "ringtone-cropper",
-      "url": "https://github.com/apoorvdarshan/ringtone-cropper",
-      "description": "Crop any audio into an iPhone ringtone (.m4r) in your browser",
-      "status": "",
-      "marker": "🔔",
-      "starBadgeUrl": ""
     },
     {
       "name": "profile",
@@ -642,6 +642,14 @@
       "name": "Web Apps & Tools",
       "items": [
         {
+          "name": "ringtone-cropper",
+          "url": "https://github.com/apoorvdarshan/ringtone-cropper",
+          "description": "Crop any audio into an iPhone ringtone (.m4r) in your browser",
+          "status": "",
+          "marker": "🔔",
+          "starBadgeUrl": ""
+        },
+        {
           "name": "crossposter",
           "url": "https://github.com/apoorvdarshan/crossposter",
           "description": "Cross-post to X, LinkedIn, Bluesky, Mastodon, IG, YouTube & more",
@@ -649,14 +657,6 @@
           "marker": "📣",
           "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/crossposter&v=3",
           "downloads": "4K+"
-        },
-        {
-          "name": "ringtone-cropper",
-          "url": "https://github.com/apoorvdarshan/ringtone-cropper",
-          "description": "Crop any audio into an iPhone ringtone (.m4r) in your browser",
-          "status": "",
-          "marker": "🔔",
-          "starBadgeUrl": ""
         },
         {
           "name": "profile",
