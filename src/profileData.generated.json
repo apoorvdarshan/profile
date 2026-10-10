@@ -1847,33 +1847,33 @@
     },
     {
       "name": "Contributing to open source",
-      "description": "Shipping PRs to omi and other upstreams"
+      "description": "Shipping PRs to [omi](https://github.com/BasedHardware/omi) and other upstreams"
     }
   ],
   "agentSetup": [
     {
       "name": "Harness",
-      "description": "Pi, defaulting to Claude Code (Opus 5.5) through pi-claude-bridge"
+      "description": "[Pi](https://pi.dev/), defaulting to [Claude Code](https://claude.com/product/claude-code) ([Opus 5.5](https://www.anthropic.com/claude/opus)) through [pi-claude-bridge](https://github.com/elidickinson/pi-claude-bridge)"
     },
     {
       "name": "Models",
-      "description": "Codex, xAI Grok, OpenCode Go, and LithosAI (DeepSeek, Kimi, GLM), all plugged into Pi"
+      "description": "[Codex](https://openai.com/codex/), [xAI](https://x.ai/) [Grok](https://grok.com/), [OpenCode Go](https://opencode.ai/go), and [LithosAI](https://lithosai.com/) ([DeepSeek](https://www.deepseek.com/), [Kimi](https://www.kimi.com/), [GLM](https://z.ai/)), all plugged into Pi"
     },
     {
       "name": "Browser",
-      "description": "agent-browser runs headless and logged out by default, and switches to my Chrome profile when a site needs my login"
+      "description": "[agent-browser](https://agent-browser.dev/) runs headless and logged out by default, and switches to my Chrome profile when a site needs my login"
     },
     {
       "name": "Computer use",
-      "description": "Cua Driver controls Mac apps directly"
+      "description": "[Cua Driver](https://github.com/trycua/cua) controls Mac apps directly"
     },
     {
       "name": "Mail",
-      "description": "my own multi-account Gmail MCP handles all three inboxes"
+      "description": "my own [multi-account Gmail MCP](https://github.com/apoorvdarshan/multi-account-gmail-mcp) handles all three inboxes"
     },
     {
       "name": "Always on",
-      "description": "agents run 24x7 on a MacBook with the lid closed (macbook-24x7-agents)"
+      "description": "agents run 24x7 on a MacBook with the lid closed ([macbook-24x7-agents](https://github.com/apoorvdarshan/macbook-24x7-agents))"
     },
     {
       "name": "Rules",
