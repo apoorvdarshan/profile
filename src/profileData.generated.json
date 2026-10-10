@@ -1852,8 +1852,8 @@
   ],
   "agentSetup": [
     {
-      "name": "Harnesses",
-      "description": "Claude Code, Codex, and Pi; OpenCode as a backup"
+      "name": "Harness",
+      "description": "Pi, running Claude Code through pi-claude-bridge, plus Codex and xAI; OpenCode as a backup"
     },
     {
       "name": "Browser",
