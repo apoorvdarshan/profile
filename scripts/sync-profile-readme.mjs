@@ -170,10 +170,10 @@ function parseReadme(readme) {
     projectSections: projectSections(readme),
     openSource: htmlEntries(readme, '### Open Source Contributions', '## GitHub Activity'),
     activityImage,
-    currentWork: namedBullets(section(readme, "## What I'm Doing", '## My Agent Setup')),
-    agentSetup: namedBullets(section(readme, '## My Agent Setup', '## What I Use')),
+    currentWork: namedBullets(section(readme, "## What I'm Doing", '## What I Use')),
+    agentSetup: namedBullets(section(readme, '## My Agent Setup', '## Resume')),
     uses: (() => {
-      const usesSection = section(readme, '## What I Use', '## Resume')
+      const usesSection = section(readme, '## What I Use', '## My Agent Setup')
       return {
         hardware: badgeTiles(section(usesSection, '### Hardware', '### Software')),
         software: badgeTiles(section(usesSection, '### Software')),
