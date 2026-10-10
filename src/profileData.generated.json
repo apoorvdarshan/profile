@@ -1853,7 +1853,7 @@
   "agentSetup": [
     {
       "name": "Harness",
-      "description": "[Pi](https://pi.dev/), defaulting to [Claude Code](https://claude.com/product/claude-code) ([Opus 5.5](https://www.anthropic.com/claude/opus)) through [pi-claude-bridge](https://github.com/elidickinson/pi-claude-bridge)"
+      "description": "[Pi](https://pi.dev/), running [Claude Code](https://claude.com/product/claude-code) ([Opus 5.5](https://www.anthropic.com/claude/opus)) through [pi-claude-bridge](https://github.com/elidickinson/pi-claude-bridge)"
     },
     {
       "name": "Models",
