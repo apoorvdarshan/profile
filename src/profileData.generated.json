@@ -1860,6 +1860,10 @@
       "description": "[Claude Code](https://claude.com/product/claude-code), [Codex](https://openai.com/codex/), [xAI](https://x.ai/) [Grok](https://grok.com/), [OpenCode Go](https://opencode.ai/go), and [LithosAI](https://lithosai.com/) ([DeepSeek](https://www.deepseek.com/)), all plugged into Pi"
     },
     {
+      "name": "Workspace",
+      "description": "[cmux](https://cmux.com/)"
+    },
+    {
       "name": "Browser",
       "description": "[agent-browser](https://agent-browser.dev/) runs headless and logged out by default, and switches to my Chrome profile when a site needs my login"
     },
