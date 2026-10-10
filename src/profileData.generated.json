@@ -1853,7 +1853,11 @@
   "agentSetup": [
     {
       "name": "Harness",
-      "description": "Pi, running Claude Code through pi-claude-bridge, plus Codex and xAI; OpenCode as a backup"
+      "description": "Pi, defaulting to Claude Code (Opus 5.5) through pi-claude-bridge"
+    },
+    {
+      "name": "Models",
+      "description": "Codex, xAI Grok, OpenCode Go, and LithosAI (DeepSeek, Kimi, GLM), all plugged into Pi"
     },
     {
       "name": "Browser",
