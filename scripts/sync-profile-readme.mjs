@@ -144,7 +144,7 @@ function parseReadme(readme) {
   const technologies = technologyMatches.map((match) => match[1])
   const tagline = readme.split('\n').find((line) => line.startsWith('📍')) ?? ''
   const statement = beforeApps.split('\n').find((line) => line.startsWith('> '))?.slice(2) ?? ''
-  const activitySection = section(readme, '## GitHub Activity', '## What I\'m Doing')
+  const activitySection = section(readme, '## GitHub Activity', '## My Agent Setup')
   const activityImage = activitySection.match(/<img src="([^"]+)"/)?.[1] ?? ''
   const philosophySection = section(readme, '### Philosophy')
   const philosophy = philosophySection.split('\n').find((line) => line.startsWith('> '))?.slice(2) ?? ''
@@ -170,10 +170,9 @@ function parseReadme(readme) {
     projectSections: projectSections(readme),
     openSource: htmlEntries(readme, '### Open Source Contributions', '## GitHub Activity'),
     activityImage,
-    currentWork: namedBullets(section(readme, "## What I'm Doing", '## What I Use')),
-    agentSetup: namedBullets(section(readme, '## My Agent Setup', '## Resume')),
+    agentSetup: namedBullets(section(readme, '## My Agent Setup', '## What I Use')),
     uses: (() => {
-      const usesSection = section(readme, '## What I Use', '## My Agent Setup')
+      const usesSection = section(readme, '## What I Use', '## Resume')
       return {
         hardware: badgeTiles(section(usesSection, '### Hardware', '### Software')),
         software: badgeTiles(section(usesSection, '### Software')),
