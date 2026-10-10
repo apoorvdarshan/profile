@@ -87,7 +87,7 @@ function markdownBullets(value) {
 function namedBullets(value) {
   return value.split('\n').flatMap((line) => {
     const match = line.match(/^-\s+\*\*([^*]+)\*\*\s*-\s*(.+)$/)
-    return match ? [{ name: plainText(match[1]), description: plainText(match[2].replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')) }] : []
+    return match ? [{ name: plainText(match[1]), description: plainText(match[2]) }] : []
   })
 }
 
