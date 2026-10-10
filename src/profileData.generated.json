@@ -1915,6 +1915,11 @@
         "url": "https://opencode.ai/"
       },
       {
+        "name": "Pi",
+        "badgeUrl": "https://img.shields.io/badge/-Pi-111111?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgNTYwIj48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNDIwIDI4MEgyODBWMTQwSDBWMEg0MjBWMjgwWiIvPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik01NjAgNTYwSDQyMFYyODBINTYwVjU2MFoiLz48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTQwIDU2MEgwVjE0MEgxNDBWMjgwSDI4MFY0MjBIMTQwVjU2MFoiLz48L3N2Zz4%3D",
+        "url": "https://pi.dev/"
+      },
+      {
         "name": "Cloudflare",
         "badgeUrl": "https://img.shields.io/badge/-Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white",
         "url": "https://www.cloudflare.com/"
