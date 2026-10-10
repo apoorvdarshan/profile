@@ -98,6 +98,14 @@ function ExternalLink({ href, children, className = '' }) {
   return <a className={className} href={href} target={isWeb ? '_blank' : undefined} rel={isWeb ? 'noreferrer' : undefined}>{children}</a>
 }
 
+function LinkedText({ text }) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g)
+  return parts.map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+    return match ? <ExternalLink key={index} href={match[2]}>{match[1]}</ExternalLink> : part
+  })
+}
+
 function InternalLink({ to, onNavigate, children, className = '' }) {
   const handleClick = (event) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return
@@ -235,7 +243,7 @@ function ReadmeDetails() {
       <section>
         <h2>What I’m doing</h2>
         <ul className="bullet-list">
-          {profile.currentWork.map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
+          {profile.currentWork.map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — <LinkedText text={item.description} /></span></li>)}
         </ul>
       </section>
 
@@ -254,7 +262,7 @@ function ReadmeDetails() {
       <section>
         <h2>My agent setup</h2>
         <ul className="bullet-list">
-          {(profile.agentSetup ?? []).map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — {item.description}</span></li>)}
+          {(profile.agentSetup ?? []).map((item) => <li key={item.name}><strong>{item.name}</strong><span className="entry-summary"> — <LinkedText text={item.description} /></span></li>)}
         </ul>
       </section>
 
