@@ -1,3 +1,4 @@
+import { htmlText, decodeEntities } from './html-text.mjs'
 import { access, readFile, writeFile } from 'node:fs/promises'
 import { constants } from 'node:fs'
 import { fileURLToPath } from 'node:url'
@@ -6,17 +7,11 @@ const README_URL = 'https://raw.githubusercontent.com/apoorvdarshan/apoorvdarsha
 const README_API_URL = 'https://api.github.com/repos/apoorvdarshan/apoorvdarshan/contents/README.md?ref=main'
 const OUTPUT_URL = new URL('../src/profileData.generated.json', import.meta.url)
 
-const decode = (value = '') => value
-  .replaceAll('&amp;', '&')
-  .replaceAll('&quot;', '"')
-  .replaceAll('&#39;', "'")
-  .replaceAll('&bull;', '')
-  .replaceAll('&gt;', '>')
-  .replaceAll('&lt;', '<')
+const decode = (value = '') => decodeEntities(value).replaceAll('•', '')
 
-export const plainText = (value = '') => decode(value
-  .replace(/<img[^>]*alt="([^"]*)"[^>]*>/g, (_, alt) => (alt === 'Stars' || alt.startsWith('Downloads:') || alt.startsWith('Users:')) ? '' : alt)
-  .replace(/<[^>]+>/g, ''))
+export const plainText = (value = '') => htmlText(value,
+  alt => (alt === 'Stars' || alt.startsWith('Downloads:') || alt.startsWith('Users:')) ? '' : alt)
+  .replaceAll('•', '')
   .replace(/\s+/g, ' ')
   .trim()
 
