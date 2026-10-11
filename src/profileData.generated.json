@@ -238,7 +238,7 @@
       "marker": "📣",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/crossposter&v=3",
       "downloads": "4K+",
-      "starCount": "37"
+      "starCount": "38"
     },
     {
       "name": "profile",
@@ -954,7 +954,7 @@
       "status": "",
       "marker": "🦋",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=flutter/flutter&v=3",
-      "starCount": "179k"
+      "starCount": "180k"
     },
     {
       "name": "dify",
@@ -1566,7 +1566,7 @@
       "status": "",
       "marker": "📺",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=CCExtractor/ccextractor&v=3",
-      "starCount": "900"
+      "starCount": "901"
     },
     {
       "name": "pyserde",
@@ -1842,12 +1842,12 @@
   "activityImage": "https://github-contribution-merger.apoorvdarshan.com/api/merge?users=apoorvdarshan%2Capoorvxircls&mode=overlay&colors=39d353%2C58a6ff&v=20260824",
   "agentSetup": [
     {
-      "name": "Harness",
-      "description": "[Pi](https://pi.dev/), running [Claude Code](https://claude.com/product/claude-code) through [pi-claude-bridge](https://github.com/elidickinson/pi-claude-bridge)"
+      "name": "Harnesses",
+      "description": "Separate TUIs: [Claude Code](https://claude.com/product/claude-code) for Claude, [Codex](https://openai.com/codex/) for GPT, and [OpenCode v2](https://opencode.ai/) for OpenCode Go and LithosAI"
     },
     {
       "name": "Models",
-      "description": "[Claude Code](https://claude.com/product/claude-code), [Codex](https://openai.com/codex/), [xAI](https://x.ai/) [Grok](https://grok.com/), [OpenCode Go](https://opencode.ai/go), and [LithosAI](https://lithosai.com/) ([DeepSeek](https://www.deepseek.com/)), all plugged into Pi"
+      "description": "Claude, GPT, [OpenCode Go](https://opencode.ai/go), and [LithosAI](https://lithosai.com/) (mostly [DeepSeek](https://www.deepseek.com/))"
     },
     {
       "name": "Workspace",
@@ -1907,11 +1907,6 @@
         "name": "Obsidian",
         "badgeUrl": "https://img.shields.io/badge/-Obsidian-7C3AED?style=flat-square&logo=obsidian&logoColor=white",
         "url": "https://obsidian.md/"
-      },
-      {
-        "name": "Pi",
-        "badgeUrl": "https://img.shields.io/badge/-Pi-111111?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgNTYwIj48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNDIwIDI4MEgyODBWMTQwSDBWMEg0MjBWMjgwWiIvPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik01NjAgNTYwSDQyMFYyODBINTYwVjU2MFoiLz48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTQwIDU2MEgwVjE0MEgxNDBWMjgwSDI4MFY0MjBIMTQwVjU2MFoiLz48L3N2Zz4%3D",
-        "url": "https://pi.dev/"
       },
       {
         "name": "cmux",
