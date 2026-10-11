@@ -26,9 +26,9 @@ Only scheduled/manual runs execute this workflow. Secrets are not exposed to pul
 
 ## Mac copies and manual resume edits
 
-`sync-local-resume.py` pulls the private repo and copies the verified source/PDF into `~/rekisei` and `~/Documents`. A user LaunchAgent runs it at login and every 30 minutes while the Mac is awake. It creates dated backups before replacing files and refuses to overwrite files changed locally since the last sync.
+`sync-local-resume.py` pulls the private repo and copies the verified source/PDF into `~/rekisei`. The two `~/Documents/Apoorv_Darshan_Resume.*` files are symlinks to the private checkout, so they follow each pull immediately. A user LaunchAgent (`com.apoorvdarshan.profile-resume-sync`) runs at login and every 30 minutes while the Mac is awake. It creates dated backups before replacing files and refuses to overwrite files changed locally since the last sync. Backups live in `~/.local/share/profile-automation/resume-backups`, also linked from `~/Documents/resume-backups`. This keeps background access out of macOS's protected Documents directory without changing privacy permissions. Editing a Documents source link edits the private checkout; the dirty-check then pauses automatic pulls.
 
-For a manual resume edit, compile and verify as usual, copy the source and PDF into `~/profile-resume-private`, update `build.json` hashes (or let the next cloud run rebuild), then commit and push that private repo. After both local destinations match the committed private source/PDF pair and manifest, run the sync script once to record the new baseline. It never publishes local edits automatically. A divergent local edit stops synchronization until deliberately reconciled.
+For a manual resume edit, compile and verify as usual, copy the source and PDF into `~/profile-resume-private`, update `build.json` hashes (or let the next cloud run rebuild), then commit and push that private repo. After the rekisei copies match the committed private source/PDF pair and manifest, run the sync script once to record the new baseline. Preserve the Documents symlinks; copy into their targets instead of replacing the links. It never publishes local edits automatically. A divergent local edit stops synchronization until deliberately reconciled.
 
 ## Local verification
 

@@ -29,6 +29,7 @@ class LocalResumeSyncTests(unittest.TestCase):
             patch.object(sync, 'HOME_DIR', root),
             patch.object(sync, 'STATE_DIR', state),
             patch.object(sync, 'STATE_FILE', state / 'state.json'),
+            patch.object(sync, 'BACKUP_DIR', state / 'resume-backups'),
             patch.object(sync, 'REPO', repo),
             patch.object(sync, 'TARGETS', targets),
             patch.object(sync.subprocess, 'check_output', return_value=''),
@@ -50,7 +51,7 @@ class LocalResumeSyncTests(unittest.TestCase):
         for folder in sync.TARGETS:
             for ext in ['.tex', '.pdf']:
                 self.assertEqual(sync.digest(folder / (sync.NAME + ext)), sync.digest(sync.REPO / (sync.NAME + ext)))
-        backup_root = sync.HOME_DIR / 'Documents/resume-backups'
+        backup_root = sync.BACKUP_DIR
         backups = list(backup_root.iterdir())
         self.assertEqual(len(backups), 1)
         for original, digest in self.original.items():
@@ -66,7 +67,7 @@ class LocalResumeSyncTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, 'Local edits'):
             sync.main()
         self.assertEqual(sync.snapshot(), before)
-        self.assertFalse((sync.HOME_DIR / 'Documents/resume-backups').exists())
+        self.assertFalse(sync.BACKUP_DIR.exists())
 
     def test_bad_manifest_stops_all_destination_writes(self):
         (sync.REPO / (sync.NAME + '.pdf')).write_bytes(b'unverified output')
