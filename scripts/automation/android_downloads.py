@@ -74,7 +74,20 @@ class Client:
                 if (error.code == 429 or error.code >= 500) and attempt < 3:
                     time.sleep(2 ** (attempt + 1))
                     continue
-                raise RuntimeError(f'Play reports HTTP {error.code}; keeping previous totals') from None
+                # Log only structured reasons and permission names, never the raw
+                # response (which may contain private object names or signed URLs).
+                detail = ''
+                try:
+                    payload = json.loads(error.read()).get('error', {})
+                    reason = payload.get('errors', [{}])[0].get('reason', '')
+                    if re.fullmatch(r'[A-Za-z0-9_]+', reason):
+                        detail += ' ' + reason
+                    denied = re.search(r'storage\.objects\.(?:list|get)', payload.get('message', ''))
+                    if denied:
+                        detail += ' ' + denied[0]
+                except (ValueError, KeyError, IndexError, TypeError):
+                    pass
+                raise RuntimeError(f'Play reports HTTP {error.code}{detail}; keeping previous totals') from None
             except (URLError, TimeoutError):
                 if attempt < 3:
                     time.sleep(2 ** (attempt + 1))
@@ -158,12 +171,15 @@ def main():
     path = Path(os.environ['PROFILE_RESUME_PATH']).parent / 'android-downloads.json'
     saved = json.loads(path.read_text()) if path.exists() else {}
     check(not saved or saved.get('version') == 1, 'Unsupported Android snapshot version')
+    identity = os.environ.get('PLAY_REPORTS_IDENTITY', 'local-authorized-account')
     if (saved.get('checked_on') == today.isoformat() and saved.get('config_sha256') == fingerprint(config)
+            and saved.get('reporting_identity', 'local-authorized-account') == identity
             and os.environ.get('PLAY_DOWNLOADS_FORCE') != 'true'):
         result = saved
         print('Android reports already checked today; using verified counts.')
     else:
         result = refresh(Client(config['bucket']), config, saved, today)
+        result['reporting_identity'] = identity
     content = json.dumps(result, indent=2) + '\n'
     if not path.exists() or path.read_text() != content:
         temporary = path.with_name(path.name + '.tmp')
