@@ -28,9 +28,9 @@ export function starBadge(repo) {
   assert(/^[\w.-]+\/[\w.-]+$/.test(repo), 'Invalid repository name')
   return `<img alt="Stars" src="https://github-star-badge.apoorvdarshan.com/api/stars?repo=${repo}&amp;v=3">`
 }
-export function badge(html, repo, stars) {
+export function badge(html, repo, stars, minimum = 1) {
   const cleaned = html.replace(STAR, '')
-  return stars > 0 ? cleaned.replace('</strong>', `</strong> ${starBadge(repo)}`) : cleaned
+  return stars >= minimum ? cleaned.replace('</strong>', `</strong> ${starBadge(repo)}`) : cleaned
 }
 function shorten(text, limit) {
   const chars = [...text]
@@ -136,7 +136,7 @@ export function updateReadme(readme, pulls, stars, previous = null) {
   prefix = prefix.split('\n').map(line => {
     const repo = line.match(/<strong><a href="https:\/\/github\.com\/([\w.-]+\/[\w.-]+)"/i)?.[1]
     if (!repo || /closed source/i.test(line)) return line
-    return badge(line, repo, getStars(repo))
+    return badge(line, repo, getStars(repo), repo.toLowerCase().startsWith(`${AUTHOR}/`) ? 5 : 1)
   }).join('\n')
   const updated = prefix + `\n<ul>\n${top}${more}\n</ul>\n\n` + readme.slice(end)
   // Nothing outside the contribution list or project star badges is managed.
@@ -162,10 +162,10 @@ export function updateResume(source, rows, stars) {
   const oldLines = new Map(existing.map(l => [lineRepo(l),l.trim()]))
   assert.equal(oldLines.size, existing.length, 'Duplicate resume contribution')
   for (const key of oldLines.keys()) assert(rows.some(r => r.repo.toLowerCase() === key), `Resume-only contribution ${key}; refusing removal`)
-  const updateStar = (line, n) => {
+  const updateStar = (line, n, minimum = 1) => {
     if (n === undefined) return line
     const value = `${formatStars(n)} ${n === 1 ? 'star' : 'stars'}`
-    if (n === 0) return line.replace(/ \$\|\$ \{\\small \$\\bigstar\$ [\d.]+[kKmM]? stars? \$\|\$/, ' $|$ {\\small').replace(/ \$\|\$ \{\\small \$\\bigstar\$ [\d.]+[kKmM]? stars?\}/, '')
+    if (n < minimum) return line.replace(/ \$\|\$ \{\\small \$\\bigstar\$ [\d.]+[kKmM]? stars? \$\|\$/, ' $|$ {\\small').replace(/ \$\|\$ \{\\small \$\\bigstar\$ [\d.]+[kKmM]? stars?\}/, '')
     if (line.includes('\\bigstar')) return line.replace(/(\\bigstar\$ )[\d.]+[kKmM]? stars?/, `$1${value}`)
     return line.replace(/(\\textbf\{\\href\{[^}]+\}\{[^}]+\}\})/, `$1 $|$ {\\small $\\bigstar$ ${value}}`)
   }
@@ -188,6 +188,6 @@ export function updateResume(source, rows, stars) {
     }
     return '      ' + updateStar(line, stars[row.repo.toLowerCase()])
   }).join('\n')
-  const prefix = source.slice(0,start).split('\n').map(line => line.includes('\\resumeProjectHeading{') ? updateStar(line,stars[lineRepo(line)]) : line).join('\n')
+  const prefix = source.slice(0,start).split('\n').map(line => line.includes('\\resumeProjectHeading{') ? updateStar(line,stars[lineRepo(line)], lineRepo(line)?.startsWith(`${AUTHOR}/`) ? 5 : 1) : line).join('\n')
   return prefix + '\n' + rendered + '\n\n    ' + source.slice(end)
 }
