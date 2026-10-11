@@ -11,7 +11,7 @@ The workflow lives in `apoorvdarshan/apoorvdarshan/.github/workflows/refresh-pro
 5. Mirrors generated OSS descriptions into the resume along with links, counts, ordering, and stars. Preserves the resume header, other sections, and existing single-PR/commit-credit descriptions. Missing OSS entries are added. Project star counts are refreshed in place.
 6. Builds changed private LaTeX with pinned Tectonic 0.17.0. Checks page count, text bounds, required entries, and renders pages before copying the PDF to `public/Apoorv_Darshan_Resume.pdf`. No private source or page artifacts are uploaded publicly. Unchanged source reuses the validated PDF.
 7. Builds the website from the exact local README and verified star snapshot, avoiding cached GitHub README/badge data.
-8. Commits only changed managed files in each repository, with **Apoorv Darshan as author** (`90602809+apoorvdarshan@users.noreply.github.com`) and **github-actions[bot] as committer**, then deploys the built site with Wrangler. No bot co-author trailer is needed; the committer records the automation's role. Pushes never force-update branches. Failures stop the run; subsequent runs retry deployment even when there are no new commits.
+8. Commits only changed managed files in each repository, with **Apoorv Darshan as author and committer** (`90602809+apoorvdarshan@users.noreply.github.com`) and **github-actions[bot] as co-author**, then deploys the built site with Wrangler. A dedicated SSH signing key registered on Apoorv's account gives automated commits the Verified badge, including with vigilant mode enabled. Signing failures produce warnings and fall back to unsigned commits, as requested; no branch rule blocks unsigned pushes. Pushes never force-update branches. Other failures stop the run; subsequent runs retry deployment even when there are no new commits.
 
 The existing `/resume` and `/Apoorv_Darshan_Resume.pdf` URLs continue serving the updated PDF. The `.tex`, PDF, and their build manifest also live in the **private** resume repository. The legacy `.github/resume-pdf-parts` files are not used by the site or refresh job.
 
@@ -20,6 +20,7 @@ The existing `/resume` and `/Apoorv_Darshan_Resume.pdf` URLs continue serving th
 - `GITHUB_TOKEN`: public GitHub reads and commits to the README repository.
 - `PROFILE_SITE_DEPLOY_KEY`: write access only to `apoorvdarshan/profile`.
 - `RESUME_SOURCE_DEPLOY_KEY`: write access only to the private resume repository.
+- `PROFILE_COMMIT_SIGNING_KEY`: dedicated SSH private signing key, registered only for signing on Apoorv's account (not authentication). The corresponding public key is pinned in the README repo's `.github/profile-signing.pub`. The runner writes it with private permissions only for the commit step and removes it afterward, including on failure. To rotate it, register a new signing public key, replace the secret and pinned public key, and confirm GitHub verifies the next automated commit before retiring the old key.
 - Existing `CLOUDFLARE_API_KEY` and `CLOUDFLARE_EMAIL`: site deployment.
 
 Only scheduled/manual runs execute this workflow. Secrets are not exposed to pull-request code. GitHub-hosted runners do the cloud work, so the Mac can be off. GitHub's normal Actions/account limits still apply.
