@@ -1,6 +1,6 @@
 import base64
 import copy
-from datetime import date
+from datetime import date, datetime, timezone
 import gzip
 import hashlib
 import json
@@ -8,9 +8,10 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
+from http.client import IncompleteRead
 import io
-from unittest.mock import patch
+from unittest.mock import call, patch
 
 import android_downloads as android
 from mobile_downloads import combine
@@ -120,12 +121,75 @@ class AndroidTests(unittest.TestCase):
         body = {'error': {'message': 'secret-token lacks storage.objects.list on private-app-object',
                           'errors': [{'reason': 'forbidden'}]}}
         error = HTTPError(client.base, 403, 'Forbidden', {}, io.BytesIO(json.dumps(body).encode()))
-        with patch.object(android, 'urlopen', side_effect=error):
+        with patch.object(android, 'urlopen', side_effect=error) as request, \
+             patch.object(android.time, 'sleep') as sleep:
             with self.assertRaises(RuntimeError) as caught:
                 client.listing()
+            request.assert_called_once()
+            sleep.assert_not_called()  # Missing access will not heal in a few seconds.
         self.assertIn('403 forbidden storage.objects.list', str(caught.exception))
         self.assertNotIn('secret-token', str(caught.exception))
         self.assertNotIn('private-app-object', str(caught.exception))
+
+    def test_temporary_errors_recover_without_accepting_partial_data(self):
+        with patch.dict(os.environ, {'PLAY_REPORTS_ACCESS_TOKEN': 'test-token'}):
+            client = android.Client('pubsite_prod_123')
+        errors = [HTTPError(client.base, 429, 'Rate limited', {'Retry-After': '5'}, None),
+                  HTTPError(client.base, 503, 'Unavailable', {}, None),
+                  URLError('Offline'), TimeoutError(), ConnectionResetError(),
+                  IncompleteRead(b'partial', 200)]
+        for error in errors:
+            with self.subTest(error=type(error).__name__), \
+                 patch.object(android, 'urlopen', side_effect=[error, io.BytesIO(b'complete')]) as request, \
+                 patch.object(android.time, 'sleep') as sleep:
+                self.assertEqual(client.request(client.base), b'complete')
+                self.assertEqual(request.call_count, 2)
+                sleep.assert_called_once_with(5 if isinstance(error, HTTPError) and error.code == 429 else 2)
+
+        # A connection can also break after headers, while reading the report body.
+        class InterruptedBody(io.BytesIO):
+            def read(self):
+                raise IncompleteRead(b'partial', 200)
+
+        with patch.object(android, 'urlopen', side_effect=[InterruptedBody(), io.BytesIO(b'complete')]), \
+             patch.object(android.time, 'sleep'):
+            self.assertEqual(client.request(client.base), b'complete')
+
+    def test_retry_after_date_invalid_and_excessive_values_are_bounded(self):
+        with patch.object(android, 'datetime') as clock:
+            clock.now.return_value = datetime(2026, 10, 11, tzinfo=timezone.utc)
+            self.assertEqual(android.retry_delay(0, {'Retry-After': 'Sun, 11 Oct 2026 00:00:30 GMT'}), 30)
+        self.assertEqual(android.retry_delay(0, {'Retry-After': '999999'}), 60)
+        self.assertEqual(android.retry_delay(0, {'Retry-After': 'invalid'}), 2)
+        self.assertEqual(android.retry_delay(0, {'Retry-After': '-1'}), 2)
+
+    def test_exhausted_network_retries_preserve_snapshot_and_allow_next_run_recovery(self):
+        config = json.loads(Path(android.__file__).with_name('android-downloads.json').read_text())
+        package = config['apps'][0]['package']
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'android-downloads.json'
+            saved = {'version': 1, 'checked_on': '2026-10-10', 'config_sha256': android.fingerprint(config),
+                     'apps': {package: {'first_time': 2579, 'as_of': '2026-10-07'}}}
+            original = json.dumps(saved)
+            path.write_text(original)
+            env = {'PROFILE_RESUME_PATH': str(Path(folder) / 'resume.tex'),
+                   'PLAY_REPORTS_ACCESS_TOKEN': 'test-token', 'PLAY_DOWNLOADS_FORCE': 'true'}
+            with patch.dict(os.environ, env), \
+                 patch.object(android, 'urlopen', side_effect=URLError('Offline')) as request, \
+                 patch.object(android.time, 'sleep') as sleep:
+                with self.assertRaisesRegex(RuntimeError, 'network request failed'):
+                    android.main()
+                self.assertEqual(request.call_count, 4)
+                self.assertEqual(sleep.call_args_list, [call(2), call(4), call(8)])
+            self.assertEqual(path.read_text(), original)
+            self.assertFalse(path.with_name(path.name + '.tmp').exists())
+
+            recovered = copy.deepcopy(saved)
+            recovered['checked_on'] = android.datetime.now(android.timezone.utc).date().isoformat()
+            recovered['apps'][package]['first_time'] = 2600
+            with patch.dict(os.environ, env), patch.object(android, 'refresh', return_value=recovered):
+                android.main()
+            self.assertEqual(json.loads(path.read_text())['apps'][package]['first_time'], 2600)
 
     def test_api_failure_preserves_private_snapshot(self):
         with tempfile.TemporaryDirectory() as folder:
