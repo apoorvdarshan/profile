@@ -108,7 +108,7 @@ def chrome_count(html):
 def update_copy(readme, resume, item, label, users=False):
     link = 'https://github.com/' + item['repo']
     kind = 'Users' if users else 'Downloads'
-    image_url = (f'https://img.shields.io/badge/users-{quote(label, safe="")}-8B1A1A?style=flat-square'
+    image_url = (f'https://apoorvdarshan.com/badges/users/v1/{quote(label, safe="")}.svg'
                  if users else f'https://apoorvdarshan.com/badges/downloads/v1/{quote(label, safe="")}.svg')
     image = f'<img alt="{kind}: {label}" src="{image_url}">'
     rows = readme.splitlines(keepends=True)
