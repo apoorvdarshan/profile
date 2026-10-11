@@ -19,7 +19,8 @@
       "status": "",
       "marker": "🥦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/fud-ai&v=3",
-      "downloads": "9K+",
+      "downloads": "10K+",
+      "metric": "downloads",
       "starCount": "467"
     },
     {
@@ -30,6 +31,7 @@
       "marker": "📈",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/verceltics&v=3",
       "downloads": "1K+",
+      "metric": "downloads",
       "starCount": "38"
     },
     {
@@ -40,6 +42,7 @@
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/scowld&v=3",
       "downloads": "400+",
+      "metric": "downloads",
       "starCount": "29"
     },
     {
@@ -49,7 +52,8 @@
       "status": "closed source",
       "marker": "🚫",
       "starBadgeUrl": "",
-      "downloads": "100+"
+      "downloads": "100+",
+      "metric": "downloads"
     },
     {
       "name": "iitjee",
@@ -58,7 +62,8 @@
       "status": "closed source",
       "marker": "📚",
       "starBadgeUrl": "",
-      "downloads": "70+"
+      "downloads": "70+",
+      "metric": "downloads"
     }
   ],
   "games": [
@@ -69,7 +74,8 @@
       "status": "closed source",
       "marker": "🌊",
       "starBadgeUrl": "",
-      "downloads": "40+"
+      "downloads": "40+",
+      "metric": "downloads"
     }
   ],
   "extensions": [
@@ -80,7 +86,8 @@
       "status": "",
       "marker": "🗺️",
       "starBadgeUrl": "",
-      "downloads": "10+"
+      "downloads": "40+",
+      "metric": "users"
     },
     {
       "name": "newest-youtube-search",
@@ -98,7 +105,8 @@
       "status": "",
       "marker": "⏸️",
       "starBadgeUrl": "",
-      "downloads": "4"
+      "downloads": "4",
+      "metric": "users"
     },
     {
       "name": "streaming-indian-filter",
@@ -183,7 +191,9 @@
       "description": "macOS menu bar app for LithosAI spend: balance, daily usage, and per-model breakdown",
       "status": "",
       "marker": "📊",
-      "starBadgeUrl": ""
+      "starBadgeUrl": "",
+      "downloads": "1",
+      "metric": "downloads"
     },
     {
       "name": "DesktopWorm",
@@ -192,6 +202,8 @@
       "status": "",
       "marker": "🪱",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/DesktopWorm&v=3",
+      "downloads": "3",
+      "metric": "downloads",
       "starCount": "1"
     },
     {
@@ -202,6 +214,7 @@
       "marker": "🍪",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/browser-cookie-bridge&v=3",
       "downloads": "3K+",
+      "metric": "downloads",
       "starCount": "9"
     },
     {
@@ -211,7 +224,8 @@
       "status": "",
       "marker": "⚓",
       "starBadgeUrl": "",
-      "downloads": "800+"
+      "downloads": "800+",
+      "metric": "downloads"
     },
     {
       "name": "TetherShot",
@@ -221,6 +235,7 @@
       "marker": "📸",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/TetherShot&v=3",
       "downloads": "3K+",
+      "metric": "downloads",
       "starCount": "19"
     },
     {
@@ -247,6 +262,7 @@
       "marker": "📣",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/crossposter&v=3",
       "downloads": "4K+",
+      "metric": "downloads",
       "starCount": "38"
     },
     {
@@ -289,7 +305,8 @@
       "status": "",
       "marker": "📊",
       "starBadgeUrl": "",
-      "downloads": "300+"
+      "downloads": "300+",
+      "metric": "downloads"
     },
     {
       "name": "zyro",
@@ -608,7 +625,9 @@
           "description": "macOS menu bar app for LithosAI spend: balance, daily usage, and per-model breakdown",
           "status": "",
           "marker": "📊",
-          "starBadgeUrl": ""
+          "starBadgeUrl": "",
+          "downloads": "1",
+          "metric": "downloads"
         },
         {
           "name": "DesktopWorm",
@@ -616,7 +635,9 @@
           "description": "Native macOS desktop C. elegans driven by the OpenWorm c302 connectome",
           "status": "",
           "marker": "🪱",
-          "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/DesktopWorm&v=3"
+          "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/DesktopWorm&v=3",
+          "downloads": "3",
+          "metric": "downloads"
         },
         {
           "name": "browser-cookie-bridge",
@@ -625,7 +646,8 @@
           "status": "",
           "marker": "🍪",
           "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/browser-cookie-bridge&v=3",
-          "downloads": "3K+"
+          "downloads": "3K+",
+          "metric": "downloads"
         },
         {
           "name": "hash-harbor",
@@ -634,7 +656,8 @@
           "status": "",
           "marker": "⚓",
           "starBadgeUrl": "",
-          "downloads": "800+"
+          "downloads": "800+",
+          "metric": "downloads"
         },
         {
           "name": "TetherShot",
@@ -643,7 +666,8 @@
           "status": "",
           "marker": "📸",
           "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/TetherShot&v=3",
-          "downloads": "3K+"
+          "downloads": "3K+",
+          "metric": "downloads"
         }
       ]
     },
@@ -673,7 +697,8 @@
           "status": "",
           "marker": "📣",
           "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/crossposter&v=3",
-          "downloads": "4K+"
+          "downloads": "4K+",
+          "metric": "downloads"
         },
         {
           "name": "profile",
@@ -714,7 +739,8 @@
           "status": "",
           "marker": "📊",
           "starBadgeUrl": "",
-          "downloads": "300+"
+          "downloads": "300+",
+          "metric": "downloads"
         },
         {
           "name": "zyro",
@@ -1574,7 +1600,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "922"
+      "starCount": "923"
     },
     {
       "name": "decorator",
@@ -1709,7 +1735,7 @@
       "status": "",
       "marker": "🍴",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=fork-commit-merge/fork-commit-merge&v=3",
-      "starCount": "512"
+      "starCount": "513"
     },
     {
       "name": "awesome-openrouter",
