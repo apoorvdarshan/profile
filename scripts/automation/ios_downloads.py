@@ -19,6 +19,7 @@ from urllib.request import Request, urlopen
 from concurrent.futures import ThreadPoolExecutor
 
 from download_badges import badge, update_download_copy
+from mobile_downloads import combine
 
 API = 'https://api.appstoreconnect.apple.com/v1/'
 METRICS = ('first_time', 'redownload')
@@ -264,6 +265,9 @@ def main():
         through = (today - timedelta(days=2)).isoformat()
         snapshot = publish_snapshot(updated, apps, through, today)
         state = updated
+    android_path = resume_path.parent / 'android-downloads.json'
+    android = json.loads(android_path.read_text()) if android_path.exists() else {}
+    snapshot = combine(snapshot, apps, android)
     readme, resume = update_copy(readme_path.read_text(), resume_path.read_text(), apps, snapshot)
     # Finish ALL fetching, validation, and rendering before writing any managed file.
     outputs = {state_path: json.dumps(state, indent=2) + '\n',
@@ -278,7 +282,7 @@ def main():
              '| App | Data through | First-time iOS | Redownloads | Public badge |', '| --- | --- | ---: | ---: | --- |']
     for item in snapshot['apps'].values():
         lines.append(f'| {item["name"]} | {item["as_of"]} | {item["first_time"]} | {item["redownload"]} | {item["badge"]} |')
-    lines += ['', 'Badges use first-time downloads; Fud AI includes the separately maintained Android count.', '']
+    lines += ['', 'Badges use first-time downloads; Fud AI includes the latest verified Google Play snapshot.', '']
     summary = '\n'.join(lines)
     print(summary)
     if os.environ.get('GITHUB_STEP_SUMMARY'):

@@ -5,8 +5,7 @@
       "id": "6758935726",
       "name": "fud-ai",
       "link": "https://github.com/apoorvdarshan/fud-ai",
-      "other_platform_downloads": 2512,
-      "other_platform_note": "Last checked 2026-10-11: Google Play public listing embedded install count (visible badge 1K+). Not Play Console; maintained separately from iOS automation."
+      "android_package": "com.apoorvdarshan.calorietracker"
     },
     {
       "id": "6761645656",
