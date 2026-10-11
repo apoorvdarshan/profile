@@ -12,9 +12,12 @@ import tempfile
 HOME_DIR = Path.home()
 STATE_DIR = HOME_DIR / '.local/share/profile-automation'
 STATE_FILE = STATE_DIR / 'local-resume-state.json'
+BACKUP_DIR = STATE_DIR / 'resume-backups'
 REPO = HOME_DIR / 'profile-resume-private'
 NAME = 'Apoorv_Darshan_Resume'
-TARGETS = [HOME_DIR / 'rekisei', HOME_DIR / 'Documents']
+# Documents files link to the private checkout. Background Python cannot access
+# the TCC-protected Documents directory, so it never reads or writes through it.
+TARGETS = [HOME_DIR / 'rekisei']
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -67,7 +70,7 @@ def main():
                 changed.append((source,target))
         if changed:
             stamp=datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S-%f')
-            backup=HOME_DIR / 'Documents/resume-backups' / stamp
+            backup=BACKUP_DIR / stamp
             for source,target in changed:
                 if target.exists():
                     old=backup / target.parent.name / target.name
