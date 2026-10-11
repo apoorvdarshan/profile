@@ -14,9 +14,9 @@ const decode = (value = '') => value
   .replaceAll('&gt;', '>')
   .replaceAll('&lt;', '<')
 
-const plainText = (value = '') => decode(value)
+export const plainText = (value = '') => decode(value
   .replace(/<img[^>]*alt="([^"]*)"[^>]*>/g, (_, alt) => (alt === 'Stars' || alt.startsWith('Downloads:') || alt.startsWith('Users:')) ? '' : alt)
-  .replace(/<[^>]+>/g, '')
+  .replace(/<[^>]+>/g, ''))
   .replace(/\s+/g, ' ')
   .trim()
 
@@ -244,4 +244,4 @@ async function main() {
   console.log(`Synced GitHub README: ${data.apps.length} apps, ${data.games.length} games, ${data.extensions.length} extensions, ${data.projects.length} projects, ${data.openSource.length} open-source contributions.`)
 }
 
-await main()
+if (process.argv[1] === fileURLToPath(import.meta.url)) await main()
