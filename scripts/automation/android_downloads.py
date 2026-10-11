@@ -84,7 +84,7 @@ class Client:
             try:
                 headers = {'Authorization': 'Bearer ' + self.token, 'Accept-Encoding': 'gzip',
                            'User-Agent': 'apoorvdarshan-profile-downloads'}
-                with urlopen(Request(url, headers=headers), timeout=60) as response:
+                with urlopen(Request(url, headers=headers), timeout=60) as response:  # nosec B310 # HTTPS and API host validated above
                     return response.read()
             except HTTPError as error:
                 if (error.code == 429 or error.code >= 500) and attempt < 3:
@@ -135,7 +135,7 @@ class Client:
         blob = self.request(self.base + '/' + quote(item['name'], safe='') + '?' +
                             urlencode({'alt': 'media', 'generation': item['generation']}))
         check(len(blob) == int(item['size']), 'Truncated Play report')
-        check(base64.b64encode(hashlib.md5(blob).digest()).decode() == item['md5Hash'],
+        check(base64.b64encode(hashlib.md5(blob, usedforsecurity=False).digest()).decode() == item['md5Hash'],
               'Play report checksum mismatch')
         return blob
 
