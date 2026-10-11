@@ -1879,6 +1879,10 @@
       "description": "my own [multi-account Gmail MCP](https://github.com/apoorvdarshan/multi-account-gmail-mcp) handles all three inboxes"
     },
     {
+      "name": "Marketing",
+      "description": "agents promote my apps on request through X, YouTube, Product Hunt, Hacker News, directories and creator outreach, with duplicate checks and promo codes for complimentary access."
+    },
+    {
       "name": "Always on",
       "description": "agents run 24x7 on a MacBook with the lid closed ([macbook-24x7-agents](https://github.com/apoorvdarshan/macbook-24x7-agents))"
     },
