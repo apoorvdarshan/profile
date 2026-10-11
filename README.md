@@ -10,6 +10,9 @@
   [Visit the website](https://apoorvdarshan.com) · [GitHub profile](https://github.com/apoorvdarshan) · [LinkedIn](https://www.linkedin.com/in/apoorvdarshan/)
 </div>
 
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/15390/badge)](https://www.bestpractices.dev/projects/15390)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/apoorvdarshan/profile/badge)](https://scorecard.dev/viewer/?uri=github.com/apoorvdarshan/profile)
+
 ## About
 
 This repository powers [apoorvdarshan.com](https://apoorvdarshan.com), a minimal editorial profile inspired by the clarity of a personal essay rather than a conventional portfolio dashboard.
