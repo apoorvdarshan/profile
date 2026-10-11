@@ -8,6 +8,8 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
+from urllib.error import HTTPError
+import io
 from unittest.mock import patch
 
 import android_downloads as android
@@ -112,6 +114,19 @@ class AndroidTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     client.report(fake.item)
 
+    def test_permission_diagnostic_does_not_expose_private_object_or_token(self):
+        with patch.dict(os.environ, {'PLAY_REPORTS_ACCESS_TOKEN': 'secret-token'}):
+            client = android.Client('pubsite_prod_123')
+        body = {'error': {'message': 'secret-token lacks storage.objects.list on private-app-object',
+                          'errors': [{'reason': 'forbidden'}]}}
+        error = HTTPError(client.base, 403, 'Forbidden', {}, io.BytesIO(json.dumps(body).encode()))
+        with patch.object(android, 'urlopen', side_effect=error):
+            with self.assertRaises(RuntimeError) as caught:
+                client.listing()
+        self.assertIn('403 forbidden storage.objects.list', str(caught.exception))
+        self.assertNotIn('secret-token', str(caught.exception))
+        self.assertNotIn('private-app-object', str(caught.exception))
+
     def test_api_failure_preserves_private_snapshot(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / 'android-downloads.json'
@@ -135,6 +150,9 @@ class AndroidTests(unittest.TestCase):
                  patch.object(android, 'Client', side_effect=RuntimeError('No token')) as client:
                 android.main()
                 client.assert_not_called()
+                # Owner-bootstrapped counts must not hide failures of the new cloud identity.
+                with patch.dict(os.environ, {'PLAY_REPORTS_IDENTITY': 'reporting@example.com'}):
+                    with self.assertRaises(RuntimeError): android.main()
                 with patch.dict(os.environ, {'PLAY_DOWNLOADS_FORCE': 'true'}):
                     with self.assertRaises(RuntimeError): android.main()
 
