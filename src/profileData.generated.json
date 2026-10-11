@@ -234,7 +234,7 @@
     {
       "name": "ringtone-cropper",
       "url": "https://github.com/apoorvdarshan/ringtone-cropper",
-      "description": "Make Android and iPhone ringtones from audio files or YouTube links in your browser",
+      "description": "Audio/YouTube to Android/iPhone ringtones",
       "status": "",
       "marker": "🔔",
       "starBadgeUrl": ""
@@ -661,7 +661,7 @@
         {
           "name": "ringtone-cropper",
           "url": "https://github.com/apoorvdarshan/ringtone-cropper",
-          "description": "Make Android and iPhone ringtones from audio files or YouTube links in your browser",
+          "description": "Audio/YouTube to Android/iPhone ringtones",
           "status": "",
           "marker": "🔔",
           "starBadgeUrl": ""
