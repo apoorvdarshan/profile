@@ -1,3 +1,4 @@
+import { htmlText } from '../html-text.mjs'
 import assert from 'node:assert/strict'
 
 export const AUTHOR = 'apoorvdarshan'
@@ -5,7 +6,7 @@ const START = '### Open Source Contributions\n'
 const END = '## GitHub Activity\n'
 const STAR = /\s*<img alt="Stars" src="[^"]*">/g
 export const escapeHtml = (s) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;')
-export const plain = (s) => s.replace(/<img[^>]*alt="([^"]*)"[^>]*>/g, '$1').replace(/<[^>]*>/g, '').replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"').replaceAll('&#39;', "'")
+export const plain = htmlText
 export function boundaries(readme) {
   assert.equal(readme.split(START).length, 2, 'Contribution heading must be unique')
   const start = readme.indexOf(START) + START.length

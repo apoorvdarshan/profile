@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 from urllib.error import HTTPError
-from urllib.parse import unquote
+from urllib.parse import unquote, urlparse
 
 import npm_downloads as npm
 
@@ -90,7 +90,7 @@ class NpmDownloadTests(unittest.TestCase):
             api = FakeAPI()
             def broken(url):
                 data = api(url)
-                if 'registry.npmjs.org' in url:
+                if urlparse(url).hostname == 'registry.npmjs.org':
                     data.update(change)
                 return data
             with self.subTest(change=change), self.assertRaises(ValueError):
