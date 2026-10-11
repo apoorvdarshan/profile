@@ -25,7 +25,7 @@ Guidance for agents working on `apoorvdarshan/profile` (https://apoorvdarshan.co
 - Current snapshot: private `~/profile-resume-private/ios-downloads.json`, linked from `~/Documents/asc_downloads.json`. `scripts/automation/ios_downloads.py` refreshes the six configured iOS apps once per UTC day, then updates the README/resume before site/PDF builds. See the automation README for the reporting key, historical baseline, deduplication and recovery rules.
 - For badges/copy use **first-time** downloads, never the all-events `total` (updates inflate all-events totals).
 - Site/resume **Fud AI** = ASC lifetime first-time downloads + the separately maintained 2,512 Android installs from the last verified Google Play listing. Round badges down; do not use the ASC all-events total.
-- GitHub README uses maroon download shield tiles (`alt="Downloads: N"`); the site sync parses those (fallback: trailing `(Nk+ downloads)`) into a `downloads` field and renders plain `↓ {count}` text beside ★ — same `.star-count` look (secondary color), **not** a maroon pill/tile.
+- GitHub README uses maroon download tiles (`alt="Downloads: N"`); the six managed iOS badges are served directly by the Cloudflare Worker at `/badges/downloads/v1/<encoded-label>.svg`, without Shields/API calls on image load. Preserve that URL in the updater. The site sync parses the alt text (fallback: trailing `(Nk+ downloads)`) into a `downloads` field and renders plain `↓ {count}` text beside ★ — same `.star-count` look (secondary color), **not** a maroon pill/tile.
 
 - Chrome Web Store public listings may use README `Users: N` shields; sync maps those into the same `downloads` / ↓ chip on the site.
 

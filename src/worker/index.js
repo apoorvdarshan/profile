@@ -1,3 +1,5 @@
+import { downloadBadge } from './download-badge.js'
+
 const RESUME_ASSET_PATH = '/Apoorv_Darshan_Resume.pdf'
 const RESUME_FILENAME = 'Apoorv_Darshan_Resume.pdf'
 
@@ -8,6 +10,8 @@ function isResumePath(pathname) {
 export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url)
+    const badge = downloadBadge(request, pathname)
+    if (badge) return badge
 
     if (!isResumePath(pathname)) {
       return env.ASSETS.fetch(request)

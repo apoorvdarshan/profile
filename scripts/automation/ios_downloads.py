@@ -104,8 +104,8 @@ def update_copy(readme, resume, apps, snapshot):
     for config in apps:
         item = snapshot['apps'][config['id']]
         label = item['badge']
-        image = (f'<img alt="Downloads: {label}" src="https://img.shields.io/badge/'
-                 f'%E2%86%93-{quote(label, safe="")}-8B1A1A?style=flat-square">')
+        image = (f'<img alt="Downloads: {label}" src="https://apoorvdarshan.com/badges/downloads/v1/'
+                 f'{quote(label, safe="")}.svg">')
         rows = readme.splitlines(keepends=True)
         matched = [i for i, line in enumerate(rows) if f'<strong><a href="{config["link"]}">' in line]
         check(len(matched) == 1, f'Expected one README entry for {config["name"]}')
