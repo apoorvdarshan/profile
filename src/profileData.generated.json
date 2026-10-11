@@ -1886,6 +1886,10 @@
       "description": "agents promote my apps on request through X, YouTube, Product Hunt, Hacker News, directories and creator outreach, with duplicate checks and promo codes for complimentary access."
     },
     {
+      "name": "Security",
+      "description": "On request, complete OpenSSF Best Practices and Scorecard setup, fix actionable findings, and verify live badges—with solo-maintainer-friendly protections."
+    },
+    {
       "name": "Always on",
       "description": "agents run 24x7 on a MacBook with the lid closed ([macbook-24x7-agents](https://github.com/apoorvdarshan/macbook-24x7-agents))"
     },
