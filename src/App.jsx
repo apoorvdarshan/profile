@@ -229,8 +229,8 @@ function GitHubActivity() {
     <ExternalLink className="activity-link" href={activityUrl('light')}>
       {graphs ? (
         <>
-          <img className="activity-graph activity-graph-light" src={graphs.light} alt="Apoorv Darshan's merged GitHub contribution graph" />
-          <img className="activity-graph activity-graph-dark" src={graphs.dark} alt="Apoorv Darshan's merged GitHub contribution graph" />
+          <img className="activity-graph activity-graph-light" src={graphs.light} alt="Apoorv Darshan's GitHub contribution graph" />
+          <img className="activity-graph activity-graph-dark" src={graphs.dark} alt="Apoorv Darshan's GitHub contribution graph" />
         </>
       ) : <span className="activity-placeholder" aria-label="Loading Apoorv Darshan's GitHub contribution graph" role="img" />}
     </ExternalLink>
