@@ -7,8 +7,10 @@ New packages are discovered privately; only validated, configured apps are publi
 import base64
 import csv
 from datetime import date, datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 import gzip
 import hashlib
+from http.client import IncompleteRead
 import io
 import json
 import os
@@ -27,6 +29,20 @@ FIELDS = {'Daily User Installs': 'user_installs', 'Install events': 'install_eve
 
 def fingerprint(config):
     return hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()
+
+
+def retry_delay(attempt, headers=None):
+    delay = 2 ** (attempt + 1)
+    retry_after = (headers or {}).get('Retry-After', '')
+    try:
+        if retry_after.isdigit():
+            delay = max(delay, int(retry_after))
+        elif retry_after:
+            when = parsedate_to_datetime(retry_after)
+            delay = max(delay, (when - datetime.now(timezone.utc)).total_seconds())
+    except (ValueError, TypeError, OverflowError):
+        pass
+    return min(delay, 60)
 
 
 def read_report(blob, package, month, today):
@@ -72,7 +88,7 @@ class Client:
                     return response.read()
             except HTTPError as error:
                 if (error.code == 429 or error.code >= 500) and attempt < 3:
-                    time.sleep(2 ** (attempt + 1))
+                    time.sleep(retry_delay(attempt, error.headers))
                     continue
                 # Log only structured reasons and permission names, never the raw
                 # response (which may contain private object names or signed URLs).
@@ -88,9 +104,9 @@ class Client:
                 except (ValueError, KeyError, IndexError, TypeError):
                     pass
                 raise RuntimeError(f'Play reports HTTP {error.code}{detail}; keeping previous totals') from None
-            except (URLError, TimeoutError):
+            except (URLError, TimeoutError, ConnectionError, IncompleteRead):
                 if attempt < 3:
-                    time.sleep(2 ** (attempt + 1))
+                    time.sleep(retry_delay(attempt))
                     continue
                 raise RuntimeError('Play report network request failed') from None
 
