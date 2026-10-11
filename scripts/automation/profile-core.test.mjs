@@ -29,12 +29,12 @@ test('new merges refresh summaries and counts while sorting and overflow stay st
   assert.throws(()=>updateReadme(first.readme,[],stars,first.state),/Previously verified PR missing/)
 })
 test('title is escaped as text, star badges added and removed',()=>{
-  const initial=readme([['org/old']]);const stars={'apoorvdarshan/app':4,'org/old':0,'org/new':10}
+  const initial=readme([['org/old']]);const stars={'apoorvdarshan/app':5,'org/old':0,'org/new':10}
   const a=updateReadme(initial,[pr('org/new',1)],stars)
   assert(a.readme.includes('Correct &lt;script&gt; &amp; $value'))
   assert(!a.readme.includes('<script>'))
   assert(a.readme.includes('repo=apoorvdarshan/app'))
-  const b=updateReadme(a.readme,[pr('org/new',1)],{...stars,'apoorvdarshan/app':0})
+  const b=updateReadme(a.readme,[pr('org/new',1)],{...stars,'apoorvdarshan/app':4})
   assert(!b.readme.includes('repo=apoorvdarshan/app'))
   assert.throws(()=>updateReadme(initial,[],{}),/Missing\/invalid stars/)
 })
@@ -53,12 +53,16 @@ test('resume reorders contributions without moving projects or altering header',
 \resumeProjectHeading{\textbf{\href{https://github.com/org/old/pull/1}{old}} $|$ {\small $\bigstar$ 1 star} \textnormal{ -- resume custom description}}{}
 \resumeSubHeadingListEnd
 FOOTER-SENTINEL`
-  const stars={'apoorvdarshan/app':0,'org/old':1,'org/new':50000}
+  const stars={'apoorvdarshan/app':4,'org/old':1,'org/new':50000}
   const r=updateReadme(readme([['org/old']]),[pr('org/new',1),pr('org/old',1),pr('org/old',2)],stars)
   const tex=updateResume(source,r.rows,stars)
   assert(tex.startsWith('HEADER-SENTINEL'))
   assert(tex.endsWith('FOOTER-SENTINEL'))
   assert(tex.includes('9K+'))
+  assert(!tex.split('\\section{Open Source Contributions}')[0].includes('\\bigstar'))
+  assert(tex.split('\\section{Open Source Contributions}')[1].includes('1 star'))
+  const five = updateResume(tex,r.rows,{...stars,'apoorvdarshan/app':5})
+  assert(five.split('\\section{Open Source Contributions}')[0].includes('5 stars'))
   assert(tex.includes(String.raw`2 merged PRs: Correct <script> \& \$value`))
   assert(!tex.includes('resume custom description'))
   assert(tex.indexOf('org/new')<tex.indexOf('org/old'))

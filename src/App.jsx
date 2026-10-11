@@ -148,6 +148,9 @@ function StarBadge({ item }) {
 
   const displayCount = liveUnavailable ? (item.starCount || '—') : (liveCount ?? item.starCount ?? '—')
 
+  const ownProject = /^https:\/\/github\.com\/apoorvdarshan\//i.test(item.url || '')
+  if (ownProject && /^\d+$/.test(displayCount) && Number(displayCount) < 5) return null
+
   return (
     <span className="star-count" aria-label={`${displayName(item.name)} has ${displayCount} GitHub stars`}>
       <span aria-hidden="true">★ {displayCount}</span>
