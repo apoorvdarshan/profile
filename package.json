@@ -24,6 +24,6 @@
     "eslint-plugin-react-hooks": "latest",
     "eslint-plugin-react-refresh": "latest",
     "globals": "latest",
-    "wrangler": "4.110.0"
+    "wrangler": "4.149.0"
   }
 }

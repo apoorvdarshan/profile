@@ -7,7 +7,7 @@ from pathlib import Path
 import re
 import time
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
 
 from download_badges import badge, check, update_download_copy
@@ -17,11 +17,13 @@ EARLIEST = date(2015, 1, 10)
 
 
 def read_json(url):
+    parsed = urlparse(url)
+    check(parsed.scheme == 'https' and parsed.hostname in ('registry.npmjs.org', 'api.npmjs.org'), 'Unexpected npm API URL')
     # Never load npmrc or send a publishing token. Both endpoints are public.
     for attempt in range(3):
         try:
             request = Request(url, headers={'User-Agent': 'apoorvdarshan-profile-downloads', 'Accept': 'application/json'})
-            with urlopen(request, timeout=30) as response:
+            with urlopen(request, timeout=30) as response:  # nosec B310 # fixed HTTPS hosts checked above
                 return json.load(response)
         except HTTPError as error:
             if error.code not in (429, 500, 502, 503, 504) or attempt == 2:

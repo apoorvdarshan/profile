@@ -13,12 +13,14 @@ import re
 import time
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 from download_badges import badge, check
 
 
 def fetch(url, github=False):
+    parsed = urlparse(url)
+    check(parsed.scheme == 'https' and parsed.hostname in ('api.github.com', 'chromewebstore.google.com'), 'Unexpected distribution API URL')
     headers = {'User-Agent': 'apoorvdarshan-profile-metrics', 'Accept-Language': 'en-US,en;q=0.9'}
     if github:
         check(url.startswith('https://api.github.com/'), 'Unexpected authenticated host')
@@ -27,7 +29,7 @@ def fetch(url, github=False):
             headers['Authorization'] = 'Bearer ' + os.environ['GH_TOKEN']
     for attempt in range(4):
         try:
-            with urlopen(Request(url, headers=headers), timeout=30) as response:
+            with urlopen(Request(url, headers=headers), timeout=30) as response:  # nosec B310 # fixed HTTPS hosts checked above
                 text = response.read().decode('utf-8')
             return json.loads(text) if github else text
         except HTTPError as error:

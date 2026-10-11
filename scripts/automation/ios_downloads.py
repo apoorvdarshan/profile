@@ -119,7 +119,7 @@ class Client:
         # Signed download URLs receive NO ASC Authorization header.
         for attempt in range(4):
             try:
-                with urlopen(Request(url, headers=headers), timeout=60) as response:
+                with urlopen(Request(url, headers=headers), timeout=60) as response:  # nosec B310 # HTTPS and API host validated above
                     return response.read()
             except HTTPError as error:
                 if (error.code == 429 or error.code >= 500) and attempt < 3:
@@ -158,7 +158,7 @@ class Client:
             info = segment['attributes']
             blob = self.request(info['url'])
             check(len(blob) == info['sizeInBytes'], 'Truncated report segment')
-            check(hashlib.md5(blob).hexdigest() == info['checksum'].lower(), 'Report checksum mismatch')
+            check(hashlib.md5(blob, usedforsecurity=False).hexdigest() == info['checksum'].lower(), 'Report checksum mismatch')
             blobs.append(blob)
         return read_segments(blobs, app_id)
 

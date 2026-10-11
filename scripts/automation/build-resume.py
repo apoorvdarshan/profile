@@ -8,7 +8,7 @@ import shutil
 import subprocess
 import tempfile
 import unicodedata
-import xml.etree.ElementTree as ET
+from defusedxml import ElementTree as ET
 
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
