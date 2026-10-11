@@ -82,6 +82,15 @@ class DownloadTests(unittest.TestCase):
         self.assertEqual(snap['apps']['123']['display_total'], 2100)
         self.assertEqual(snap['apps']['123']['ios_total_downloads'], 105)
 
+    def test_delayed_reports_do_not_publish_incomplete_next_day(self):
+        app = state()
+        app['complete_through'] = '2026-10-08'
+        ios.merge_instance(app['days'], {'2026-10-09': dict(ios.zero(), first_time=99)}, '2026-10-10', 'late')
+        snap = ios.publish_snapshot({'apps': {'123': app}}, [{'id':'123','name':'example'}],
+                                    '2026-10-09', date(2026,10,11))
+        self.assertEqual(snap['apps']['123']['first_time'], 100)
+        self.assertEqual(snap['apps']['123']['as_of'], '2026-10-08')
+
     def test_wrong_app_unknown_type_negative_and_bad_schema_rejected(self):
         for rows in [[('2026-10-09', 'other', 'First-time download', 1)],
                      [('2026-10-09', '123', 'Unknown', 1)],
