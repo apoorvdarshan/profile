@@ -39,7 +39,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/scowld&v=3",
-      "downloads": "100+",
+      "downloads": "400+",
       "starCount": "29"
     },
     {
@@ -49,7 +49,7 @@
       "status": "closed source",
       "marker": "🚫",
       "starBadgeUrl": "",
-      "downloads": "10+"
+      "downloads": "100+"
     },
     {
       "name": "iitjee",
@@ -58,7 +58,7 @@
       "status": "closed source",
       "marker": "📚",
       "starBadgeUrl": "",
-      "downloads": "30+"
+      "downloads": "70+"
     }
   ],
   "games": [
@@ -69,7 +69,7 @@
       "status": "closed source",
       "marker": "🌊",
       "starBadgeUrl": "",
-      "downloads": "20+"
+      "downloads": "40+"
     }
   ],
   "extensions": [
@@ -1574,7 +1574,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "920"
+      "starCount": "921"
     },
     {
       "name": "decorator",
