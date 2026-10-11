@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { updateReadme, updateResume, entries, verifiedPRs, texEscape, recentDescription, cleanTitle } from './profile-core.mjs'
+import { plainText } from '../sync-profile-readme.mjs'
 
 function readme(rows) {return `# Hello\n## Mobile Apps\n<ul>\n<li>📱 <strong><a href="https://github.com/apoorvdarshan/app">app</a></strong> - my app</li>\n</ul>\n### Open Source Contributions\n\n<ul>\n${rows.map(([repo,desc='my custom fix'])=>`  <li>🔧 <strong><a href="https://github.com/${repo}/pull/1">${repo.split('/')[1]}</a></strong> - ${desc}</li>`).join('\n')}\n</ul>\n\n## GitHub Activity\nPRIVATE-SENTINEL-DO-NOT-EDIT\n`}
 function pr(repo,number,extra={}) { return {number,title:'fix(ui): Correct <script> & $value',url:`https://github.com/${repo}/pull/${number}`,mergedAt:'2026-10-10T00:00:00Z',author:{login:'apoorvdarshan'},repository:{nameWithOwner:repo,isPrivate:false,owner:{login:repo.split('/')[0]}},...extra} }
@@ -127,4 +128,10 @@ test('title cleanup removes redundant author and code markup without inventing w
   const prs=[pr('org/r',1),pr('org/r',2,{title:'fix: Handle retries (by design)'})]
   const first=updateReadme(readme([['org/r']]),prs,stars)
   assert.equal(updateReadme(first.readme,prs,stars,first.state).readme,first.readme)
+})
+test('website descriptions preserve literal code symbols from escaped PR titles',()=>{
+  const r=updateReadme(readme([['org/r']]),[pr('org/r',1),pr('org/r',2,{title:'feat: Add List<T> support'})],{'apoorvdarshan/app':0,'org/r':1})
+  const row=r.rows.find(r=>r.repo==='org/r')
+  assert.equal(plainText(row.html.slice(row.html.indexOf(' - ')+3)), '2 merged PRs: Add List<T> support; Correct <script> & $value')
+  assert.equal(plainText('<img alt="Stars" src="x"> hello <a href="x">world</a>'), 'hello world')
 })
