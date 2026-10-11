@@ -1039,7 +1039,7 @@
     {
       "name": "open-source-ios-apps",
       "url": "https://github.com/dkhamsing/open-source-ios-apps/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
-      "description": "2 merged PRs: Scowld, Verceltics",
+      "description": "2 merged PRs: Add Verceltics; Add Scowld",
       "status": "",
       "marker": "📱",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=dkhamsing/open-source-ios-apps&v=3",
@@ -1066,7 +1066,7 @@
     {
       "name": "zx",
       "url": "https://github.com/google/zx/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
-      "description": "2 merged PRs: cwd validation + remote script error handling (by Google)",
+      "description": "2 merged PRs: improve error handling for…; provide clear error when cwd… (by Google)",
       "status": "",
       "marker": "🐚",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=google/zx&v=3",
@@ -1174,7 +1174,7 @@
     {
       "name": "omi",
       "url": "https://github.com/BasedHardware/omi/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
-      "description": "40 merged PRs: BYOK, device sync, speaker profiles, updates, and onboarding",
+      "description": "40 merged PRs: correct Bluetooth diagnostic reason…; keep recent device diagnostics…",
       "status": "",
       "marker": "🎙️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=BasedHardware/omi&v=3",
@@ -1210,7 +1210,7 @@
     {
       "name": "sqlfluff",
       "url": "https://github.com/sqlfluff/sqlfluff/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
-      "description": "7 merged PRs: SQL dialect parsing, grammar, and Jinja encoding fixes",
+      "description": "7 merged PRs: Read Jinja macro files with the…; ClickHouse: parse GROUP BY WITH…",
       "status": "",
       "marker": "❄️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=sqlfluff/sqlfluff&v=3",
@@ -1291,7 +1291,7 @@
     {
       "name": "up-for-grabs.net",
       "url": "https://github.com/up-for-grabs/up-for-grabs.net/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
-      "description": "8 merged PRs: add projects + fix forks badge cursor",
+      "description": "8 merged PRs: Add Verceltics project; Add Fud AI project; Add Nornlore project",
       "status": "",
       "marker": "🆙",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=up-for-grabs/up-for-grabs.net&v=3",
@@ -1336,7 +1336,7 @@
     {
       "name": "typeshed",
       "url": "https://github.com/python/typeshed/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
-      "description": "2 merged PRs: frozendict __init__ + functools.partial.__get__ (3.14)",
+      "description": "2 merged PRs: Add functools.partial.__get__ for…; Fix frozendict constructor: drop…",
       "status": "",
       "marker": "🏷️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=python/typeshed&v=3",
@@ -1453,7 +1453,7 @@
     {
       "name": "pygments",
       "url": "https://github.com/pygments/pygments/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
-      "description": "2 merged PRs: add 'yml' alias for YAML lexer + Mathematica \\[Name] named-character escapes",
+      "description": "2 merged PRs: Mathematica: recognize \\[Name]…; Add 'yml' as an alias for the YAML…",
       "status": "",
       "marker": "🖍️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=pygments/pygments&v=3",
@@ -1588,7 +1588,7 @@
     {
       "name": "ccextractor",
       "url": "https://github.com/CCExtractor/ccextractor/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
-      "description": "2 merged PRs: fix null pointer dereference in Matroska parser + config file parsing bugs",
+      "description": "2 merged PRs: Fix null pointer dereference in…; Fix configuration file parsing bugs…",
       "status": "",
       "marker": "📺",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=CCExtractor/ccextractor&v=3",
@@ -1849,7 +1849,7 @@
     {
       "name": "awesome-mac",
       "url": "https://github.com/abordage/awesome-mac/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
-      "description": "4 merged PRs: Hash Harbor, MacBook 24x7 Agents, Browser Cookie Bridge, TetherShot",
+      "description": "4 merged PRs: add TetherShot to screen capture; Add MacBook 24x7 Agents",
       "status": "",
       "marker": "🍎",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=abordage/awesome-mac&v=3",
