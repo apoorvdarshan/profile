@@ -11,6 +11,10 @@ Guidance for agents working on `apoorvdarshan/profile` (https://apoorvdarshan.co
 
 ## Other content
 
+- Automatic profile refresh runs every six hours from `apoorvdarshan/apoorvdarshan/.github/workflows/refresh-profile.yml`, using this repo's `scripts/automation/`. It updates verified merges/stars for `apoorvdarshan` only, commits directly, rebuilds the resume, syncs this site, and deploys to Cloudflare. No review PR or AI service. See `scripts/automation/README.md` for operations.
+- For manual resume edits, also commit/push the verified source and PDF to the private `~/profile-resume-private` repo. Never put personal LaTeX in this public repo. Local Documents/rekisei copies sync from the private cloud copy every 30 minutes with dated backups and local-edit protection.
+- Preserve curated project order, custom descriptions, download counts, and the resume header. Only OSS entries sort by stars automatically.
+
 - GitHub profile README syncs into `src/profileData.generated.json` via `scripts/sync-profile-readme.mjs` on build/dev. Cloudflare Workers `prebuild` re-runs that sync so a redeploy picks up the current README.
 - `## What I Use` `### Hardware` / `### Software` shields.io logo tiles on GitHub README; sync → `uses.hardware` / `uses.software` (`name`, `badgeUrl`, `url`). **Site renders text links like Connect** (not badge images). Never the resume.
 - LinkedIn experience/education are hand-maintained in `src/linkedinExperience.js` and `src/linkedinEducation.js`.
