@@ -11,7 +11,7 @@ The workflow lives in `apoorvdarshan/apoorvdarshan/.github/workflows/refresh-pro
 5. Mirrors generated OSS descriptions into the resume along with links, counts, ordering, and stars. Preserves the resume header, other sections, and existing single-PR/commit-credit descriptions. Missing OSS entries are added. Project star counts are refreshed in place.
 6. Builds changed private LaTeX with pinned Tectonic 0.17.0. Checks page count, text bounds, required entries, and renders pages before copying the PDF to `public/Apoorv_Darshan_Resume.pdf`. No private source or page artifacts are uploaded publicly. Unchanged source reuses the validated PDF.
 7. Builds the website from the exact local README and verified star snapshot, avoiding cached GitHub README/badge data.
-8. Commits only the managed files in each repository, then deploys the built site with Wrangler. Pushes never force-update branches. Failures stop the run; subsequent runs retry deployment even when there are no new commits.
+8. Commits only changed managed files in each repository, with **Apoorv Darshan as author** (`90602809+apoorvdarshan@users.noreply.github.com`) and **github-actions[bot] as committer**, then deploys the built site with Wrangler. No bot co-author trailer is needed; the committer records the automation's role. Pushes never force-update branches. Failures stop the run; subsequent runs retry deployment even when there are no new commits.
 
 The existing `/resume` and `/Apoorv_Darshan_Resume.pdf` URLs continue serving the updated PDF. The `.tex`, PDF, and their build manifest also live in the **private** resume repository. The legacy `.github/resume-pdf-parts` files are not used by the site or refresh job.
 
