@@ -12,7 +12,7 @@ Guidance for agents working on `apoorvdarshan/profile` (https://apoorvdarshan.co
 ## Other content
 
 - Automatic profile refresh runs every six hours from `apoorvdarshan/apoorvdarshan/.github/workflows/refresh-profile.yml`, using this repo's `scripts/automation/`. It updates verified merges/stars for `apoorvdarshan` only, commits directly, rebuilds the resume, syncs this site, and deploys to Cloudflare. No review PR or AI service. See `scripts/automation/README.md` for operations.
-- For manual resume edits, also commit/push the verified source and PDF to the private `~/profile-resume-private` repo. Never put personal LaTeX in this public repo. Local Documents/rekisei copies sync from the private cloud copy every 30 minutes with dated backups and local-edit protection.
+- For manual resume edits, also commit/push the verified source and PDF to the private `~/profile-resume-private` repo. Never put personal LaTeX in this public repo. Local Documents/rekisei copies sync from the private cloud copy at login and every six hours while the Mac is awake, with dated backups and local-edit protection.
 - Preserve curated project order, personal-project descriptions, download counts, and the resume header. Only OSS entries sort by stars automatically. Multi-PR OSS descriptions refresh from the newest 2–3 distinct merged PR titles within the one-line limit, retaining cumulative counts and linked attribution; mirror generated descriptions into the resume.
 - Preserve the Documents resume symlinks to `~/profile-resume-private`. Background sync updates the private checkout and rekisei copies; backups live in `~/.local/share/profile-automation/resume-backups` (linked from Documents). Do not make background Python access the protected Documents folder.
 
