@@ -1870,14 +1870,6 @@
       "description": "[cmux](https://cmux.com/)"
     },
     {
-      "name": "Browser",
-      "description": "[agent-browser](https://agent-browser.dev/) runs headless and logged out by default, and switches to my Chrome profile when a site needs my login"
-    },
-    {
-      "name": "Computer use",
-      "description": "[Cua Driver](https://github.com/trycua/cua) controls Mac apps directly"
-    },
-    {
       "name": "Mail",
       "description": "my own [multi-account Gmail MCP](https://github.com/apoorvdarshan/multi-account-gmail-mcp) handles all three inboxes"
     },
