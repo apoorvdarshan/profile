@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { updateReadme, updateResume, entries, verifiedPRs, texEscape } from './profile-core.mjs'
+import { updateReadme, updateResume, entries, verifiedPRs, texEscape, recentDescription, cleanTitle } from './profile-core.mjs'
 
 function readme(rows) {return `# Hello\n## Mobile Apps\n<ul>\n<li>📱 <strong><a href="https://github.com/apoorvdarshan/app">app</a></strong> - my app</li>\n</ul>\n### Open Source Contributions\n\n<ul>\n${rows.map(([repo,desc='my custom fix'])=>`  <li>🔧 <strong><a href="https://github.com/${repo}/pull/1">${repo.split('/')[1]}</a></strong> - ${desc}</li>`).join('\n')}\n</ul>\n\n## GitHub Activity\nPRIVATE-SENTINEL-DO-NOT-EDIT\n`}
 function pr(repo,number,extra={}) { return {number,title:'fix(ui): Correct <script> & $value',url:`https://github.com/${repo}/pull/${number}`,mergedAt:'2026-10-10T00:00:00Z',author:{login:'apoorvdarshan'},repository:{nameWithOwner:repo,isPrivate:false,owner:{login:repo.split('/')[0]}},...extra} }
@@ -8,19 +8,23 @@ test('filters own/private/other-author/unmerged PRs, deduplicates',()=>{
   const good=pr('org/one',1)
   assert.equal(verifiedPRs([good,good,pr('apoorvdarshan/app',1),pr('org/two',2,{author:{login:'elsewhere'}}),pr('org/two',3,{mergedAt:null}),pr('org/secret',1,{repository:{nameWithOwner:'org/secret',owner:{login:'org'},isPrivate:true}})]).length,1)
 })
-test('counts preserve prose, sorting and overflow; rerun is idempotent',()=>{
+test('new merges refresh summaries and counts while sorting and overflow stay stable',()=>{
   const repos=Array.from({length:12},(_,i)=>`org/repo${i}`)
   const stars=Object.fromEntries(repos.map((r,i)=>[r,i]));stars['apoorvdarshan/app']=1
   const before=readme(repos.map(r=>[r]))
-  const prs=[pr(repos[0],1),pr(repos[0],2)]
+  const prs=[pr(repos[0],1,{title:'fix: Login bug'}),pr(repos[0],2,{title:'feat: Offline mode'})]
   const first=updateReadme(before,prs,stars)
-  assert(first.readme.includes('2 merged PRs: my custom fix'))
+  assert(first.readme.includes('2 merged PRs: Offline mode; Login bug'))
   assert.equal(entries(first.readme)[0].repo,'org/repo11')
   const oss=first.readme.split('### Open Source Contributions')[1]
   assert.equal((oss.match(/<li>.*<strong>/g)||[]).length,10)
   assert.equal((oss.match(/<div>&bull;/g)||[]).length,2)
   assert(first.readme.endsWith('PRIVATE-SENTINEL-DO-NOT-EDIT\n'))
   assert.equal(updateReadme(first.readme,prs,stars,first.state).readme,first.readme)
+  const next=updateReadme(first.readme,[...prs,pr(repos[0],3,{title:'feat: Export CSV'})],stars,first.state)
+  assert(next.readme.includes('3 merged PRs: Export CSV; Offline mode; Login bug'))
+  assert(next.rows.find(r=>r.repo===repos[0]).html.includes('author%3Aapoorvdarshan'))
+  assert(next.rows.find(r=>r.repo===repos[1]).html.includes('my custom fix'))
   assert.throws(()=>updateReadme(first.readme,[],stars,first.state),/Previously verified PR missing/)
 })
 test('title is escaped as text, star badges added and removed',()=>{
@@ -54,7 +58,8 @@ FOOTER-SENTINEL`
   assert(tex.startsWith('HEADER-SENTINEL'))
   assert(tex.endsWith('FOOTER-SENTINEL'))
   assert(tex.includes('9K+'))
-  assert(tex.includes('2 merged PRs: resume custom description'))
+  assert(tex.includes(String.raw`2 merged PRs: Correct <script> \& \$value`))
+  assert(!tex.includes('resume custom description'))
   assert(tex.indexOf('org/new')<tex.indexOf('org/old'))
   for (const line of tex.split('\n').filter(l=>l.includes('\\resumeProjectHeading{'))) {
     const braces = line.replace(/\\[{}]/g, '').match(/[{}]/g)
@@ -76,4 +81,50 @@ test('resume recognizes escaped repository names and preserves their prose',()=>
   assert(tex.includes('keep this custom wording'))
   assert(tex.includes('20k stars'))
   assert.equal(updateResume(tex,r.rows,stars),tex)
+})
+test('recent summaries use merge time, up to three distinct titles, and the full count',()=>{
+  const pulls=[
+    pr('org/r',10,{title:'feat: Offline mode',mergedAt:'2026-10-10T03:00:00Z'}),
+    pr('org/r',20,{title:'fix: Login bug',mergedAt:'2026-10-10T01:00:00Z'}),
+    pr('org/r',30,{title:'docs: Login bug',mergedAt:'2026-10-10T02:00:00Z'}),
+    pr('org/r',40,{title:'feat: Export CSV',mergedAt:'2026-10-09T00:00:00Z'}),
+    pr('org/r',50,{title:'chore: Older work',mergedAt:'2026-10-08T00:00:00Z'}),
+  ]
+  assert.equal(recentDescription(pulls),'5 merged PRs: Offline mode; Login bug; Export CSV')
+  assert.equal(recentDescription([...pulls].reverse()),recentDescription(pulls))
+})
+test('long summaries keep the two newest titles inside the one-line budget',()=>{
+  const summary=recentDescription([
+    pr('org/r',1,{title:'feat: Older feature that should not displace the latest work'}),
+    pr('org/r',2,{title:'fix: Restore compatibility for encoded UTF-8 characters in exported filenames'}),
+    pr('org/r',3,{title:'feat: Add offline synchronization for encrypted local document collections'}),
+  ])
+  assert([...summary].length<=90)
+  assert(summary.startsWith('3 merged PRs: Add offline'))
+  assert(summary.includes('; Restore compatibility'))
+  assert(!summary.includes('Older feature'))
+  assert.equal(summary.split('; ').length,2)
+  const withShort=recentDescription([pr('org/r',1,{title:'feat: '+ '😀'.repeat(100)}),pr('org/r',2,{title:'fix: Login'})])
+  assert([...withShort].length<=90)
+  assert(withShort.includes('Login; 😀'))
+  assert(!withShort.includes('\uFFFD'))
+})
+test('brand attribution survives description replacement and counts toward the limit',()=>{
+  const attribution=' (by <a href="https://github.com/org"><img alt="Brand" src="brand.svg"></a>)'
+  const before=readme([['org/r','old wording'+attribution]])
+  const stars={'apoorvdarshan/app':0,'org/r':1}
+  const first=updateReadme(before,[pr('org/r',1),pr('org/r',2,{title:'feat: A new feature'})],stars)
+  assert(first.readme.includes(attribution))
+  assert(first.readme.includes('A new feature; Correct &lt;script&gt; &amp; $value'))
+  assert(!first.readme.includes('old wording'))
+  assert.equal(updateReadme(first.readme,[pr('org/r',1),pr('org/r',2,{title:'feat: A new feature'})],stars,first.state).readme,first.readme)
+})
+test('title cleanup removes redundant author and code markup without inventing wording',()=>{
+  assert.equal(cleanTitle('feat(app): Add `Verceltics` by @apoorvdarshan'),'Add Verceltics')
+  assert.equal(cleanTitle('Add project by @someone-else'),'Add project by @someone-else')
+  assert.equal(cleanTitle('Add project by @apoorvdarshan-other'),'Add project by @apoorvdarshan-other')
+  const stars={'apoorvdarshan/app':0,'org/r':1}
+  const prs=[pr('org/r',1),pr('org/r',2,{title:'fix: Handle retries (by design)'})]
+  const first=updateReadme(readme([['org/r']]),prs,stars)
+  assert.equal(updateReadme(first.readme,prs,stars,first.state).readme,first.readme)
 })

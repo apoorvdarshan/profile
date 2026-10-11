@@ -32,10 +32,46 @@ export function badge(html, repo, stars) {
   const cleaned = html.replace(STAR, '')
   return stars > 0 ? cleaned.replace('</strong>', `</strong> ${starBadge(repo)}`) : cleaned
 }
+function shorten(text, limit) {
+  const chars = [...text]
+  if (chars.length <= limit) return text
+  const head = chars.slice(0, limit - 1).join('')
+  const words = head.replace(/\s+\S*$/, '').trimEnd()
+  return ([...words].length >= limit / 2 ? words : head.trimEnd()) + '…'
+}
 export function cleanTitle(title) {
-  const cleaned = title.replace(/^(?:fix|feat|docs|chore|refactor|test|ci|build|perf|style)(?:\([^)]*\))?!?:\s*/i, '').replace(/\s+/g, ' ').trim()
+  const cleaned = title.replace(/^(?:fix|feat|docs|chore|refactor|test|ci|build|perf|style)(?:\([^)]*\))?!?:\s*/i, '')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(new RegExp(`\\s+by @${AUTHOR}(?![\\w-])`, 'gi'), '')
+    .replace(/\s+/g, ' ').trim()
   assert(cleaned, 'Empty PR title')
-  return [...cleaned].length <= 90 ? cleaned : [...cleaned].slice(0, 87).join('').replace(/\s+\S*$/, '') + '…'
+  return shorten(cleaned, 90)
+}
+export function recentDescription(prs, limit = 90) {
+  assert(prs.length > 0, 'Cannot summarize an empty PR list')
+  const prefix = prs.length > 1 ? `${prs.length} merged PRs: ` : ''
+  const budget = limit - [...prefix].length
+  assert(budget >= 20, 'Not enough room for a contribution description')
+  const seen = new Set()
+  let titles = [...prs].sort((a,b) => b.mergedAt.localeCompare(a.mergedAt) || b.number-a.number)
+    .map(p => cleanTitle(p.title)).filter(title => {
+      const key = title.toLowerCase()
+      if (seen.has(key)) return false
+      seen.add(key)
+      return true
+    }).slice(0,3)
+  // Keep two readable titles instead of squeezing three long ones into fragments.
+  if (titles.length === 3 && [...titles.join('; ')].length > budget) titles = titles.slice(0,2)
+  if ([...titles.join('; ')].length <= budget) return prefix + titles.join('; ')
+  const available = budget - (titles.length-1)*2
+  const sizes = titles.map(() => Math.floor(available / titles.length))
+  sizes[0] += available % titles.length
+  // Give unused room from a short title to the longer one.
+  for (let i=0; i<titles.length; i++) {
+    const spare = sizes[i] - [...titles[i]].length
+    if (spare > 0 && titles.length > 1) { sizes[i] -= spare; sizes[1-i] += spare }
+  }
+  return prefix + titles.map((title,i) => shorten(title,sizes[i])).join('; ')
 }
 export function verifiedPRs(pulls) {
   const unique = new Map()
@@ -62,6 +98,7 @@ export function updateReadme(readme, pulls, stars, previous = null) {
   const byRepo = new Map(rows.map(r => [r.repo.toLowerCase(), r]))
   for (const [key, prs] of groups) {
     let row = byRepo.get(key)
+    const isNew = !row
     if (!row) {
       const latest = [...prs].sort((a,b) => b.mergedAt.localeCompare(a.mergedAt) || b.number-a.number)[0]
       row = { repo: latest.repo, html: `🔧 <strong><a href="${latest.url}">${escapeHtml(latest.repo.split('/')[1])}</a></strong> - ${escapeHtml(cleanTitle(latest.title))}` }
@@ -73,12 +110,16 @@ export function updateReadme(readme, pulls, stars, previous = null) {
       // Hand-maintained entries may include authored commits or historical credit.
       // Do not silently reduce or reinterpret them as verified authored PRs.
       warnings.push(`${row.repo}: preserved editorial count ${count[1]}; ${prs.length} authored merges verified`)
-    } else if (prs.length > 1) {
+    } else if (isNew || prs.length > 1 || (previous && !previous.pullRequests.some(p => p.repo.toLowerCase() === key))) {
       const old = row.html
-      const href = `https://github.com/${row.repo}/pulls?q=${encodeURIComponent(`is:pr is:merged author:${AUTHOR}`)}`
+      const href = prs.length > 1 ? `https://github.com/${row.repo}/pulls?q=${encodeURIComponent(`is:pr is:merged author:${AUTHOR}`)}` : prs[0].url
       row.html = row.html.replace(/(<strong><a href=")[^"]+(">)/, `$1${href}$2`)
-      row.html = count ? row.html.replace(/ - \d+ merged PRs?: /, ` - ${prs.length} merged PRs: `) : row.html.replace(' - ', ` - ${prs.length} merged PRs: `)
-      if (row.html !== old) changes.push(`Updated ${row.repo}: ${prs.length} merged PRs`)
+      const separator = row.html.indexOf(' - ')
+      assert(separator >= 0, `Contribution description missing for ${row.repo}`)
+      const attribution = row.html.slice(separator).match(/\s+\((?:by|merged by)\s+<a\b[\s\S]*\)$/)?.[0] ?? ''
+      row.autoDescription = recentDescription(prs, 90 - [...plain(attribution)].length)
+      row.html = row.html.slice(0,separator) + ' - ' + escapeHtml(row.autoDescription) + attribution
+      if (row.html !== old) changes.push(`Updated ${row.repo}: ${prs.length} merged PRs and recent descriptions`)
     }
   }
   const getStars = (repo) => {
@@ -139,7 +180,11 @@ export function updateResume(source, rows, stars) {
       line = `\\resumeProjectHeading{\\textbf{\\href{${texEscape(plain(link[1]))}}{${texEscape(name)}}} \\textnormal{ -- ${texEscape(description)}}}{}`
     } else {
       line = line.replace(/\\href\{[^}]+\}/, () => `\\href{${texEscape(plain(link[1]))}}`)
-      if (count) line = / -- \d+ merged PRs?: /.test(line) ? line.replace(/ -- \d+ merged PRs?: /, ` -- ${count} merged PRs: `) : line.replace(' -- ', ` -- ${count} merged PRs: `)
+      if (row.autoDescription) {
+        const description = /(\\textnormal\{ -- )[\s\S]*(\}\}\{\})$/
+        assert(description.test(line), `Resume description structure missing for ${row.repo}`)
+        line = line.replace(description, (_,prefix,suffix) => prefix + texEscape(row.autoDescription) + suffix)
+      } else if (count) line = / -- \d+ merged PRs?: /.test(line) ? line.replace(/ -- \d+ merged PRs?: /, ` -- ${count} merged PRs: `) : line.replace(' -- ', ` -- ${count} merged PRs: `)
     }
     return '      ' + updateStar(line, stars[row.repo.toLowerCase()])
   }).join('\n')
