@@ -11,7 +11,7 @@
 </div>
 
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/15390/badge)](https://www.bestpractices.dev/projects/15390)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/apoorvdarshan/profile/badge)](https://scorecard.dev/viewer/?uri=github.com/apoorvdarshan/profile)
+[![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/apoorvdarshan/profile?label=openssf%20scorecard&style=flat)](https://scorecard.dev/viewer/?uri=github.com/apoorvdarshan/profile)
 
 ## About
 
