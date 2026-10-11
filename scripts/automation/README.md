@@ -53,7 +53,7 @@ The updater reads **App Downloads Standard**, DAILY instances only, paginates al
 
 `ios-download-history.json` in **private** `profile-resume-private` stores per-day aggregates, processed-instance IDs, and the complete daily lifetime history verified against the App Store Connect Analytics UI on 2026-10-11 (through 2026-10-09). This survives Apple's 35-day report retention and runner/cache resets. Fresh ONE_TIME_SNAPSHOT requests were made on 2026-10-11 for all six apps; once generated, the job automatically imports the full report history and reconciles the bootstrapped UI history. It validates the snapshot covers the known app history. The checked daily totals are saved as private `ios-downloads.json`. Raw reports, signed download URLs and credentials are never committed.
 
-Fud AI adds **the latest verified Android first-time install total** from private `android-downloads.json`; `android_package` in the iOS config maps the two platforms. The Android and iOS reporting dates are retained separately. All other configured badges use iOS alone. Milestones round down (35 → 30+, 188 → 100+, 1,358 → 1K+). Project descriptions, order, extension user counts and other download badges remain curated.
+Fud AI adds **the latest verified Android first-time install total** from private `android-downloads.json`; `android_package` in the iOS config maps the two platforms. The Android and iOS reporting dates are retained separately. All other configured badges use iOS alone. Milestones round down (35 → 30+, 188 → 100+, 1,358 → 1K+). Project descriptions and order remain curated; the final distribution step refreshes mapped release downloads and Chrome users.
 
 The exact same labels update the GitHub README and private resume source before the existing PDF build/site sync. Both public PDF URLs therefore follow automatically. The Mac's existing six-hour pull brings the private history, source and PDF down; Documents resume symlinks and the rekisei mirror follow. `~/Documents/asc_downloads.json` is a symlink to the current private aggregate file after its original snapshot was archived; read the current `apps` mapping rather than the legacy array format.
 
@@ -77,7 +77,7 @@ Apple references: [Analytics Reports](https://developer.apple.com/documentation/
 
 `npm_downloads.py` refreshes the five explicitly configured packages in `npm-downloads.json` once per UTC day during the six-hour workflow. No npm token, npmrc, publishing permission, or 2FA bypass is used. It reads the public registry metadata and public download-count API. `refresh_npm_downloads` in manual dispatch (or local `NPM_DOWNLOADS_FORCE=true`) forces a fresh check.
 
-The metric is **lifetime npm package downloads**, across all versions from each package's creation date through the latest completed date available for all five packages. Downloads include repeat installs and automated/CI requests; they are not unique users, GitHub release downloads, or Homebrew installs. The existing project download badge displays this npm-only count, rounded down with the same milestone rules as iOS. Fud AI and extension user counts are managed separately.
+The metric is **lifetime npm package downloads**, across all versions from each package's creation date through the latest completed date available for all five packages. Downloads include repeat installs and automated/CI requests; they are not unique users, GitHub release downloads, or Homebrew installs. This step writes the npm subtotal; the final distribution step adds configured GitHub asset events and publishes a combined badge with the same floor rounding. Fud AI and extension user counts are managed separately.
 
 Each daily refresh verifies the exact package name, maintainer, repository, and pinned creation date. Scoped packages are queried individually. Full history is fetched again in non-overlapping inclusive windows of at most 365 days, below npm's 18-month request limit. Responses must cover the exact requested interval with a nonnegative integer count. This incorporates corrected statistics without incrementally double-counting downloads. Packages created before npm's available history (2015-01-10) require an explicit historical policy before being added.
 
@@ -128,3 +128,42 @@ A follow-up probe confirmed that adding the email identity scope does not resolv
 - A failed fetch or validation never replaces the saved count with zero, marks it fresh, or writes a partial history. The last verified snapshot stays intact; the next six-hour run retries. Once access recovers, the normal fetch replaces the snapshot automatically. A valid reporting response showing no new installs is handled separately from a failed request.
 - Android, ASC and npm fetch failures allow other valid updates, signed commits, the resume build and deployment to proceed with the previous verified counts. **After publishing**, a final health step marks the workflow failed and adds an explicit summary if any download source or Play authentication failed. A fallback run must not appear entirely green. Earlier build/deployment failures remain visible too; retained data does not imply a successful deployment.
 - Reporting dates stay attached to the private snapshots; old totals are never described as freshly fetched. No switch to public Play Store milestone estimates, new API key, publishing key or owner credential happens automatically.
+
+
+## Public release downloads, Homebrew and Chrome users
+
+`distribution_counts.py` runs daily after mobile/npm composition. Configuration is
+`distribution-counts.json`; audit snapshots are committed to the README repository
+at `profile-automation/distribution-counts.json`. `DISTRIBUTION_FORCE=true` bypasses
+the daily cache. The GitHub token is sent only to api.github.com; store pages need
+no credentials. Chrome requests fix `hl=en` and parse only the listing header.
+Only Country Filter and Streaming Auto-Pause are published; no counts are invented
+for local-only extensions. Publicly readable unlisted pages can also be configured.
+Restricted/private listings are not accessed with personal cookies.
+
+Six repositories have stable release assets: Fud AI (APK only), LithosAI Bar,
+DesktopWorm, Browser Cookie Bridge, Hash Harbor, and TetherShot. Both releases and
+assets are paginated. Allowlisted distributables exclude signatures/checksums,
+source auto-archives, draft/prerelease assets and publishing-only Android AAB files.
+Counts cover assets still available on GitHub; deleted assets cannot be recovered.
+
+For mapped projects, npm downloads plus GitHub asset requests form a **download
+event total**, not unique users or successful installs. A single npm installation
+can fetch a release binary too (for example Hash Harbor); both are file downloads.
+Fud AI adds APK download events to its independently verified iOS + Android
+first-time store subtotal. The private store snapshots keep their original metric.
+Chrome users are never added to downloads and may decrease.
+
+TetherShot and Browser Cookie Bridge are in `apoorvdarshan/homebrew-tap`. Their
+casks fetch the same GitHub release DMGs, so those fetches are already represented
+in GitHub counts. There is no extra Homebrew total to add. Homebrew analytics
+are optional reporting over rolling windows, not a complete lifetime counter:
+https://docs.brew.sh/Analytics . Crossposter's README mentions brew, but the tap
+currently has no corresponding formula; do not treat that command as proof of
+an available package or invent its usage.
+
+Sources refresh independently. On failure, retain that source's last verified
+snapshot (including its original date), compose against current saved subtotals,
+and let other sources publish. A first-time failure leaves that project's badge
+alone. The workflow publishes valid changes, then fails its final health check.
+This avoids silently green stale-source runs. No source count is clamped upwards.

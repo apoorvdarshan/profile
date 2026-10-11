@@ -160,8 +160,8 @@ function DownloadBadge({ item }) {
   if (!item.downloads) return null
 
   return (
-    <span className="download-count" aria-label={`${displayName(item.name)} has ${item.downloads} downloads`}>
-      <span aria-hidden="true">↓ {item.downloads}</span>
+    <span className="download-count" aria-label={`${displayName(item.name)} has ${item.downloads} ${item.metric || 'downloads'}`}>
+      <span aria-hidden="true">↓ {item.downloads}{item.metric === 'users' ? ' users' : ''}</span>
     </span>
   )
 }

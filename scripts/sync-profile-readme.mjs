@@ -57,7 +57,7 @@ function htmlEntriesFrom(text) {
       status,
       marker,
       starBadgeUrl,
-      ...(downloads ? { downloads } : {}),
+      ...(downloads ? { downloads, metric: usersFromBadge ? 'users' : 'downloads' } : {}),
     }]
   })
 }
