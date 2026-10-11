@@ -1038,7 +1038,7 @@
     },
     {
       "name": "open-source-ios-apps",
-      "url": "https://github.com/dkhamsing/open-source-ios-apps/pulls?q=author%3Aapoorvdarshan",
+      "url": "https://github.com/dkhamsing/open-source-ios-apps/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
       "description": "2 merged PRs: Scowld, Verceltics",
       "status": "",
       "marker": "📱",
@@ -1065,7 +1065,7 @@
     },
     {
       "name": "zx",
-      "url": "https://github.com/google/zx/pulls?q=author%3Aapoorvdarshan",
+      "url": "https://github.com/google/zx/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
       "description": "2 merged PRs: cwd validation + remote script error handling (by Google)",
       "status": "",
       "marker": "🐚",
@@ -1091,21 +1091,21 @@
       "starCount": "39k"
     },
     {
-      "name": "core",
-      "url": "https://github.com/dotnet/core/pull/10349",
-      "description": "add F# release notes for .NET 11 Preview 3 (by .NET)",
-      "status": "",
-      "marker": "🔷",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=dotnet/core&v=3",
-      "starCount": "22k"
-    },
-    {
       "name": "CodexBar",
       "url": "https://github.com/steipete/CodexBar/pull/344/commits",
       "description": "fix: region-specific API endpoint for MiniMax (by @steipete, 🦞 OpenClaw)",
       "status": "",
       "marker": "🛠️",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=steipete/CodexBar&v=3",
+      "starCount": "22k"
+    },
+    {
+      "name": "core",
+      "url": "https://github.com/dotnet/core/pull/10349",
+      "description": "add F# release notes for .NET 11 Preview 3 (by .NET)",
+      "status": "",
+      "marker": "🔷",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=dotnet/core&v=3",
       "starCount": "22k"
     },
     {
@@ -1127,15 +1127,6 @@
       "starCount": "18k"
     },
     {
-      "name": "burn",
-      "url": "https://github.com/tracel-ai/burn/pull/5536",
-      "description": "fix(store): exclude adapter-matched tensors from unused",
-      "status": "",
-      "marker": "🦀",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=tracel-ai/burn&v=3",
-      "starCount": "16k"
-    },
-    {
       "name": "Effect",
       "url": "https://github.com/Effect-TS/effect/pull/7533",
       "description": "fix(atom-solid): forward default idle TTL",
@@ -1143,6 +1134,15 @@
       "marker": "⚡",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=Effect-TS/effect&v=3",
       "starCount": "17k"
+    },
+    {
+      "name": "burn",
+      "url": "https://github.com/tracel-ai/burn/pull/5536",
+      "description": "fix(store): exclude adapter-matched tensors from unused",
+      "status": "",
+      "marker": "🦀",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=tracel-ai/burn&v=3",
+      "starCount": "16k"
     },
     {
       "name": "react-spectrum",
@@ -1173,7 +1173,7 @@
     },
     {
       "name": "omi",
-      "url": "https://github.com/BasedHardware/omi/pulls?q=author%3Aapoorvdarshan",
+      "url": "https://github.com/BasedHardware/omi/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
       "description": "40 merged PRs: BYOK, device sync, speaker profiles, updates, and onboarding",
       "status": "",
       "marker": "🎙️",
@@ -1190,15 +1190,6 @@
       "starCount": "13k"
     },
     {
-      "name": "gunicorn",
-      "url": "https://github.com/benoitc/gunicorn/pull/3686",
-      "description": "fix: decrement nr_conns on server-initiated close in the ASGI worker (authored commit)",
-      "status": "",
-      "marker": "🦄",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=benoitc/gunicorn&v=3",
-      "starCount": "11k"
-    },
-    {
       "name": "kornia",
       "url": "https://github.com/kornia/kornia/pull/4121",
       "description": "fix(geometry): validate NMS box shape",
@@ -1208,8 +1199,17 @@
       "starCount": "11k"
     },
     {
+      "name": "gunicorn",
+      "url": "https://github.com/benoitc/gunicorn/pull/3686",
+      "description": "fix: decrement nr_conns on server-initiated close in the ASGI worker (authored commit)",
+      "status": "",
+      "marker": "🦄",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=benoitc/gunicorn&v=3",
+      "starCount": "11k"
+    },
+    {
       "name": "sqlfluff",
-      "url": "https://github.com/sqlfluff/sqlfluff/pulls?q=author%3Aapoorvdarshan",
+      "url": "https://github.com/sqlfluff/sqlfluff/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
       "description": "7 merged PRs: SQL dialect parsing, grammar, and Jinja encoding fixes",
       "status": "",
       "marker": "❄️",
@@ -1289,21 +1289,21 @@
       "starCount": "6.7k"
     },
     {
+      "name": "up-for-grabs.net",
+      "url": "https://github.com/up-for-grabs/up-for-grabs.net/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
+      "description": "8 merged PRs: add projects + fix forks badge cursor",
+      "status": "",
+      "marker": "🆙",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=up-for-grabs/up-for-grabs.net&v=3",
+      "starCount": "6k"
+    },
+    {
       "name": "lark",
       "url": "https://github.com/lark-parser/lark/pull/1619",
       "description": "fix: preserve lexer callbacks for keyword terminals",
       "status": "",
       "marker": "🐦",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=lark-parser/lark&v=3",
-      "starCount": "6k"
-    },
-    {
-      "name": "up-for-grabs.net",
-      "url": "https://github.com/up-for-grabs/up-for-grabs.net/pulls?q=author%3Aapoorvdarshan",
-      "description": "8 merged PRs: add projects + fix forks badge cursor",
-      "status": "",
-      "marker": "🆙",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=up-for-grabs/up-for-grabs.net&v=3",
       "starCount": "6k"
     },
     {
@@ -1334,21 +1334,21 @@
       "starCount": "5.6k"
     },
     {
+      "name": "typeshed",
+      "url": "https://github.com/python/typeshed/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
+      "description": "2 merged PRs: frozendict __init__ + functools.partial.__get__ (3.14)",
+      "status": "",
+      "marker": "🏷️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=python/typeshed&v=3",
+      "starCount": "5.1k"
+    },
+    {
       "name": "akka.net",
       "url": "https://github.com/akkadotnet/akka.net/pull/8048",
       "description": "fix: downgrade RemoveChild log from Warning to Debug",
       "status": "",
       "marker": "⚡",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=akkadotnet/akka.net&v=3",
-      "starCount": "5.1k"
-    },
-    {
-      "name": "typeshed",
-      "url": "https://github.com/python/typeshed/pulls?q=author%3Aapoorvdarshan",
-      "description": "2 merged PRs: frozendict __init__ + functools.partial.__get__ (3.14)",
-      "status": "",
-      "marker": "🏷️",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=python/typeshed&v=3",
       "starCount": "5.1k"
     },
     {
@@ -1379,21 +1379,21 @@
       "starCount": "4.4k"
     },
     {
-      "name": "dynaconf",
-      "url": "https://github.com/dynaconf/dynaconf/pull/1421",
-      "description": "feat: support list values for environment configuration",
-      "status": "",
-      "marker": "🧰",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=dynaconf/dynaconf&v=3",
-      "starCount": "4.3k"
-    },
-    {
       "name": "fsharp",
       "url": "https://github.com/dotnet/fsharp/pull/19317",
       "description": "fix: Seq.empty serializer rendering (by .NET)",
       "status": "",
       "marker": "🔷",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=dotnet/fsharp&v=3",
+      "starCount": "4.3k"
+    },
+    {
+      "name": "dynaconf",
+      "url": "https://github.com/dynaconf/dynaconf/pull/1421",
+      "description": "feat: support list values for environment configuration",
+      "status": "",
+      "marker": "🧰",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=dynaconf/dynaconf&v=3",
       "starCount": "4.3k"
     },
     {
@@ -1433,15 +1433,6 @@
       "starCount": "3.3k"
     },
     {
-      "name": "Pint",
-      "url": "https://github.com/hgrecco/pint/pull/2330",
-      "description": "feat: support superscript decimal point and fraction slash in exponents",
-      "status": "",
-      "marker": "📐",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=hgrecco/pint&v=3",
-      "starCount": "2.8k"
-    },
-    {
       "name": "python-markdown2",
       "url": "https://github.com/trentm/python-markdown2/pull/713",
       "description": "fix: prevent duplicate IDs from the header-ids extra",
@@ -1451,8 +1442,17 @@
       "starCount": "2.8k"
     },
     {
+      "name": "Pint",
+      "url": "https://github.com/hgrecco/pint/pull/2330",
+      "description": "feat: support superscript decimal point and fraction slash in exponents",
+      "status": "",
+      "marker": "📐",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=hgrecco/pint&v=3",
+      "starCount": "2.8k"
+    },
+    {
       "name": "pygments",
-      "url": "https://github.com/pygments/pygments/pulls?q=author%3Aapoorvdarshan",
+      "url": "https://github.com/pygments/pygments/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
       "description": "2 merged PRs: add 'yml' alias for YAML lexer + Mathematica \\[Name] named-character escapes",
       "status": "",
       "marker": "🖍️",
@@ -1478,30 +1478,21 @@
       "starCount": "1.9k"
     },
     {
-      "name": "simplejson",
-      "url": "https://github.com/simplejson/simplejson/pull/381",
-      "description": "fix: handle non-finite Decimal values like floats in the encoder",
-      "status": "",
-      "marker": "🔢",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=simplejson/simplejson&v=3",
-      "starCount": "1.7k"
-    },
-    {
-      "name": "argcomplete",
-      "url": "https://github.com/kislyuk/argcomplete/pull/553",
-      "description": "fix: expand ~ in DirectoriesCompleter",
-      "status": "",
-      "marker": "⌨️",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=kislyuk/argcomplete&v=3",
-      "starCount": "1.6k"
-    },
-    {
       "name": "awesome-swift-macos-apps",
       "url": "https://github.com/jaywcjlove/awesome-swift-macos-apps/pull/101",
       "description": "add TetherShot to the curated Swift macOS apps list",
       "status": "",
       "marker": "🍎",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=jaywcjlove/awesome-swift-macos-apps&v=3",
+      "starCount": "1.7k"
+    },
+    {
+      "name": "simplejson",
+      "url": "https://github.com/simplejson/simplejson/pull/381",
+      "description": "fix: handle non-finite Decimal values like floats in the encoder",
+      "status": "",
+      "marker": "🔢",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=simplejson/simplejson&v=3",
       "starCount": "1.7k"
     },
     {
@@ -1520,6 +1511,15 @@
       "status": "",
       "marker": "🔤",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=pwaller/pyfiglet&v=3",
+      "starCount": "1.6k"
+    },
+    {
+      "name": "argcomplete",
+      "url": "https://github.com/kislyuk/argcomplete/pull/553",
+      "description": "fix: expand ~ in DirectoriesCompleter",
+      "status": "",
+      "marker": "⌨️",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=kislyuk/argcomplete&v=3",
       "starCount": "1.6k"
     },
     {
@@ -1568,6 +1568,15 @@
       "starCount": "950"
     },
     {
+      "name": "awesome-ai-companion",
+      "url": "https://github.com/DasterProkio/awesome-ai-companion/pull/10",
+      "description": "docs: add Scowld companion client",
+      "status": "",
+      "marker": "🤖",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
+      "starCount": "910"
+    },
+    {
       "name": "decorator",
       "url": "https://github.com/micheles/decorator/pull/186",
       "description": "fix: FunctionMaker.create() with return type annotation",
@@ -1578,7 +1587,7 @@
     },
     {
       "name": "ccextractor",
-      "url": "https://github.com/CCExtractor/ccextractor/pulls?q=author%3Aapoorvdarshan",
+      "url": "https://github.com/CCExtractor/ccextractor/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
       "description": "2 merged PRs: fix null pointer dereference in Matroska parser + config file parsing bugs",
       "status": "",
       "marker": "📺",
@@ -1611,15 +1620,6 @@
       "marker": "🪶",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=ikamensh/flynt&v=3",
       "starCount": "732"
-    },
-    {
-      "name": "awesome-ai-companion",
-      "url": "https://github.com/DasterProkio/awesome-ai-companion/pull/10",
-      "description": "docs: add Scowld companion client",
-      "status": "",
-      "marker": "🤖",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "910"
     },
     {
       "name": "kart",
@@ -1712,15 +1712,6 @@
       "starCount": "512"
     },
     {
-      "name": "poetry-core",
-      "url": "https://github.com/python-poetry/poetry-core/pull/953",
-      "description": "fix: Version.difference with local variants of the same version",
-      "status": "",
-      "marker": "📝",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=python-poetry/poetry-core&v=3",
-      "starCount": "481"
-    },
-    {
       "name": "awesome-openrouter",
       "url": "https://github.com/OpenRouterTeam/awesome-openrouter/pull/103",
       "description": "add Fud AI to the OpenRouter app directory",
@@ -1728,6 +1719,15 @@
       "marker": "🔀",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=OpenRouterTeam/awesome-openrouter&v=3",
       "starCount": "506"
+    },
+    {
+      "name": "poetry-core",
+      "url": "https://github.com/python-poetry/poetry-core/pull/953",
+      "description": "fix: Version.difference with local variants of the same version",
+      "status": "",
+      "marker": "📝",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=python-poetry/poetry-core&v=3",
+      "starCount": "481"
     },
     {
       "name": "mail-parser",
@@ -1848,7 +1848,7 @@
     },
     {
       "name": "awesome-mac",
-      "url": "https://github.com/abordage/awesome-mac/pulls?q=author%3Aapoorvdarshan",
+      "url": "https://github.com/abordage/awesome-mac/pulls?q=is%3Apr%20is%3Amerged%20author%3Aapoorvdarshan",
       "description": "4 merged PRs: Hash Harbor, MacBook 24x7 Agents, Browser Cookie Bridge, TetherShot",
       "status": "",
       "marker": "🍎",
