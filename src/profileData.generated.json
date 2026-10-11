@@ -224,6 +224,14 @@
       "starCount": "19"
     },
     {
+      "name": "omi-leaderboard",
+      "url": "https://github.com/apoorvdarshan/omi-leaderboard",
+      "description": "Omi contributor rankings, merged PRs, and shareable profiles",
+      "status": "",
+      "marker": "🏆",
+      "starBadgeUrl": ""
+    },
+    {
       "name": "ringtone-cropper",
       "url": "https://github.com/apoorvdarshan/ringtone-cropper",
       "description": "Crop any audio into an iPhone ringtone (.m4r) in your browser",
@@ -642,6 +650,14 @@
     {
       "name": "Web Apps & Tools",
       "items": [
+        {
+          "name": "omi-leaderboard",
+          "url": "https://github.com/apoorvdarshan/omi-leaderboard",
+          "description": "Omi contributor rankings, merged PRs, and shareable profiles",
+          "status": "",
+          "marker": "🏆",
+          "starBadgeUrl": ""
+        },
         {
           "name": "ringtone-cropper",
           "url": "https://github.com/apoorvdarshan/ringtone-cropper",
