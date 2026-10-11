@@ -104,7 +104,7 @@ class DownloadTests(unittest.TestCase):
         resume = 'Header\n' + r'\resumeProjectHeading{\textbf{\href{https://example.com}{example}} \textcolor{Maroon}{$\downarrow$ 1K+} -- Leave prose}{}' + '\nFooter\n'
         new, tex = ios.update_copy(readme, resume, [app], {'apps':{'123':{'badge':'2K+'}}})
         self.assertIn('Downloads: 2K+', new)
-        self.assertIn('2K%2B-8B1A1A', new)
+        self.assertIn('https://apoorvdarshan.com/badges/downloads/v1/2K%2B.svg', new)
         self.assertEqual(tex, resume.replace('1K+', '2K+'))
         self.assertIn('Leave prose', new)
         with self.assertRaises(ValueError): ios.update_copy(readme+readme, resume, [app], {'apps':{'123':{'badge':'2K+'}}})
