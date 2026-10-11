@@ -140,7 +140,8 @@
       "description": "Send LinkedIn connection requests by country/role at a human pace",
       "status": "",
       "marker": "🤝",
-      "starBadgeUrl": ""
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/linkedin-connection-sender&v=3",
+      "starCount": "1"
     },
     {
       "name": "rekisei",
@@ -554,7 +555,7 @@
           "description": "Send LinkedIn connection requests by country/role at a human pace",
           "status": "",
           "marker": "🤝",
-          "starBadgeUrl": ""
+          "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=apoorvdarshan/linkedin-connection-sender&v=3"
         },
         {
           "name": "rekisei",
@@ -1843,11 +1844,7 @@
   "agentSetup": [
     {
       "name": "Harnesses",
-      "description": "Separate TUIs: [Claude Code](https://claude.com/product/claude-code) for Claude, [Codex](https://openai.com/codex/) for GPT, and [OpenCode v2](https://opencode.ai/) for OpenCode Go and LithosAI"
-    },
-    {
-      "name": "Models",
-      "description": "Claude, GPT, [OpenCode Go](https://opencode.ai/go), and [LithosAI](https://lithosai.com/) (mostly [DeepSeek](https://www.deepseek.com/))"
+      "description": "Separate TUIs: [Claude Code](https://claude.com/product/claude-code) for Claude, [Codex](https://openai.com/codex/) for GPT, and [OpenCode v2](https://opencode.ai/) for OpenCode Go and LithosAI ([DeepSeek](https://www.deepseek.com/))"
     },
     {
       "name": "Workspace",
