@@ -1,3 +1,4 @@
+import { scorecardBadge } from './scorecard-badge.js'
 import { downloadBadge } from './download-badge.js'
 
 const RESUME_ASSET_PATH = '/Apoorv_Darshan_Resume.pdf'
@@ -12,6 +13,8 @@ export default {
     const { pathname } = new URL(request.url)
     const badge = downloadBadge(request, pathname)
     if (badge) return badge
+    const scorecard = await scorecardBadge(request, pathname)
+    if (scorecard) return scorecard
 
     if (!isResumePath(pathname)) {
       return env.ASSETS.fetch(request)
