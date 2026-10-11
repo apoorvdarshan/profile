@@ -197,6 +197,8 @@ class Client:
 
 def refresh_app(client, app_id, existing, today):
     app = copy.deepcopy(existing)
+    complete_through = max(app.get('complete_through', app['baseline']['through']),
+                           app.get('bootstrap', {}).get('through', app['baseline']['through']))
     requests = client.listing(f'apps/{app_id}/analyticsReportRequests?limit=200')
     ongoing = [r for r in requests if r['attributes']['accessType'] == 'ONGOING']
     check(len(ongoing) == 1 and not ongoing[0]['attributes']['stoppedDueToInactivity'],
@@ -220,6 +222,8 @@ def refresh_app(client, app_id, existing, today):
         check(all(i['attributes']['granularity'] == 'DAILY' for i in instances), 'Mixed report granularities')
         if not instances:
             continue  # Zero-activity apps or a historical request still being generated.
+        latest_processing = max(date.fromisoformat(i['attributes']['processingDate']) for i in instances)
+        complete_through = max(complete_through, (latest_processing - timedelta(days=2)).isoformat())
         available_ids.update(i['id'] for i in instances)
         new = instances if snapshot else [i for i in instances if i['id'] not in app['seen_instances']]
         with ThreadPoolExecutor(max_workers=4) as executor:
@@ -240,25 +244,31 @@ def refresh_app(client, app_id, existing, today):
             app['baseline'] = {'through': '2023-12-31', 'counts': zero(), 'source': 'Full ASC historical snapshot'}
             app.setdefault('imported_snapshots', []).append(request['id'])
             app['history_source'] = 'full ASC report history'
-            recovered_through = date.fromisoformat(max(snapshot_days))
+            recovered_through = latest_processing - timedelta(days=2)
     check(gap <= 32 or (recovered_through is not None and recovered_through >= today - timedelta(days=32)),
           f'App {app_id}: report retention gap; request a fresh historical snapshot with an Admin key')
     app['seen_instances'] = {key: value for key, value in app['seen_instances'].items() if key in available_ids}
     app['checked_on'] = today.isoformat()
+    app['complete_through'] = min(complete_through, (today - timedelta(days=2)).isoformat())
     return app
 
 
 def publish_snapshot(state, configs, through, today):
-    result = {'metric': 'lifetime first-time App Store downloads', 'as_of': through,
+    result = {'metric': 'lifetime first-time App Store downloads', 'target_as_of': through,
               'checked_on': today.isoformat(), 'apps': {}}
     for config in configs:
-        counts = totals(state['apps'][config['id']], through)
+        app = state['apps'][config['id']]
+        complete = app.get('complete_through', app.get('bootstrap', {}).get('through', app['baseline']['through']))
+        cutoff = min(through, complete)
+        counts = totals(app, cutoff)
         other = config.get('other_platform_downloads', 0)
         result['apps'][config['id']] = {
-            'name': config['name'], **counts, 'ios_total_downloads': counts['first_time'] + counts['redownload'],
+            'name': config['name'], 'as_of': cutoff, **counts, 'ios_total_downloads': counts['first_time'] + counts['redownload'],
             'other_platform_downloads': other, 'display_total': counts['first_time'] + other,
             'badge': badge(counts['first_time'] + other),
         }
+    result['as_of'] = min(a['as_of'] for a in result['apps'].values())
+    result['latest_as_of'] = max(a['as_of'] for a in result['apps'].values())
     return result
 
 
@@ -275,7 +285,7 @@ def main():
     if state.get('checked_on') == today.isoformat() and os.environ.get('ASC_DOWNLOADS_FORCE') != 'true':
         print('iOS download reports already checked today; using verified counts.')
         saved = json.loads(snapshot_path.read_text())
-        snapshot = publish_snapshot(state, apps, saved['as_of'], today)
+        snapshot = publish_snapshot(state, apps, saved.get('target_as_of', saved['as_of']), today)
     else:
         client = Client()
         updated = copy.deepcopy(state)
@@ -297,10 +307,10 @@ def main():
             temp = path.with_name(path.name + '.tmp')
             temp.write_text(content)
             temp.replace(path)
-    lines = [f'## iOS downloads through {snapshot["as_of"]}', '',
-             '| App | First-time iOS | Redownloads | Public badge |', '| --- | ---: | ---: | --- |']
+    lines = [f'## iOS downloads checked {snapshot["checked_on"]}', '',
+             '| App | Data through | First-time iOS | Redownloads | Public badge |', '| --- | --- | ---: | ---: | --- |']
     for item in snapshot['apps'].values():
-        lines.append(f'| {item["name"]} | {item["first_time"]} | {item["redownload"]} | {item["badge"]} |')
+        lines.append(f'| {item["name"]} | {item["as_of"]} | {item["first_time"]} | {item["redownload"]} | {item["badge"]} |')
     lines += ['', 'Badges use first-time downloads; Fud AI includes the separately maintained Android count.', '']
     summary = '\n'.join(lines)
     print(summary)
