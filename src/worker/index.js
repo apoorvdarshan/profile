@@ -1,4 +1,4 @@
-const RESUME_ASSET_PATH = '/Apoorv_Darshan_Resume.pdf?v=32'
+const RESUME_ASSET_PATH = '/Apoorv_Darshan_Resume.pdf'
 const RESUME_FILENAME = 'Apoorv_Darshan_Resume.pdf'
 
 function isResumePath(pathname) {
@@ -20,6 +20,7 @@ export default {
     const headers = new Headers(assetResponse.headers)
     headers.set('Content-Type', 'application/pdf')
     headers.set('Content-Disposition', `inline; filename="${RESUME_FILENAME}"`)
+    headers.set('Cache-Control', 'public, max-age=0, must-revalidate')
 
     return new Response(assetResponse.body, {
       status: assetResponse.status,

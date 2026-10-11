@@ -113,7 +113,7 @@ function badgeTiles(value) {
   })
 }
 
-async function attachStarCounts(data, previousStarCounts = new Map()) {
+async function attachStarCounts(data, previousStarCounts = new Map(), verifiedStars) {
   const queue = ['apps', 'games', 'extensions', 'projects', 'openSource']
     .flatMap((key) => data[key])
     .filter((item) => item.starBadgeUrl)
@@ -122,6 +122,13 @@ async function attachStarCounts(data, previousStarCounts = new Map()) {
     while (queue.length) {
       const item = queue.shift()
       try {
+        if (verifiedStars) {
+          const repo = new URL(item.starBadgeUrl).searchParams.get('repo')?.toLowerCase()
+          const stars = verifiedStars[repo]
+          if (!Number.isSafeInteger(stars) || stars < 0) throw new Error(`Missing verified stars for ${repo}`)
+          item.starCount = stars >= 10000 ? `${Math.round(stars / 1000)}k` : stars >= 1000 ? `${Number((stars / 1000).toFixed(1))}k` : String(stars)
+          continue
+        }
         const response = await fetch(item.starBadgeUrl, { headers: { 'User-Agent': 'apoorv-profile-build' } })
         if (!response.ok) throw new Error(`badge returned ${response.status}`)
         const svg = await response.text()
@@ -129,6 +136,7 @@ async function attachStarCounts(data, previousStarCounts = new Map()) {
           || previousStarCounts.get(item.starBadgeUrl)
           || ''
       } catch (error) {
+        if (verifiedStars) throw error
         item.starCount = previousStarCounts.get(item.starBadgeUrl) ?? ''
         console.warn(`Star count unavailable for ${item.name}: ${error.message}`)
       }
@@ -187,7 +195,9 @@ function parseReadme(readme) {
 
 async function main() {
   let readme
-  try {
+  if (process.env.PROFILE_README_PATH) {
+    readme = await readFile(process.env.PROFILE_README_PATH, 'utf8')
+  } else try {
     const response = await fetch(README_API_URL, {
       headers: {
         Accept: 'application/vnd.github.raw+json',
@@ -223,7 +233,13 @@ async function main() {
     if (item.name === 'Resume') item.url = 'https://apoorvdarshan.com/resume'
   }
 
-  await attachStarCounts(data, previousStarCounts)
+  const verifiedStars = process.env.PROFILE_STARS_PATH
+    ? JSON.parse(await readFile(process.env.PROFILE_STARS_PATH, 'utf8')).stars
+    : undefined
+  if (process.env.PROFILE_README_PATH && (!data.apps.length || !data.openSource.length || !data.activityImage)) {
+    throw new Error('Incomplete local README; refusing to overwrite profile snapshot')
+  }
+  await attachStarCounts(data, previousStarCounts, verifiedStars)
   await writeFile(fileURLToPath(OUTPUT_URL), `${JSON.stringify(data, null, 2)}\n`)
   console.log(`Synced GitHub README: ${data.apps.length} apps, ${data.games.length} games, ${data.extensions.length} extensions, ${data.projects.length} projects, ${data.openSource.length} open-source contributions.`)
 }
