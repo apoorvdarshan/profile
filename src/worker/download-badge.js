@@ -22,7 +22,7 @@ export function downloadBadge(request, pathname) {
   const width = leftWidth + rightWidth
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="20" role="img" aria-label="${kind}: ${label}">
 <title>${kind}: ${label}</title>
-<path fill="#555" d="M0 0h${leftWidth}v20H0z"/><path fill="#8B1A1A" d="M${leftWidth} 0h${rightWidth}v20H15z"/>
+<path fill="#555" d="M0 0h${leftWidth}v20H0z"/><path fill="#8B1A1A" d="M${leftWidth} 0h${rightWidth}v20H${leftWidth}z"/>
 <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
 <text x="${leftWidth / 2}" y="14">${users ? 'users' : '↓'}</text><text x="${leftWidth + rightWidth / 2}" y="14" textLength="${textWidth}" lengthAdjust="spacingAndGlyphs">${label}</text>
 </g></svg>`
