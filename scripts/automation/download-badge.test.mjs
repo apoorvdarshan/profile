@@ -46,3 +46,14 @@ test('badge routing preserves normal assets and the resume PDF response', async 
   }
   assert.deepEqual(seen, ['/', '/Apoorv_Darshan_Resume.pdf', '/Apoorv_Darshan_Resume.pdf'])
 })
+
+
+test('user badges preserve the metric and reject invalid input', async () => {
+  for (const label of ['4', '40+', '1K+']) {
+    const response = await worker.fetch(new Request(`${origin}/badges/users/v1/${encodeURIComponent(label)}.svg`), noAssets)
+    assert.equal(response.status, 200)
+    assert.match(await response.text(), new RegExp(`<title>Users: ${label.replace('+', '\\+')}</title>`))
+  }
+  const response = await worker.fetch(new Request(`${origin}/badges/users/v1/bad.svg`), noAssets)
+  assert.equal(response.status, 404)
+})
