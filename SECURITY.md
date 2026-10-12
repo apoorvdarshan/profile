@@ -27,3 +27,17 @@ are monitored with Dependabot and CI audits where a package manifest exists.
 Solo-maintainer policy: zero required approving reviews. Do not require code-owner
 approval or last-push approval. Force pushes/deletions are blocked where the GitHub
 plan supports protections. Automated profile commits must remain possible.
+
+## Automated checks and dependency updates
+CI runs CodeQL, Bandit, dependency audits and generated-input tests. The fast-check
+properties exercise HTML text/attribute decoding and script/style exclusion; the
+badge/LaTeX regression suite also exercises hostile inputs. Run them with
+`node --test scripts/automation/*.test.mjs`. Failures include a seed and shrink
+path for reproduction; preserve any discovered bug as a regression example.
+
+Python direct requirements live in `scripts/automation/requirements.in` and
+`requirements-security.in`. Their `.txt` locks include transitive versions and
+SHA-256 hashes; CI and profile refresh enforce `--require-hashes`. Regenerate
+with `uv pip compile <input.in> --python-version 3.12 --universal --generate-hashes
+-o <output.txt>` (substitute the matching paths), review version/hash changes,
+and run CI before publishing. Keep both locks compatible with Python 3.12.

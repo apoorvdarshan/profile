@@ -1,4 +1,5 @@
 import test from 'node:test'
+import fc from 'fast-check'
 import assert from 'node:assert/strict'
 import worker from '../../src/worker/index.js'
 import { texEscape } from './profile-core.mjs'
@@ -18,4 +19,15 @@ test('fuzz badge paths and LaTeX input escaping across 2000 hostile inputs', asy
     assert(!escaped.includes('\\input{'))
     assert(!escaped.includes('\\write18'))
   }
+})
+
+test('generated Unicode text survives HTML decoding without becoming markup', async () => {
+  const { htmlText } = await import('../html-text.mjs')
+  const alphabet = [...'abc<>&"\' /={}💥é漢字']
+  const escape = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;')
+  fc.assert(fc.property(fc.string({unit: fc.constantFrom(...alphabet), maxLength: 100}), raw => {
+    assert.equal(htmlText(`<b>${escape(raw)}</b>`), raw)
+    assert.equal(htmlText(`<img alt="${escape(raw)}">`), raw)
+    assert.equal(htmlText(`<script>${escape(raw)}</script><style>${escape(raw)}</style>safe`), 'safe')
+  }), {numRuns: 1500})
 })
