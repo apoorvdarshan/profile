@@ -126,9 +126,9 @@
       "starBadgeUrl": ""
     },
     {
-      "name": "multi-account-gmail-mcp",
-      "url": "https://github.com/apoorvdarshan/multi-account-gmail-mcp",
-      "description": "Local Codex/MCP plugin for multi-account Gmail access",
+      "name": "fud-mail",
+      "url": "https://github.com/apoorvdarshan/fud-mail",
+      "description": "Multi-account Gmail MCP for Codex, Claude Code, and OpenCode",
       "status": "",
       "marker": "📬",
       "starBadgeUrl": ""
@@ -536,9 +536,9 @@
           "starBadgeUrl": ""
         },
         {
-          "name": "multi-account-gmail-mcp",
-          "url": "https://github.com/apoorvdarshan/multi-account-gmail-mcp",
-          "description": "Local Codex/MCP plugin for multi-account Gmail access",
+          "name": "fud-mail",
+          "url": "https://github.com/apoorvdarshan/fud-mail",
+          "description": "Multi-account Gmail MCP for Codex, Claude Code, and OpenCode",
           "status": "",
           "marker": "📬",
           "starBadgeUrl": ""
@@ -1870,8 +1870,8 @@
       "description": "[cmux](https://cmux.com/)"
     },
     {
-      "name": "Mail",
-      "description": "my own [multi-account Gmail MCP](https://github.com/apoorvdarshan/multi-account-gmail-mcp) handles all three inboxes"
+      "name": "Fud Mail",
+      "description": "my own [multi-account Gmail MCP](https://github.com/apoorvdarshan/fud-mail) handles all three inboxes"
     },
     {
       "name": "Always on",
