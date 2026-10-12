@@ -1870,8 +1870,8 @@
       "description": "[cmux](https://cmux.com/)"
     },
     {
-      "name": "Fud Mail",
-      "description": "my own [multi-account Gmail MCP](https://github.com/apoorvdarshan/fud-mail) handles all three inboxes"
+      "name": "Gmail MCP",
+      "description": "my own [Fud Mail](https://github.com/apoorvdarshan/fud-mail) handles all three inboxes"
     },
     {
       "name": "Always on",
