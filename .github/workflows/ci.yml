@@ -25,7 +25,7 @@ jobs:
       - run: npm ci
       - run: python -m pip install --require-hashes -r scripts/automation/requirements.txt
       - run: npm run lint
-      - run: node --test scripts/automation/*.test.mjs
+      - run: node --test scripts/automation/*.test.*js
       - run: python -m unittest discover -s scripts/automation -p 'test_*.py'
       - run: npm audit --audit-level=moderate
       - run: python -m pip install --require-hashes -r scripts/automation/requirements-security.txt

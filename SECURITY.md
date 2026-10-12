@@ -32,7 +32,7 @@ plan supports protections. Automated profile commits must remain possible.
 CI runs CodeQL, Bandit, dependency audits and generated-input tests. The fast-check
 properties exercise HTML text/attribute decoding and script/style exclusion; the
 badge/LaTeX regression suite also exercises hostile inputs. Run them with
-`node --test scripts/automation/*.test.mjs`. Failures include a seed and shrink
+`node --test scripts/automation/*.test.*js`. Failures include a seed and shrink
 path for reproduction; preserve any discovered bug as a regression example.
 
 Python direct requirements live in `scripts/automation/requirements.in` and
