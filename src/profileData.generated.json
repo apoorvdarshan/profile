@@ -86,7 +86,7 @@
       "status": "",
       "marker": "🗺️",
       "starBadgeUrl": "",
-      "downloads": "40+",
+      "downloads": "50+",
       "metric": "users"
     },
     {
@@ -1562,6 +1562,15 @@
       "starCount": "1.1k"
     },
     {
+      "name": "awesome-ai-companion",
+      "url": "https://github.com/DasterProkio/awesome-ai-companion/pull/10",
+      "description": "docs: add Scowld companion client",
+      "status": "",
+      "marker": "🤖",
+      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
+      "starCount": "951"
+    },
+    {
       "name": "djLint",
       "url": "https://github.com/djlint/djLint/pull/2206",
       "description": "fix: keep template variable in HTML attribute name on one line",
@@ -1569,15 +1578,6 @@
       "marker": "🧹",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=djlint/djLint&v=3",
       "starCount": "951"
-    },
-    {
-      "name": "awesome-ai-companion",
-      "url": "https://github.com/DasterProkio/awesome-ai-companion/pull/10",
-      "description": "docs: add Scowld companion client",
-      "status": "",
-      "marker": "🤖",
-      "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=DasterProkio/awesome-ai-companion&v=3",
-      "starCount": "947"
     },
     {
       "name": "ccextractor",
@@ -1622,7 +1622,7 @@
       "status": "",
       "marker": "🪶",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=ikamensh/flynt&v=3",
-      "starCount": "732"
+      "starCount": "733"
     },
     {
       "name": "kart",
@@ -1685,7 +1685,7 @@
       "status": "",
       "marker": "🤖",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=giselles-ai/giselle&v=3",
-      "starCount": "557"
+      "starCount": "556"
     },
     {
       "name": "BancosBrasileiros",
@@ -1712,7 +1712,7 @@
       "status": "",
       "marker": "🍴",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=fork-commit-merge/fork-commit-merge&v=3",
-      "starCount": "513"
+      "starCount": "514"
     },
     {
       "name": "awesome-openrouter",
@@ -1775,7 +1775,7 @@
       "status": "",
       "marker": "🧪",
       "starBadgeUrl": "https://github-star-badge.apoorvdarshan.com/api/stars?repo=aregtech/areg-sdk&v=3",
-      "starCount": "367"
+      "starCount": "368"
     },
     {
       "name": "radis",
