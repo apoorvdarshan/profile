@@ -1,3 +1,6 @@
+> **Archived — moved to [apoorvdarshan/apoorvdarshan](https://github.com/apoorvdarshan/apoorvdarshan).**
+> Active development is now in [`website/`](https://github.com/apoorvdarshan/apoorvdarshan/tree/main/website). The GitHub profile, website, and public resume are maintained together there. This repository is retained as a read-only historical archive.
+
 <div align="center">
   <a href="https://apoorvdarshan.com">
     <img src="public/android-chrome-192x192.png" width="104" height="104" alt="Apoorv Darshan profile icon" />
